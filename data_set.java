@@ -1,19 +1,29 @@
 package object_project;
 
-public class data_set { //excel¿¡ ³Ö¾î¾ßÇÒ µ¥ÀÌÅÍµéÀÇ ¹¶Ä¡¸¦ Á¤ÀÇÇÑ ÀÏÁ¾ÀÇ structure class
+public class data_set { //excelï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ structure class
 
-	private String CustId; // ÇĞ¹ø
-	private String CustName; // ÀÌ¸§
-	private String CustNum; // ÇÚµåÆù ¹øÈ£
-	private String CustPeriod; // »ç¿ë±âÇÑ
+	private String CustRock; //ê°œì¸ ì‚¬ë¬¼í•¨ ë²ˆí˜¸
+	private String CustId; // ï¿½Ğ¹ï¿½
+	private String CustName; // ï¿½Ì¸ï¿½
+	private String CustNum; // ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	private String CustPeriod; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	// data set about id,name,num,peroid
-	public data_set(String CustId, String CustName, String CustNum, String CustPeriod) {
+	public data_set(String CustRock, String CustId, String CustName, String CustNum, String CustPeriod) {
 		super();
+		this.CustRock = CustRock;
 		this.CustId = CustId;
 		this.CustName = CustName;
 		this.CustNum = CustNum;
 		this.CustPeriod = CustPeriod;
+	}
+
+	public String getCustRock() {
+		return CustRock;
+	}
+
+	public String setCustRock(String CustRock) {
+		this.CustRock = CustRock;
 	}
 
 	public String getCustId() {
@@ -52,6 +62,7 @@ public class data_set { //excel¿¡ ³Ö¾î¾ßÇÒ µ¥ÀÌÅÍµéÀÇ ¹¶Ä¡¸¦ Á¤ÀÇÇÑ ÀÏÁ¾ÀÇ struc
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 
+		sb.append("ID : " + CustRock);
 		sb.append("ID : " + CustId);
 		sb.append("ID : " + CustName);
 		sb.append("ID : " + CustNum);
