@@ -1,12 +1,12 @@
 package object_project;
 
-public class data_set { //excel�� �־����� �����͵��� ��ġ�� ������ ������ structure class
+public class data_set {
 
-	private String CustRock; //개인 사물함 번호
-	private String CustId; // �й�
-	private String CustName; // �̸�
-	private String CustNum; // �ڵ��� ��ȣ
-	private String CustPeriod; // ��������
+	private String CustRock; 
+	private String CustId; 
+	private String CustName; 
+	private String CustNum; 
+	private String CustPeriod; 
 
 	// data set about id,name,num,peroid
 	public data_set(String CustRock, String CustId, String CustName, String CustNum, String CustPeriod) {
@@ -21,11 +21,12 @@ public class data_set { //excel�� �־����� �����͵��
 	public String getCustRock() {
 		return CustRock;
 	}
-
-	public String setCustRock(String CustRock) {
+	
+	public void setCustRock(String CustRock) {
 		this.CustRock = CustRock;
 	}
 
+	
 	public String getCustId() {
 		return CustId;
 	}

@@ -14,9 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import object_project.data_set;
 
 public class ExcelWriter {
-	/*
-	 * return list<data_set> object return to xlsx file. 
-	 */
+	
 	public void xlsxWriter(List<data_set> list) {
 		// create object for return
 		XSSFWorkbook workbook = new XSSFWorkbook(); // create xssfworkbook object include whole data
@@ -24,17 +22,20 @@ public class ExcelWriter {
 		XSSFSheet sheet = workbook.createSheet(); // create (sheet,row,cell) object for search
 		XSSFRow row = sheet.createRow(0);
 		XSSFCell cell;
-
+		
 		cell = row.createCell(0);
+		cell.setCellValue("사물함번호");
+		
+		cell = row.createCell(1);
 		cell.setCellValue("학번");
 
-		cell = row.createCell(1);
+		cell = row.createCell(2);
 		cell.setCellValue("이름");
 
-		cell = row.createCell(2);
+		cell = row.createCell(3);
 		cell.setCellValue("연락처");
 
-		cell = row.createCell(3);
+		cell = row.createCell(4);
 		cell.setCellValue("사용기한");
 
 		data_set ds;
@@ -45,15 +46,18 @@ public class ExcelWriter {
 			row = sheet.createRow(rowIdx + 1);
 
 			cell = row.createCell(0);
+			cell.setCellValue(ds.getCustRock());
+			
+			cell = row.createCell(1);
 			cell.setCellValue(ds.getCustId());
 
-			cell = row.createCell(1);
+			cell = row.createCell(2);
 			cell.setCellValue(ds.getCustName());
 
-			cell = row.createCell(2);
+			cell = row.createCell(3);
 			cell.setCellValue(ds.getCustNum());
 
-			cell = row.createCell(3);
+			cell = row.createCell(4);
 			cell.setCellValue(ds.getCustPeriod());
 
 			//  write in file with input data
