@@ -1,7 +1,7 @@
 package Operation;
 
-
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,15 +15,38 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import Operation.data_set;
 
 public class ExcelWriter {
-	
+	/*
+	 * return list<data_set> object return to xlsx file. 
+	 */
 	public void xlsxWriter(List<data_set> list) {
-		// create object for return
-		XSSFWorkbook workbook = new XSSFWorkbook(); // create xssfworkbook object include whole data
-
-		XSSFSheet sheet = workbook.createSheet(); // create (sheet,row,cell) object for search
-		XSSFRow row = sheet.createRow(0);
-		XSSFCell cell;
+		// create object for return		
+		//  write in file with input data
+		File file = new File("D:\\db.xlsx");
+		FileOutputStream fos = null;
+		FileInputStream fis = null;
 		
+		XSSFWorkbook workbook = new XSSFWorkbook(); // create xssfworkbook object include whole data
+		XSSFSheet sheet = workbook.createSheet(); // create (sheet,row,cell) object for search
+		XSSFCell cell;
+		XSSFRow row;
+		int rows = 0;
+			
+		// 엑셀파일 읽기
+		try {
+	        fis = new FileInputStream(file);
+	        workbook = new XSSFWorkbook(fis);
+	        sheet = workbook.getSheetAt(0);
+			rows = sheet.getPhysicalNumberOfRows();
+			System.out.println(rows);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// 엑셀파일 쓰기
+		
+		// 헤더 작성
+		row = sheet.createRow(0);
+
 		cell = row.createCell(0);
 		cell.setCellValue("사물함번호");
 		
@@ -38,54 +61,48 @@ public class ExcelWriter {
 
 		cell = row.createCell(4);
 		cell.setCellValue("사용기한");
-
+		
+		// 새 정보 작성
 		data_set ds;
-		// "for roop" for search row  
-		for (int rowIdx = 0; rowIdx < list.size(); rowIdx++) {
-			ds = list.get(rowIdx);
+		ds = list.get(0);
+		if(rows == 0) rows = 1;
+		row = sheet.createRow(rows);
 
-			row = sheet.createRow(rowIdx + 1);
+		cell = row.createCell(0);
+		cell.setCellValue(ds.getCustRock());
+		
+		cell = row.createCell(1);
+		cell.setCellValue(ds.getCustId());
 
-			cell = row.createCell(0);
-			cell.setCellValue(ds.getCustLock());
-			
-			cell = row.createCell(1);
-			cell.setCellValue(ds.getCustId());
+		cell = row.createCell(2);
+		cell.setCellValue(ds.getCustName());
 
-			cell = row.createCell(2);
-			cell.setCellValue(ds.getCustName());
+		cell = row.createCell(3);
+		cell.setCellValue(ds.getCustNum());
 
-			cell = row.createCell(3);
-			cell.setCellValue(ds.getCustNum());
+		cell = row.createCell(4);
+		cell.setCellValue(ds.getCustPeriod());
 
-			cell = row.createCell(4);
-			cell.setCellValue(ds.getCustPeriod());
+		// try-catch structure
+		try {
+			fos = new FileOutputStream(file);
+			workbook.write(fos);
 
-			//  write in file with input data
-			File file = new File("D:\\project\\db.xlsx");
-			FileOutputStream fos = null;
-
-			// try-catch structure
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
 			try {
-				fos = new FileOutputStream(file);
-				workbook.write(fos);
-
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
+				if (workbook != null) // finally에서 해제
+					workbook.close();
+				if (fos != null)
+					fos.close();
 			} catch (IOException e) {
 				e.printStackTrace();
-			} finally {
-				try {
-					if (workbook != null) // finally에서 해제
-						workbook.close();
-					if (fos != null)
-						fos.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
 			}
-
 		}
 
 	}
+
 }
