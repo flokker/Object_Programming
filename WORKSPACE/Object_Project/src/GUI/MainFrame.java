@@ -1,19 +1,20 @@
 package GUI;
 
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.border.LineBorder;
 
-/** Class Description of MainFrame.
-* 
-* <br>
-* this class show you main frame that contains locker image.
-* it extends JFrame to show some component.
-*
-* @author Junhyuk Jang
-* @version 1.1
-**/
+/**
+ * GUI환경에서 메인 프레임 역할을 하게 될 프레임
+ * history : June hyuk, 1.0 2017.11.14 초기 작성
+ * @author June hyuk
+ * @since 2017.11.14 
+ * @version 1.0 
+ */
+
+
 public class MainFrame extends JFrame {
 
 	private JButton[] Lock_num;
@@ -123,11 +124,8 @@ public class MainFrame extends JFrame {
 		 */
 	}
 	
-	/** This method is for ActionListener.
-	* when you click next, close or search button, it will occur some event.
-	* 
-	* <br>
-	* 
+	/** 
+	* 액션리스너를 구현하기 위한 클래스, 조건에 맞는 버튼을 클릭시 그에 맞는 처리를 한다.
 	* @param ActionEvent e
 	* @return void
 	**/		
@@ -144,10 +142,8 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	/** This method is for change a view to next panel as card.
-	* 
-	* <br>
-	* 
+	/** 
+	* 카드레이아웃 환경에서 다음 카드로 전환하기 위한 메소드
 	* @param void
 	* @return void
 	**/		
@@ -156,10 +152,8 @@ public class MainFrame extends JFrame {
 	
 	}
 
-	/** This method is for change a view to previous panel as card.
-	* 
-	* <br>
-	* 
+	/** 
+	* 카드레이아웃 환경에서 전의 카드로 전환하기 위한 메소드
 	* @param void
 	* @return void
 	**/	

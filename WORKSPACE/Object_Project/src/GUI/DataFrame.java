@@ -1,12 +1,10 @@
 package GUI;
 
-
-import java.awt.*;
-import java.awt.event.*;
-import java.util.Random;
-
 import javax.swing.*;
 import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
 
 import Operation.MainApplication;
 import Operation.data_set;
@@ -186,5 +184,3 @@ public class DataFrame extends JFrame {
 		}		
 	}
 }
-
-

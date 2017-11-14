@@ -1,5 +1,6 @@
 package Operation;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,13 +15,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import Operation.data_set;
 
-/** Class Description of ExcelWriter
-* 
-* <br>
-* this class is for inputing data to Excel DB.
-* this class get a list that contains data_set format. and get last rows number not input, inserting data there.
-* 
-* @author Myungho Bae
+/** 
+* 엑셀을 이용하여 데이터 값들을 리스트 형태로 작성하기 위한 클래스
+* @since 
+* @author June hyuk, Myungho Bae
 * @version 1.1
 **/
 public class ExcelWriter {
