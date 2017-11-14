@@ -14,24 +14,29 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import Operation.data_set;
 
+/** Class Description of ExcelWriter
+* 
+* <br>
+* this class is for inputing data to Excel DB.
+* this class get a list that contains data_set format. and get last rows number not input, inserting data there.
+* 
+* @author Myungho Bae
+* @version 1.1
+**/
 public class ExcelWriter {
-	/*
-	 * return list<data_set> object return to xlsx file. 
-	 */
+
 	public void xlsxWriter(List<data_set> list) {
-		// create object for return		
-		//  write in file with input data
+
 		File file = new File("D:\\db.xlsx");
 		FileOutputStream fos = null;
 		FileInputStream fis = null;
 		
-		XSSFWorkbook workbook = new XSSFWorkbook(); // create xssfworkbook object include whole data
-		XSSFSheet sheet = workbook.createSheet(); // create (sheet,row,cell) object for search
+		XSSFWorkbook workbook = new XSSFWorkbook();
+		XSSFSheet sheet = workbook.createSheet();
 		XSSFCell cell;
 		XSSFRow row;
 		int rows = 0;
 			
-		// 엑셀파일 읽기
 		try {
 	        fis = new FileInputStream(file);
 	        workbook = new XSSFWorkbook(fis);
@@ -42,9 +47,6 @@ public class ExcelWriter {
 			e.printStackTrace();
 		}
 
-		// 엑셀파일 쓰기
-		
-		// 헤더 작성
 		row = sheet.createRow(0);
 
 		cell = row.createCell(0);
@@ -62,14 +64,13 @@ public class ExcelWriter {
 		cell = row.createCell(4);
 		cell.setCellValue("사용기한");
 		
-		// 새 정보 작성
 		data_set ds;
 		ds = list.get(0);
 		if(rows == 0) rows = 1;
 		row = sheet.createRow(rows);
 
 		cell = row.createCell(0);
-		cell.setCellValue(ds.getCustRock());
+		cell.setCellValue(ds.getCustLock());
 		
 		cell = row.createCell(1);
 		cell.setCellValue(ds.getCustId());
@@ -83,7 +84,6 @@ public class ExcelWriter {
 		cell = row.createCell(4);
 		cell.setCellValue(ds.getCustPeriod());
 
-		// try-catch structure
 		try {
 			fos = new FileOutputStream(file);
 			workbook.write(fos);
@@ -94,7 +94,7 @@ public class ExcelWriter {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (workbook != null) // finally에서 해제
+				if (workbook != null)
 					workbook.close();
 				if (fos != null)
 					fos.close();

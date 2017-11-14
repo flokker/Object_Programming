@@ -19,7 +19,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 * this class get some data that input from SearchFrame, and find row number of that equals to data.
 * 
 * @author Myungho Bae
-* @version 1.0
+* @version 1.1
 **/
 public class Search {
 	/** Stored information of data_set from SearchFrame Class **/
@@ -34,7 +34,7 @@ public class Search {
 	* @return void
 	**/
 	public void SearchLocker(data_set ds, int enterCnt) {
-		Cust[0] = ds.getCustRock();
+		Cust[0] = ds.getCustLock();
 		Cust[1] = ds.getCustId();
 		Cust[2] = ds.getCustName();
 		Cust[3] = ds.getCustNum();
