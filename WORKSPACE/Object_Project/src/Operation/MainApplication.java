@@ -1,39 +1,33 @@
 package Operation;
 
-
-import java.util.Scanner; // Console로 입력 받기 위해 import, 추후 GUI기반으로 적용되면 삭제 요망
 import java.util.ArrayList;
 import java.util.List; //import to use list 
 
-import Operation.data_set; //data_set class import
-import Operation.ExcelWriter; //ExcelWriter class import
+import Operation.ExcelWriter;
+import Operation.data_set;
 
+/** Class Description of MainApplication.
+* 
+* <br>
+* this class is for run program firstly.
+* if you run this program, this class make StartFrame instance, 
+* and the instance show you start frame.
+*
+* @author Junhyuk Jang, Myungho Bae
+* @version 2.0
+**/
 public class MainApplication {
 
-//main class for input and return to Excelwriter class
-	public static void main(String[] args) {
-
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
-
-		// Sysout창 역시 console기반으로 작성한 것이므로, 추후 GUI 적용되면 변경 요망
-		System.out.println("사물함 번호를 입력해 주세요");
-		String CustLock = sc.next();
-		System.out.println("학번을 입력해주세요");
-		String CustId = sc.next();
-		System.out.println("이름을 입력해주세요");
-		String CustName = sc.next();
-		System.out.println("연락처를 입력해주세요 (- 없이)");
-		String CustNum = sc.next();
-		System.out.println("사용 기한을 입력해주세요 (yymmdd 형식으로)");
-		String CustPeriod = sc.next();
-
-		List<data_set> list = new ArrayList<data_set>(); // create list object
-		list.add(new data_set(CustLock, CustId, CustName, CustNum, CustPeriod)); // add in list id,name,num,peroid
+	public void excelWriting(data_set ds) {
+		List<data_set> list = new ArrayList<data_set>();
+		list.add(ds);
 
 		ExcelWriter excelwriter = new ExcelWriter();
 
-		excelwriter.xlsxWriter(list); // write the file with xlsx format
+		excelwriter.xlsxWriter(list);
 	}
 
+	public static void main(String[] args) {
+		GUI.StartFrame startApp = new GUI.StartFrame();
+	}
 }

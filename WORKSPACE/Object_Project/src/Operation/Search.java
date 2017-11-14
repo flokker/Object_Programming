@@ -1,6 +1,5 @@
 package Operation;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -16,7 +15,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /** Class Description of Search.
 * 
 * <br>
-* this class is for searching some locker information what user want from excel DB
+* this class is for searching some locker information what user want from excel DB.
+* this class get some data that input from SearchFrame, and find row number of that equals to data.
 * 
 * @author Myungho Bae
 * @version 1.0
@@ -32,8 +32,13 @@ public class Search {
 	* @param List<data_set> list
 	* @param int enterCnt
 	* @return void
-	**/	
-	public void SearchLocker(List<data_set> list, int enterCnt) {
+	**/
+	public void SearchLocker(data_set ds, int enterCnt) {
+		Cust[0] = ds.getCustRock();
+		Cust[1] = ds.getCustId();
+		Cust[2] = ds.getCustName();
+		Cust[3] = ds.getCustNum();
+		Cust[4] = ds.getCustPeriod();		
 		try {
 			FileInputStream fis = new FileInputStream("D:\\db.xlsx");
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
@@ -42,12 +47,12 @@ public class Search {
 			int SearchArray[] = new int[rows];
 			int ArrayNum = 0;
 			int searchedCnt = 0;
-			for (int rowIndex = 1; rowIndex <= rows; rowIndex++) {
+			for (int rowIndex = 1; rowIndex < rows; rowIndex++) {
 				searchedCnt = 0;
 				XSSFRow row = sheet.getRow(rowIndex);
 				if (row != null) {
 					int cells = row.getPhysicalNumberOfCells();
-					for (int columnIndex = 0; columnIndex < cells; columnIndex++) {
+					for (int columnIndex = 0; columnIndex < 5; columnIndex++) {
 						XSSFCell cell = row.getCell(columnIndex);
 						if(Cust[columnIndex].equals(cell.getStringCellValue())) {
 							searchedCnt ++;
@@ -65,7 +70,7 @@ public class Search {
 			for(int i=0; i<ArrayNum; i++) {
 				System.out.println(SearchArray[i]);				
 			}
-			이곳에 draw method를 추가해야함
+			//이곳에 draw method를 추가해야함
 			*/
 			
 		} catch (IOException e) {
@@ -73,3 +78,4 @@ public class Search {
 		}	
 	}
 }
+
