@@ -118,7 +118,7 @@ public class MainFrame extends JFrame {
 
 		SearchButton.setBounds(108, 471, 127, 131);
 		contentPane.add(SearchButton);
-
+		contentPane.addKeyListener(new KeyHandler());
 		
 		
 		BackButton.addActionListener(new MyActionListener());
