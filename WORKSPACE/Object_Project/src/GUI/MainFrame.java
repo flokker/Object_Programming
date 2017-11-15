@@ -22,13 +22,17 @@ public class MainFrame extends JFrame {
 	private JPanel contentPane, Lockpanel;
 	private JButton BackButton, NextButton, SearchButton;
 	private CardLayout cards;
+	JScrollPane scrollPane;
+	ImageIcon icon;
 
+	
 	public static void main(String[] args) {
 		MainFrame frame = new MainFrame();
 	}
 
 	protected MainFrame() {
 
+		
 		Lock_card = new JPanel[10];
 
 		setTitle("Main Frame");
@@ -36,23 +40,24 @@ public class MainFrame extends JFrame {
 		setLocationRelativeTo(null);
 		setBounds(100, 100, 913, 693);
 		contentPane = new JPanel();
-		contentPane.setLayout(null);
-		setContentPane(contentPane);
+		contentPane.setLayout(null);		
+		setContentPane(contentPane);		
 		contentPane.setBackground(Color.white);
+
 		// MainPanel
 		JPanel mainpanel = new JPanel();
 		mainpanel.setBounds(0, 10, 897, 416);
 		contentPane.add(mainpanel);
-		mainpanel.setLayout(null);
+		mainpanel.setLayout(null);	
 		mainpanel.setBackground(Color.white);
 		// back button
-		BackButton = new JButton(new ImageIcon("img/back.png"));
+		BackButton = new JButton(new ImageIcon("./Img/back.png"));
 		BackButton.setBounds(0, 124, 97, 130);
 		BackButton.setContentAreaFilled(false);
 		mainpanel.add(BackButton);
 
 		// next button
-		NextButton = new JButton(new ImageIcon("img/next.png"));
+		NextButton = new JButton(new ImageIcon("./Img/next.png"));
 		NextButton.setBounds(800, 124, 97, 130);
 		mainpanel.add(NextButton);
 		NextButton.setContentAreaFilled(false);
@@ -86,7 +91,7 @@ public class MainFrame extends JFrame {
 		}
 
 		// 검색버튼
-		SearchButton = new JButton(new ImageIcon("img/magnifier.png"));
+		SearchButton = new JButton(new ImageIcon("./Img/Search.png"));
 		getContentPane().add(SearchButton);
 		setVisible(true);
 
