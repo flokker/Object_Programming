@@ -72,7 +72,7 @@ public class MainFrame extends JFrame {
 		mainpanel.add(Lockpanel);
 		
 		// Mini Map 붙일 패널
-		JPanel Map_panel = new JPanel();
+		Mini_Map Map_panel = new Mini_Map();
 		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Map_panel.setBounds(314, 436, 478, 166);
 		contentPane.add(Map_panel);
