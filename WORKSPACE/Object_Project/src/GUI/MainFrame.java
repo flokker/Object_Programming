@@ -30,6 +30,10 @@ public class MainFrame extends JFrame {
 		MainFrame frame = new MainFrame();
 	}
 
+	/**
+	 * 메인프레임에 대한 메소드
+	 * 
+	 */
 	protected MainFrame() {
 
 		
@@ -49,24 +53,14 @@ public class MainFrame extends JFrame {
 		mainpanel.setBounds(0, 10, 897, 416);
 		contentPane.add(mainpanel);
 		mainpanel.setLayout(null);	
-		mainpanel.setBackground(Color.white);
-		// back button
-		BackButton = new JButton(new ImageIcon("./Img/back.png"));
-		BackButton.setBounds(0, 124, 97, 130);
-		BackButton.setContentAreaFilled(false);
-		mainpanel.add(BackButton);
-
-		// next button
-		NextButton = new JButton(new ImageIcon("./Img/next.png"));
-		NextButton.setBounds(800, 124, 97, 130);
-		mainpanel.add(NextButton);
-		NextButton.setContentAreaFilled(false);
+		mainpanel.setBackground(Color.black);
+		
 		// Lockpanel (카드 레이아웃)
 
 		cards = new CardLayout();
 		Lockpanel = new JPanel();
 		Lockpanel.setLayout(cards);
-		Lockpanel.setBounds(109, 30, 679, 357);
+		Lockpanel.setBounds(250, 50, 400, 300);
 
 		// 사물함 구역 별로 Lockpanel 카드 갯수
 		for (int i = 0; i < 10; i++) {
@@ -76,13 +70,35 @@ public class MainFrame extends JFrame {
 		}
 
 		mainpanel.add(Lockpanel);
+		
+		// Mini Map 붙일 패널
+		JPanel Map_panel = new JPanel();
+		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		Map_panel.setBounds(314, 436, 478, 166);
+		contentPane.add(Map_panel);
+		setVisible(true);
+		
+		// back button
+		BackButton = new JButton(new ImageIcon("./Img/back.png"));
+		BackButton.setBounds(0, 124, 97, 130);
+		mainpanel.add(BackButton);
+		BackButton.setBorderPainted(false);
+		BackButton.setContentAreaFilled(false);
+		
 
+		// next button
+		NextButton = new JButton(new ImageIcon("./Img/next.png"));
+		NextButton.setBounds(800, 124, 97, 130);
+		mainpanel.add(NextButton);
+
+		NextButton.setBorderPainted(false);
+		NextButton.setContentAreaFilled(false);
 		// 버튼 3x3생성
 		Lock_num = new JButton[9];
 		for (int i = 0; i < Lock_card.length; i++) {
 			for (int j = 0; j < 9; j++) {
-				Lock_num[j] = new JButton("" + (j + 1));
-
+				Lock_num[j] = new JButton(new ImageIcon("./Img/locker.png"));
+				Lock_num[j].addActionListener(new MyActionListener());
 				Lock_num[j].setContentAreaFilled(false);
 				Lock_num[j].setOpaque(false);
 				Lock_card[i].add(Lock_num[j]);
@@ -103,30 +119,11 @@ public class MainFrame extends JFrame {
 		SearchButton.setBounds(108, 471, 127, 131);
 		contentPane.add(SearchButton);
 
-		// Mini Map 붙일 패널
-		JPanel Map_panel = new JPanel();
-		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		Map_panel.setBounds(314, 436, 478, 166);
-		contentPane.add(Map_panel);
-		setVisible(true);
+		
 		
 		BackButton.addActionListener(new MyActionListener());
 		NextButton.addActionListener(new MyActionListener());
 		SearchButton.addActionListener(new MyActionListener());
-	}
-	
-	/** This method is for adding Listeners to components.
-	* 
-	* <br>
-	* 
-	* @param void
-	* @return void
-	**/		
-	public void addListener() {
-		/*
-		 * for (int i = 0; i < 10; i++) for (int j = 0; j < 9; j++) {
-		 * Lock_num[j].addMouseListener(addMouseListener()); }
-		 */
 	}
 	
 	/** 
@@ -137,12 +134,16 @@ public class MainFrame extends JFrame {
 	class MyActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			JButton temp = (JButton)e.getSource();
-			if (temp == NextButton)
-				goNextCard();     
+			if (temp == NextButton) 
+				goNextCard();
+			
 			else if (temp == BackButton) 
 				goBackCard();
 			else if (temp == SearchButton) {
 				SearchFrame frame = new SearchFrame();
+		}
+			else {
+				DataFrame daframe = new DataFrame();
 			}
 		}
 	}

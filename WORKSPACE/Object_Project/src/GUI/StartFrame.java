@@ -41,7 +41,7 @@ public class StartFrame extends JFrame implements ActionListener {
 	void makeGUI() {
 		setLayout(new BorderLayout());
 		
-		lockerImg = new ImageIcon("H:\\LockerImg.png");
+		lockerImg = new ImageIcon("./Img/LockerImg.png");
 		JPanel imgPanel = new JPanel() {	// 익명클래스
 			   public void paintComponent(Graphics g) {
 				    g.drawImage(lockerImg.getImage(), -28, -80, null);
@@ -51,11 +51,11 @@ public class StartFrame extends JFrame implements ActionListener {
 		};
 		JPanel btnPanel = new JPanel();
 		
-		startBtn = new JButton(new ImageIcon("H:\\StartBtn.png"));	
+		startBtn = new JButton(new ImageIcon("./Img/StartBtn.png"));	
 		deleteButtonFormat(startBtn);		
 		startBtn.addActionListener(this);
 			
-		closeBtn = new JButton(new ImageIcon("H:\\CloseBtn.png"));
+		closeBtn = new JButton(new ImageIcon("./Img/CloseBtn.png"));
 		deleteButtonFormat(closeBtn);
 		closeBtn.addActionListener(this);
 			

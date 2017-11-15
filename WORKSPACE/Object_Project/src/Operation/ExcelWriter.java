@@ -25,7 +25,7 @@ public class ExcelWriter {
 
 	public void xlsxWriter(List<data_set> list) {
 
-		File file = new File("D:\\db.xlsx");
+		File file = new File("./ExcelSheet/db.xlsx");
 		FileOutputStream fos = null;
 		FileInputStream fis = null;
 		

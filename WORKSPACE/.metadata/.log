@@ -1694,3 +1694,1292 @@ Caused by: org.apache.http.client.CircularRedirectException: Circular redirect t
 
 !ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 11:21:22.843
 !MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+!SESSION 2017-11-15 20:16:56.848 -----------------------------------------------
+eclipse.buildId=4.7.0.I20170612-0950
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-11-15 20:17:12.134
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\r'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:46:57.538
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2017-11-15 20:46:58.748
+!MESSAGE Unable to read repository at http://www.objectaid.com/download.
+!STACK 0
+java.io.IOException: http://www.objectaid.com/download is not a valid repository location.
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:102)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-11-15 20:47:01.062
+!MESSAGE No repository found at http://www.objectaid.com/update.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:02.734
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2017-11-15 20:47:03.328
+!MESSAGE Unable to read repository at http://www.objectaid.net/update.
+!STACK 0
+java.io.IOException: http://www.objectaid.net/update is not a valid repository location.
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:102)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:15.902
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:20.780
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:22.327
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:26.954
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:29.001
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:33.108
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:34.749
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:47:40.393
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 20:47:54.535
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:03.277
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:20.451
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:34.899
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:36.385
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:40.918
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:42.590
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:48.897
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:50.473
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:56.147
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:48:59.163
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:49:27.845
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:49:44.626
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:49:56.833
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 20:50:04.508
+!MESSAGE Connection to http://www.objectaid.net/update/content.xml failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.xml'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:50:15.840
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:50:18.741
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:50:23.516
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 20:50:40.077
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:50:49.065
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:51:06.139
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:51:41.455
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:51:45.772
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:51:47.503
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:51:52.642
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 20:52:06.146
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:52:15.412
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:52:20.129
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:52:25.482
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:52:42.573
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:52:47.471
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:52:48.424
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:53:15.179
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:53:31.509
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:53:51.341
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:53:55.842
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:53:59.403
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:54:03.542
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:54:19.284
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:54:39.127
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:54:55.659
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:55:03.974
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:55:04.886
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 20:55:12.506
+!MESSAGE Connection to http://www.objectaid.net/update/content.xml.xz failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.xml.xz'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:55:13.606
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/compositeContent.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 20:55:24.236
+!MESSAGE Connection to http://www.objectaid.net/update/compositeContent.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/compositeContent.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:55:33.256
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:55:50.253
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:56:07.639
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:56:12.284
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:56:13.856
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:56:19.865
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:56:22.204
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:56:26.434
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 20:56:40.207
+!MESSAGE Connection to http://www.objectaid.net/update/content.xml failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.xml'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:56:48.936
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:57:08.744
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:57:21.151
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:57:37.725
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:57:43.706
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:57:58.943
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:58:15.572
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:58:28.695
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:58:30.140
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:58:49.160
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:58:53.723
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:58:54.643
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 20:59:11.286
+!MESSAGE Connection to http://www.objectaid.net/update/content.xml.xz failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.xml.xz'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:59:20.085
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:59:24.736
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:59:26.738
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:59:31.034
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 20:59:38.480
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2017-11-15 21:04:06.322
+!MESSAGE Graphic is disposed
+!STACK 0
+org.eclipse.swt.SWTException: Graphic is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4533)
+	at org.eclipse.swt.SWT.error(SWT.java:4448)
+	at org.eclipse.swt.SWT.error(SWT.java:4419)
+	at org.eclipse.swt.graphics.Font.getFontData(Font.java:192)
+	at org.eclipse.e4.ui.css.swt.helpers.CSSSWTFontHelper.getFirstFontData(CSSSWTFontHelper.java:459)
+	at org.eclipse.e4.ui.css.swt.properties.converters.CSSValueSWTFontDataConverterImpl.convert(CSSValueSWTFontDataConverterImpl.java:59)
+	at org.eclipse.e4.ui.css.swt.properties.converters.CSSValueSWTFontConverterImpl.convert(CSSValueSWTFontConverterImpl.java:34)
+	at org.eclipse.e4.ui.css.core.impl.engine.AbstractCSSEngine.convert(AbstractCSSEngine.java:1124)
+	at org.eclipse.e4.ui.css.swt.properties.css2.CSSPropertyFontSWTHandler.onAllCSSPropertiesApplyed(CSSPropertyFontSWTHandler.java:251)
+	at org.eclipse.e4.ui.css.core.dom.properties.ICSSPropertyHandler2.onAllCSSPropertiesApplyed(ICSSPropertyHandler2.java:44)
+	at org.eclipse.e4.ui.css.core.impl.engine.AbstractCSSEngine.applyStyleDeclaration(AbstractCSSEngine.java:581)
+	at org.eclipse.e4.ui.css.core.impl.engine.AbstractCSSEngine.applyStyles(AbstractCSSEngine.java:426)
+	at org.eclipse.e4.ui.css.core.impl.engine.AbstractCSSEngine.applyStyles(AbstractCSSEngine.java:367)
+	at org.eclipse.e4.ui.css.swt.engine.CSSSWTApplyStylesListener$1.handleEvent(CSSSWTApplyStylesListener.java:32)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4420)
+	at org.eclipse.swt.widgets.Display.runSkin(Display.java:4321)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1361)
+	at org.eclipse.swt.widgets.Composite.sendResize(Composite.java:1039)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1085)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3261)
+	at org.eclipse.swt.widgets.Control.setBounds(Control.java:3256)
+	at org.eclipse.swt.layout.FillLayout.layout(FillLayout.java:204)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1363)
+	at org.eclipse.swt.widgets.Composite.sendResize(Composite.java:1039)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1085)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3261)
+	at org.eclipse.swt.widgets.Control.setBounds(Control.java:3256)
+	at org.eclipse.swt.layout.FillLayout.layout(FillLayout.java:204)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1363)
+	at org.eclipse.swt.widgets.Composite.sendResize(Composite.java:1039)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1085)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3261)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3337)
+	at org.eclipse.swt.widgets.Control.setBounds(Control.java:3333)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.setRectangle(SashLayout.java:283)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.tileSubNodes(SashLayout.java:228)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.tileSubNodes(SashLayout.java:271)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.tileSubNodes(SashLayout.java:271)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.tileSubNodes(SashLayout.java:271)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.layout(SashLayout.java:145)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1363)
+	at org.eclipse.swt.widgets.Composite.sendResize(Composite.java:1039)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1085)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3261)
+	at org.eclipse.swt.widgets.Control.setBounds(Control.java:3256)
+	at org.eclipse.swt.layout.FillLayout.layout(FillLayout.java:204)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1363)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1774)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4918)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:88)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5743)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4931)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.SetWindowPos(Native Method)
+	at org.eclipse.swt.widgets.Widget.SetWindowPos(Widget.java:1482)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3304)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1079)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3261)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3337)
+	at org.eclipse.swt.widgets.Control.setBounds(Control.java:3333)
+	at org.eclipse.swt.custom.StackLayout.layout(StackLayout.java:123)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1363)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1774)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4918)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:88)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5743)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4931)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.SetWindowPos(Native Method)
+	at org.eclipse.swt.widgets.Widget.SetWindowPos(Widget.java:1482)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3304)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1079)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3261)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3337)
+	at org.eclipse.swt.widgets.Control.setBounds(Control.java:3333)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.setRectangle(SashLayout.java:283)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.tileSubNodes(SashLayout.java:228)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.tileSubNodes(SashLayout.java:271)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashLayout.layout(SashLayout.java:145)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1363)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1774)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4918)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:88)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5743)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4931)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.SetWindowPos(Native Method)
+	at org.eclipse.swt.widgets.Widget.SetWindowPos(Widget.java:1482)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3304)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1079)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3261)
+	at org.eclipse.swt.widgets.Control.setBounds(Control.java:3256)
+	at org.eclipse.swt.layout.FillLayout.layout(FillLayout.java:204)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1363)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1774)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4918)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:88)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5743)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4931)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5191)
+	at org.eclipse.swt.internal.win32.OS.EndDeferWindowPos(Native Method)
+	at org.eclipse.swt.widgets.Composite.resizeChildren(Composite.java:1007)
+	at org.eclipse.swt.widgets.Composite.resizeChildren(Composite.java:973)
+	at org.eclipse.swt.widgets.Composite.setResizeChildren(Composite.java:1187)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1778)
+	at org.eclipse.swt.widgets.Canvas.WM_SIZE(Canvas.java:492)
+	at org.eclipse.swt.widgets.Decorations.WM_SIZE(Decorations.java:1850)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4918)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1657)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5191)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5743)
+	at org.eclipse.swt.widgets.Canvas.WM_WINDOWPOSCHANGED(Canvas.java:499)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4931)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1657)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.SetMenu(Native Method)
+	at org.eclipse.swt.widgets.Decorations.setMenuBar(Decorations.java:1188)
+	at org.eclipse.swt.widgets.Menu.releaseParent(Menu.java:1206)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:844)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:460)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.disposeWidget(SWTPartRenderer.java:172)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:940)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$1(PartRenderingEngine.java:868)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:863)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:847)
+	at org.eclipse.ui.internal.WorkbenchWindow$1.handleEvent(WorkbenchWindow.java:322)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler$1.run(UIEventHandler.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:233)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:144)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4889)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:212)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:36)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:52)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setWidget(UIElementImpl.java:261)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.unbindWidget(SWTPartRenderer.java:147)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.lambda$0(SWTPartRenderer.java:136)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:124)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:836)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:460)
+	at org.eclipse.swt.widgets.Decorations.dispose(Decorations.java:460)
+	at org.eclipse.swt.widgets.Shell.dispose(Shell.java:737)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3868)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:298)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3351)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4941)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1657)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5191)
+	at org.eclipse.swt.internal.win32.OS.PeekMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.PeekMessage(OS.java:3152)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3812)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:818)
+	at org.eclipse.jface.window.Window.open(Window.java:794)
+	at org.eclipse.jface.dialogs.MessageDialog.open(MessageDialog.java:396)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchWindowAdvisor.promptOnExit(IDEWorkbenchWindowAdvisor.java:224)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$1.handleEvent(IDEWorkbenchAdvisor.java:164)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4420)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3364)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4941)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1657)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5191)
+	at org.eclipse.swt.internal.win32.OS.PeekMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.PeekMessage(OS.java:3152)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3812)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1044)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY org.eclipse.ui 4 0 2017-11-15 21:04:06.369
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IllegalArgumentException: Argument not valid
+	at org.eclipse.swt.SWT.error(SWT.java:4514)
+	at org.eclipse.swt.SWT.error(SWT.java:4448)
+	at org.eclipse.swt.SWT.error(SWT.java:4419)
+	at org.eclipse.swt.graphics.GC.setForeground(GC.java:4639)
+	at org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering.drawBackground(CTabRendering.java:1075)
+	at org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering.drawUnselectedTabBackground(CTabRendering.java:1008)
+	at org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering.drawCustomBackground(CTabRendering.java:990)
+	at org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering.draw(CTabRendering.java:218)
+	at org.eclipse.swt.custom.CTabFolder.updateBkImages(CTabFolder.java:3876)
+	at org.eclipse.swt.custom.CTabFolder.setButtonBounds(CTabFolder.java:2611)
+	at org.eclipse.swt.custom.CTabFolder.updateItems(CTabFolder.java:3786)
+	at org.eclipse.swt.custom.CTabFolder.updateItems(CTabFolder.java:3717)
+	at org.eclipse.swt.custom.CTabFolder.onResize(CTabFolder.java:2110)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:335)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Control.WM_SIZE(Control.java:5511)
+	at org.eclipse.swt.widgets.Scrollable.WM_SIZE(Scrollable.java:367)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1763)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4918)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:88)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5743)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4931)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5191)
+	at org.eclipse.swt.internal.win32.OS.SetWindowPos(Native Method)
+	at org.eclipse.swt.widgets.Widget.SetWindowPos(Widget.java:1482)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3304)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1079)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Control.setSizeInPixels(Control.java:3829)
+	at org.eclipse.swt.widgets.Control.setSize(Control.java:3859)
+	at org.eclipse.swt.widgets.Control.pack(Control.java:2214)
+	at org.eclipse.swt.widgets.Control.pack(Control.java:2184)
+	at org.eclipse.ui.internal.e4.compatibility.ActionBars.updateActionBars(ActionBars.java:83)
+	at org.eclipse.ui.part.PageBookView.showPageRec(PageBookView.java:1007)
+	at org.eclipse.ui.views.contentoutline.ContentOutline.showPageRec(ContentOutline.java:227)
+	at org.eclipse.ui.part.PageBookView.partHidden(PageBookView.java:1091)
+	at org.eclipse.ui.part.PageBookView$1.partHidden(PageBookView.java:1048)
+	at org.eclipse.ui.internal.WorkbenchPage$29.run(WorkbenchPage.java:5321)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.WorkbenchPage.firePartHidden(WorkbenchPage.java:5318)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.lambda$0(CompatibilityPart.java:103)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler$1.run(UIEventHandler.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:233)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:144)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4889)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:212)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:36)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:52)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setWidget(UIElementImpl.java:261)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.unbindWidget(SWTPartRenderer.java:147)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.lambda$0(SWTPartRenderer.java:136)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:124)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1079)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:836)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:929)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:171)
+	at org.eclipse.swt.widgets.Decorations.releaseChildren(Decorations.java:808)
+	at org.eclipse.swt.widgets.Shell.releaseChildren(Shell.java:1368)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:839)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:460)
+	at org.eclipse.swt.widgets.Decorations.dispose(Decorations.java:460)
+	at org.eclipse.swt.widgets.Shell.dispose(Shell.java:737)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3868)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:298)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3351)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4941)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1657)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5191)
+	at org.eclipse.swt.internal.win32.OS.PeekMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.PeekMessage(OS.java:3152)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3812)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:818)
+	at org.eclipse.jface.window.Window.open(Window.java:794)
+	at org.eclipse.jface.dialogs.MessageDialog.open(MessageDialog.java:396)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchWindowAdvisor.promptOnExit(IDEWorkbenchWindowAdvisor.java:224)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$1.handleEvent(IDEWorkbenchAdvisor.java:164)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4428)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4420)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3364)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4941)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1657)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5191)
+	at org.eclipse.swt.internal.win32.OS.PeekMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.PeekMessage(OS.java:3152)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3812)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1044)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+!SESSION 2017-11-15 22:03:16.165 -----------------------------------------------
+eclipse.buildId=4.7.0.I20170612-0950
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-11-15 22:03:29.608
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\r'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2017-11-15 22:23:19.812
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-11-15 22:23:19.817
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:39:32.695
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2017-11-15 22:39:33.943
+!MESSAGE Unable to read repository at http://www.objectaid.com/download.
+!STACK 0
+java.io.IOException: http://www.objectaid.com/download is not a valid repository location.
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:102)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor63.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-11-15 22:39:36.322
+!MESSAGE No repository found at http://www.objectaid.com/update.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:39:40.917
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2017-11-15 22:39:42.426
+!MESSAGE Unable to read repository at http://www.objectaid.net/update.
+!STACK 0
+java.io.IOException: http://www.objectaid.net/update is not a valid repository location.
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:102)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at sun.reflect.GeneratedMethodAccessor63.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:39:54.807
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:40:00.447
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:04.998
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:06.642
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:11.185
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:12.710
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:17.516
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:19.202
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:21.500
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:30.947
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:33.456
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:38.413
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:39.335
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 22:41:47.113
+!MESSAGE Connection to http://www.objectaid.net/update/content.xml.xz failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.xml.xz'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:41:56.049
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:42:16.687
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:42:44.262
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:45:55.484
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:46:00.338
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:46:02.470
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:46:13.335
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:46:17.987
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:46:23.955
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:46:35.821
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:46:40.594
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 22:46:49.151
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:07.161
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:11.184
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:12.878
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:18.988
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:21.128
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:23.073
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:44.125
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:45.755
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:50.122
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:51.055
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:52.733
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:56.602
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:47:58.322
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:48:32.217
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:48:52.725
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:48:57.387
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:48:59.153
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:49:03.857
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:49:06.607
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:49:11.451
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:49:13.043
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:49:21.057
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:49:21.903
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/compositeContent.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 22:49:42.957
+!MESSAGE Connection to http://www.objectaid.net/update/compositeContent.jar failed on Connection timed out: connect. Retry attempt 0 started
+!STACK 0
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient4.ECFHttpClientProtocolSocketFactory.connectSocket(ECFHttpClientProtocolSocketFactory.java:86)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:49:52.124
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:11.902
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:26.384
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:28.034
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:34.469
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:36.212
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:42.199
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:43.846
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:48.915
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:50:50.528
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:51:01.754
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 22:51:21.406
+!MESSAGE Connection to http://www.objectaid.net/update/content.xml failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.xml'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:51:30.585
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:51:50.558
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:51:55.237
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:51:56.931
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:52:16.649
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:52:26.608
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:52:31.251
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 22:52:42.033
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:52:52.933
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:52:54.683
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:52:59.494
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:53:01.197
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:55:09.900
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:55:11.544
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:55:15.651
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:55:17.572
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:55:24.447
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-11-15 22:55:32.370
+!MESSAGE Connection to http://www.objectaid.net/update/content.jar failed on null. Retry attempt 0 started
+!STACK 0
+org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:888)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.apache.http.client.CircularRedirectException: Circular redirect to 'http://www.objectaid.net/update/content.jar'
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getLocationURI(DefaultRedirectStrategy.java:176)
+	at org.apache.http.impl.client.DefaultRedirectStrategy.getRedirect(DefaultRedirectStrategy.java:220)
+	at org.apache.http.impl.client.DefaultRequestDirector.handleResponse(DefaultRequestDirector.java:1085)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:516)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	... 6 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:55:41.901
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:56:16.779
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:56:23.306
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:56:24.291
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:56:33.560
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:56:38.797
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.jface.text 2 0 2017-11-15 22:58:40.042
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-11-15 22:58:40.058
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:58:50.116
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:58:55.237
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:58:56.203
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.xml.xz
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:58:57.868
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.com/download/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-15 22:59:01.978
+!MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar

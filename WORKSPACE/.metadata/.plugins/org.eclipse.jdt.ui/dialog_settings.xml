@@ -11,14 +11,14 @@
 		<item value="false" key="nodeprecated"/>
 		<item value="false" key="nonavbar"/>
 		<item value="" key="docletpath"/>
-		<item value="" key="javadoc_command_history"/>
+		<item value="C:\Program Files\Java\jdk1.8.0_121\bin\javadoc.exe" key="javadoc_command_history"/>
 		<item value="1.8" key="source"/>
 		<item value="true" key="version"/>
 		<item value="" key="docletname"/>
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\Users\r\Desktop\WORKSPACE\Object_Project\doc" key="destdir"/>
+		<item value="C:\Users\r\Desktop\javadoc!" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
 			<section name="RemoteSystemsTempFiles">
@@ -28,7 +28,7 @@
 			</section>
 			<section name="Object_Project">
 				<item value="C:\Users\r\Desktop\WORKSPACE\Object_Project\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\r\Desktop\WORKSPACE\Object_Project\doc" key="destdir"/>
+				<item value="C:\Users\r\Desktop\javadoc!" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 		</section>
