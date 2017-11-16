@@ -41,7 +41,7 @@ public class Search {
 		Cust[3] = ds.getCustNum();
 		Cust[4] = ds.getCustPeriod();		
 		try {
-			FileInputStream fis = new FileInputStream("./ExcelSheet/db.xlsx");
+			FileInputStream fis = new FileInputStream("D:\\db.xlsx");
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			int rows = sheet.getPhysicalNumberOfRows();

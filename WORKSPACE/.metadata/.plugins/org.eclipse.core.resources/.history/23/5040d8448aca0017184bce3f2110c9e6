@@ -15,20 +15,6 @@ import javax.swing.border.LineBorder;
  */
 
 
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-import javax.swing.border.LineBorder;
-
-/**
- * GUI환경에서 메인 프레임 역할을 하게 될 프레임
- * history : June hyuk, 1.0 2017.11.14 초기 작성
- * @author June hyuk
- * @since 2017.11.14 
- * @version 1.0 
- */
-
-
 public class MainFrame extends JFrame {
 
 	private JButton[] Lock_num;
@@ -86,7 +72,7 @@ public class MainFrame extends JFrame {
 		mainpanel.add(Lockpanel);
 		
 		// Mini Map 붙일 패널
-		Mini_Map Map_panel = new Mini_Map();
+		JPanel Map_panel = new JPanel();
 		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Map_panel.setBounds(314, 436, 478, 166);
 		contentPane.add(Map_panel);
@@ -132,7 +118,7 @@ public class MainFrame extends JFrame {
 
 		SearchButton.setBounds(108, 471, 127, 131);
 		contentPane.add(SearchButton);
-		contentPane.addKeyListener(new KeyHandler());
+
 		
 		
 		BackButton.addActionListener(new MyActionListener());

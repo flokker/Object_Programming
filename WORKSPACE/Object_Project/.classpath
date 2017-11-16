@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="C:/Users/r/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="C:/Users/r/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/commons-collections4-4.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/r/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/r/Downloads/poi-bin-3.17-20170915/poi-3.17/ooxml-lib/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
