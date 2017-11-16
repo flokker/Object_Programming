@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.border.LineBorder;
 
+import GUI.MainBackgroundPanel;
+
+
 /**
  * GUI환경에서 메인 프레임 역할을 하게 될 프레임
  * history : June hyuk, 1.0 2017.11.14 초기 작성
@@ -16,19 +19,17 @@ import javax.swing.border.LineBorder;
 
 
 public class MainFrame extends JFrame {
-
+	
+	ButtonStyle btnStyle = new ButtonStyle();
+	
 	private JButton[] Lock_num;
 	private JPanel[] Lock_card;
-	private JPanel contentPane, Lockpanel;
+	private JPanel Lockpanel;
+	private MainBackgroundPanel fullPanel;
 	private JButton BackButton, NextButton, SearchButton;
 	private CardLayout cards;
 	JScrollPane scrollPane;
 	ImageIcon icon;
-
-	
-	public static void main(String[] args) {
-		MainFrame frame = new MainFrame();
-	}
 
 	/**
 	 * 메인프레임에 대한 메소드
@@ -43,20 +44,18 @@ public class MainFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setBounds(100, 100, 913, 693);
-		contentPane = new JPanel();
-		contentPane.setLayout(null);		
-		setContentPane(contentPane);		
-		contentPane.setBackground(Color.white);
+		fullPanel = new MainBackgroundPanel();
+		fullPanel.setLayout(null);		
+		setContentPane(fullPanel);		
 
 		// MainPanel
 		JPanel mainpanel = new JPanel();
 		mainpanel.setBounds(0, 10, 897, 416);
-		contentPane.add(mainpanel);
+		fullPanel.add(mainpanel);
 		mainpanel.setLayout(null);	
-		mainpanel.setBackground(Color.black);
+		mainpanel.setOpaque(false);	
 		
 		// Lockpanel (카드 레이아웃)
-
 		cards = new CardLayout();
 		Lockpanel = new JPanel();
 		Lockpanel.setLayout(cards);
@@ -74,25 +73,23 @@ public class MainFrame extends JFrame {
 		// Mini Map 붙일 패널
 		Mini_Map Map_panel = new Mini_Map();
 		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		Map_panel.setBounds(314, 436, 478, 166);
-		contentPane.add(Map_panel);
+		Map_panel.setBounds(217, 436, 478, 166);
+		fullPanel.add(Map_panel);
 		setVisible(true);
 		
 		// back button
 		BackButton = new JButton(new ImageIcon("./Img/back.png"));
-		BackButton.setBounds(0, 124, 97, 130);
+		BackButton.setBounds(0, 124, 97, 178);
 		mainpanel.add(BackButton);
-		BackButton.setBorderPainted(false);
-		BackButton.setContentAreaFilled(false);
+		btnStyle.deleteButtonFormat(BackButton);
 		
 
 		// next button
 		NextButton = new JButton(new ImageIcon("./Img/next.png"));
-		NextButton.setBounds(800, 124, 97, 130);
+		NextButton.setBounds(800, 124, 97, 178);
 		mainpanel.add(NextButton);
 
-		NextButton.setBorderPainted(false);
-		NextButton.setContentAreaFilled(false);
+		btnStyle.deleteButtonFormat(NextButton);
 		// 버튼 3x3생성
 		Lock_num = new JButton[9];
 		for (int i = 0; i < Lock_card.length; i++) {
@@ -111,14 +108,13 @@ public class MainFrame extends JFrame {
 		getContentPane().add(SearchButton);
 		setVisible(true);
 
-		SearchButton.setBorderPainted(false);
-		SearchButton.setContentAreaFilled(false);
+		btnStyle.deleteButtonFormat(SearchButton);
 
 		// search 버튼 action listener
 
-		SearchButton.setBounds(108, 471, 127, 131);
-		contentPane.add(SearchButton);
-		contentPane.addKeyListener(new KeyHandler());
+		SearchButton.setBounds(48, 471, 127, 131);
+		fullPanel.add(SearchButton);
+		fullPanel.addKeyListener(new KeyHandler());
 		
 		
 		BackButton.addActionListener(new MyActionListener());

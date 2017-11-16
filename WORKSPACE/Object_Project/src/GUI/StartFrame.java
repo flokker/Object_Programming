@@ -39,6 +39,8 @@ public class StartFrame extends JFrame implements ActionListener {
 	* @return void
 	**/	
 	void makeGUI() {
+		ButtonStyle btnStyle = new ButtonStyle();
+		
 		setLayout(new BorderLayout());
 		
 		lockerImg = new ImageIcon("./Img/LockerImg.png");
@@ -52,11 +54,11 @@ public class StartFrame extends JFrame implements ActionListener {
 		JPanel btnPanel = new JPanel();
 		
 		startBtn = new JButton(new ImageIcon("./Img/StartBtn.png"));	
-		deleteButtonFormat(startBtn);		
+		btnStyle.deleteButtonFormat(startBtn);		
 		startBtn.addActionListener(this);
 			
 		closeBtn = new JButton(new ImageIcon("./Img/CloseBtn.png"));
-		deleteButtonFormat(closeBtn);
+		btnStyle.deleteButtonFormat(closeBtn);
 		closeBtn.addActionListener(this);
 			
 		btnPanel.setLayout(new FlowLayout(1,20,30));
@@ -84,21 +86,5 @@ public class StartFrame extends JFrame implements ActionListener {
 		else {								  // 종료버튼 눌렀을 때 
 			System.exit(0);
 		}
-	}
-	
-	/** This method is for delete basic format of buttons.
-	* It will help you can see appearance of image button without basic button format. 
-	* 
-	* <br>
-	* 
-	* @param JButton btn
-	* @return void
-	**/		
-	private void deleteButtonFormat(JButton btn) {	// 버튼의 기본 모습들을 없애 주기 위한 함수를 포함한 메소드
-		btn.setBorderPainted(false);
-		btn.setContentAreaFilled(false);
-		btn.setDefaultCapable(false);
-		btn.setFocusPainted(false);
-		btn.setOpaque(false);
 	}
 }
