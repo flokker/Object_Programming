@@ -39,7 +39,6 @@ public class SearchFrame extends JFrame {
 	String Cust[] = new String[5];
 	
 	protected SearchFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 345);
 		getContentPane().setLayout(null);
 
