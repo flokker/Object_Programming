@@ -13,41 +13,24 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-/** Class Description of Search.
+
+
+/** This class consists of SearchLocker method returning the list of index number for given search targets
 * 
 * <br>
-* this class is for searching some locker information what user want from excel DB.
-* this class get some data that input from SearchFrame, and find row number of that equals to data.
+* A method in this class receives data list of locker without NULL, and number of conditions.
+* During Performing a search operation, they count number if given list and stored list are consistent.
+* If give number of conditions and Counting number are consistent, the list will be search target
+* 
 * 
 * @author Myungho Bae
 * @version 1.1
 **/
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.*;
-
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-/** Class Description of Search.
-* 
-* <br>
-* this class is for searching some locker information what user want from excel DB.
-* this class get some data that input from SearchFrame, and find row number of that equals to data.
-* 
-* @author Myungho Bae
-* @version 1.1
-**/
-public class Search {
+public class ExcelSearcher {
 	/** Stored information of data_set from SearchFrame Class **/
 	String Cust[] = new String[5];
 	
-	/** Searching some locker information what user want
+	/** Returns index of matching list. If there are matching list, returning NULL.
 	* 
 	* <br>
 	* 
@@ -55,7 +38,8 @@ public class Search {
 	* @param int enterCnt
 	* @return void
 	**/
-	public void SearchLocker(data_set ds, int enterCnt) {
+	public void SearchLocker(List<data_set> list, int enterCnt) {
+		data_set ds = list.get(0);		
 		Cust[0] = ds.getCustLock();
 		Cust[1] = ds.getCustId();
 		Cust[2] = ds.getCustName();
@@ -100,4 +84,3 @@ public class Search {
 		}	
 	}
 }
-
