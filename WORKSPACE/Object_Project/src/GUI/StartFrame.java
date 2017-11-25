@@ -38,7 +38,7 @@ public class StartFrame extends JFrame implements ActionListener {
 	* @param void
 	* @return void
 	**/	
-	void makeGUI() {
+void makeGUI() {
 		ButtonStyle btnStyle = new ButtonStyle();
 		
 		setLayout(new BorderLayout());

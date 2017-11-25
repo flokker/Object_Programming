@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="C:\Users\r\Downloads\poi-bin-3.17-20170915\poi-3.17" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="C:\Users\r\Downloads\poi-bin-3.17-20170915\poi-3.17\lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>

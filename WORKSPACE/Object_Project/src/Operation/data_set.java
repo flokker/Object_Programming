@@ -1,11 +1,11 @@
 package Operation;
 
 /**
- * 사용할 데이터를 선언하고,이에 대한 일종의 구조체를 작성한 클래스
- * history : June hyuk, 1.0 2017.10.14 초기 작성
+ * define using data & some of structure(like Programming language C) class
+ * history : June hyuk, 1.0 2017.10.14 initiate version
  * @author June hyuk
  * @since 2017-10-14 
- * @version 1.1 - 2017.11.08 CustLock변수 추가 
+ * @version 1.1 - 2017.11.08 add CustLock variable 
  */
 public class data_set {
 
@@ -15,12 +15,22 @@ public class data_set {
 	private String CustNum; 
 	private String CustPeriod; 
 
-	// data set about id,name,num,peroid
-	public data_set(String CustLock, String CustId, String CustName, String CustNum, String CustPeriod) {		
-		/**
-		 * 데이터들의 구조체
-		 * 
-		 */		
+	/**
+	 * this class has 5param of data what we use in this program
+	 * CustLock means Locker's number
+	 * CustId means user's Student ID
+	 * CustName means user's name
+	 * CustNum means user's phone number
+	 * CustPeriod means user's Period of use
+	 * 
+	 * @param String CustLock
+	 * @param String CustId
+	 * @param String CustName
+	 * @param String CustNum
+	 * @param String CustPeriod
+	 */
+	public data_set(String CustLock, String CustId, String CustName, String CustNum, String CustPeriod) {		// data set about id,name,num,peroid
+	
 		super();
 		this.CustLock = CustLock;
 		this.CustId = CustId;
@@ -29,7 +39,8 @@ public class data_set {
 		this.CustPeriod = CustPeriod;
 	}
 	/**
-	 * CustLock을 반환하는 메소드
+	 * 
+	 * Method of return CustLock variable
 	 * @return CustLock
 	 */
 	public String getCustLock() {
@@ -37,7 +48,7 @@ public class data_set {
 	}
 	
 	/**
-	 * CustLock을 담는 메소드
+	 * Method of Store CustLock variable
 	 * @param String CustLock
 	 */
 	public void setCustLock(String CustLock) {
@@ -45,7 +56,7 @@ public class data_set {
 	}
 
 	/**
-	 * CustId를 반환하는 메소드
+	 * Method of return CustId variable
 	 * @return CustId
 	 */
 	
@@ -53,21 +64,21 @@ public class data_set {
 		return CustId;
 	}
 /**
- * CustId를 담는 메소드
+ * Method of Store CustId variable
  * @param String CustId
  */
 	public void setCustId(String CustId) {
 		this.CustId = CustId;
 	}
 /**
- * CustName을 반환하는 메소드
+ * Method of return CustName variable 
  * @return CustName
  */
 	public String getCustName() {
 		return CustName;
 	}
 /**
- * CustName을 담는 메소드
+ * Method of Store CustName variable
  * @param String CustName
  */
 	public void setCustName(String CustName) {
@@ -75,7 +86,7 @@ public class data_set {
 	}
 
 /**
- * CustNum을 반환하는 메소드
+ * Method of return CustNum variable
  * @return CustNum
  */
 	public String getCustNum() {
@@ -83,21 +94,21 @@ public class data_set {
 	}
 
 /**
- * CustNum을 담는 메소드
+ * Method of Store CustNum variable
  * @param String CustNum
  */
 	public void setCustNum(String CustNum) {
 		this.CustNum = CustNum;
 	}
 /**
- * CustPeriod를 반환하는 메소드
+ * Method of return CustPeriod variable
  * @return CustPeriod
  */
 	public String getCustPeriod() {
 		return CustPeriod;
 	}
 /**
- * CustPeriod를 담는 메소드
+ * Method of Store CustPeriod variable
  * @param String CustPeriod
  */
 	public void setCustPeriod(String CustPeriod) {

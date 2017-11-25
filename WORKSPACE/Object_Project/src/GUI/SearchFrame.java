@@ -41,7 +41,7 @@ public class SearchFrame extends JFrame {
 	protected SearchFrame() {
 		setBounds(100, 100, 450, 345);
 		getContentPane().setLayout(null);
-
+setTitle("SearchFrame");
 		addSearchPanel();
 		
 		pan_content.setBounds(5, 5, 424, 250);

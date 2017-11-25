@@ -17,9 +17,10 @@ import Operation.data_set;
 
 /** 
 * 엑셀을 이용하여 데이터 값들을 리스트 형태로 작성하기 위한 클래스
-* @since 
+* This class = Using Excel for write data in list form
+* @since 2017-10-14
 * @author June hyuk, Myungho Bae
-* @version 1.1
+* @version 1.1 
 **/
 public class ExcelWriter {
 

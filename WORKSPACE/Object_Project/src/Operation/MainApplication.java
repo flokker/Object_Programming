@@ -9,11 +9,11 @@ import Operation.data_set; //data_set class import
 import Operation.ExcelWriter; //ExcelWriter class import
 
 /**
- * GUI 환경에서 데이터를 작성하고, Excelwriter 객체를 생성하여 엑셀 시트로 작성
- * history : June hyuk, 1.0 2017.10.14 초기 작성
- * @author June hyuk Myungho Bae
+ * Writing data in GUI & Writing in Excelsheet with Creats Excelwriter objects
+ * history : June hyuk, 1.0 2017.10.14 initiate version
+ * @author June hyuk, Myungho Bae
  * @since 2017.10.14 
- * @version 1.1 - 2017.11.08 CustLock변수 추가 
+ * @version 1.1 - 2017.11.08 add CustLock variable 
  */
 public class MainApplication {
 
@@ -27,7 +27,7 @@ public class MainApplication {
 	}
 
 	/**
-	 * startApp객체를 생성하여 프로그램 구동 
+	 * Operate program with create startApp object
 	 * @param args
 	 */
 	public static void main(String[] args) {

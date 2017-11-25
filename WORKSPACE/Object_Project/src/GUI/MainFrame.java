@@ -10,8 +10,9 @@ import GUI.MainBackgroundPanel;
 
 
 /**
- * GUI환경에서 메인 프레임 역할을 하게 될 프레임
- * history : June hyuk, 1.0 2017.11.14 초기 작성
+ * This class acts as MainFrame in this program with GUI
+ * in this class, all panels and buttons are 
+ * history : June hyuk, 1.0 2017.11.14 initiate version
  * @author June hyuk
  * @since 2017.11.14 
  * @version 1.0 
@@ -32,7 +33,7 @@ public class MainFrame extends JFrame {
 	ImageIcon icon;
 
 	/**
-	 * 메인프레임에 대한 메소드
+	 * this method from Mainframe
 	 * 
 	 */
 	protected MainFrame() {
@@ -123,7 +124,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	/** 
-	* 액션리스너를 구현하기 위한 클래스, 조건에 맞는 버튼을 클릭시 그에 맞는 처리를 한다.
+	* This class implements for ActionListener, if click conditional button then events for that button occur 
 	* @param ActionEvent e
 	* @return void
 	**/		
@@ -145,7 +146,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	/** 
-	* 카드레이아웃 환경에서 다음 카드로 전환하기 위한 메소드
+	* This method acts as function to the next card in Cardlayout
 	* @param void
 	* @return void
 	**/		
@@ -155,7 +156,7 @@ public class MainFrame extends JFrame {
 	}
 
 	/** 
-	* 카드레이아웃 환경에서 전의 카드로 전환하기 위한 메소드
+	* This method acts as function to the previous card in Cardlayout
 	* @param void
 	* @return void
 	**/	
