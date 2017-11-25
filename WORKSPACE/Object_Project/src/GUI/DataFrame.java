@@ -4,17 +4,16 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 
 import Operation.MainApplication;
 import Operation.data_set;
 
-/** Class Description of DataFrame.
+/** A class that lets the user fill out personal information to apply locker.
 * 
 * <br>
-* this class is Frame for inserting data to user want to add to Excel DB.
-* it extends JFrame to show some component.
-* class has 5 TextFields, 2 RadioButtons, 2 buttons, 6 labels, 3 panels.
+* The class contains forms which is Name, ID, Phone Number, Period.
+* All of component should be filled out by each format.
+* If the user select next button, list that user filled out will be written in excel DB.
 *
 * @author Myungho Bae
 * @version 1.0
@@ -46,22 +45,7 @@ public class DataFrame extends JFrame {
 	protected DataFrame() {		
 		setTitle("InputForm Frame");
 		setSize(400,500);	
-		makeGUI();
-		//setUndecorated(true);		// 타이틀 바 없애는 함수
-		setLocationRelativeTo(null); // 프로그램 화면 중앙에서 실행
-		setVisible(true);
-	}
 
-	/** This method is for Making a GUI environment.
-	* It contains 6 labels, 2 buttons, 3 panels. 
-	* two buttons have ActionListener to go next processing or dispose this frame.
-	* 
-	* <br>
-	* 
-	* @param void
-	* @return void
-	**/	
-	void makeGUI() {
 		setLayout(new FlowLayout(FlowLayout.CENTER,10,10));
 		
 		//LabelPanel 라벨이 들어있는 판넬
@@ -89,9 +73,9 @@ public class DataFrame extends JFrame {
 		JPanel radioPanel = new JPanel();
 		radioPanel.setLayout(new FlowLayout());
 		normalApply = new JRadioButton("일반신청",true);
-		normalApply.addItemListener(new MyItemListener());
+		normalApply.addItemListener(new DataFrm_ItemListener());
 		periodApply = new JRadioButton("기간신청");
-		periodApply.addItemListener(new MyItemListener());
+		periodApply.addItemListener(new DataFrm_ItemListener());
         ButtonGroup buttonGrp = new ButtonGroup();
         buttonGrp.add(normalApply);
         buttonGrp.add(periodApply);
@@ -101,9 +85,9 @@ public class DataFrame extends JFrame {
 		btnPanel.setLayout(new FlowLayout(FlowLayout.CENTER,100,100));
 		
 		doneBtn = new JButton("완료");
-		doneBtn.addActionListener(new MyActionListener());
+		doneBtn.addActionListener(new DataFrm_ActionListener());
 		closeBtn = new JButton("종료");
-		closeBtn.addActionListener(new MyActionListener());
+		closeBtn.addActionListener(new DataFrm_ActionListener());
 		
 		//각 판넬과 컴포넌트들 추가
 		labelPanel.add(lockLabel);
@@ -115,10 +99,9 @@ public class DataFrame extends JFrame {
 		
 		radioPanel.add(normalApply);
 		radioPanel.add(periodApply);
-		
-		Random rand = new Random();
-		Locker = Integer.toString(rand.nextInt());
-		lockText.setText(Locker);
+
+		// 사물함 번호 자동 입력 부분 수정 필요
+		lockText.setText("00");
 		lockText.setEnabled(false);
 		formPanel.add(lockText);
 		formPanel.add(idText);
@@ -133,17 +116,13 @@ public class DataFrame extends JFrame {
 		add(labelPanel);
 		add(formPanel);
 		add(btnPanel);
+		
+		//setUndecorated(true);		// 타이틀 바 없애는 함수
+		setLocationRelativeTo(null); // 프로그램 화면 중앙에서 실행
+		setVisible(true);
 	}
-	
-	/** This method is for ActionListener.
-	* when user click next, or exit button, it will occur some event.
-	*
-	* <br>
-	* 
-	* @param ActionEvent e
-	* @return void
-	**/	
-	private class MyActionListener implements ActionListener {
+
+	private class DataFrm_ActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			JButton btn = (JButton)e.getSource();
 			if (btn.getText().equals("완료")) {
@@ -161,16 +140,8 @@ public class DataFrame extends JFrame {
 			}
 		}		
 	}
-	
-	/** This method is for ItemListener.
-	* when user choose RadioButtons, it will occur some event.
-	* 
-	* <br>
-	* 
-	* @param ItemEvent e
-	* @return void
-	**/		
-	private class MyItemListener implements ItemListener {
+
+	private class DataFrm_ItemListener implements ItemListener {
 		public void itemStateChanged(ItemEvent e) {
 			AbstractButton sel = (AbstractButton)e.getItemSelectable();
 			if(e.getStateChange() == ItemEvent.SELECTED) {
