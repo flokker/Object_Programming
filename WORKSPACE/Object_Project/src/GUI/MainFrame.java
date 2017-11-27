@@ -60,12 +60,11 @@ public class MainFrame extends JFrame {
 		cards = new CardLayout();
 		Lockpanel = new JPanel();
 		Lockpanel.setLayout(cards);
-		Lockpanel.setBounds(250, 50, 400, 300);
-
+		Lockpanel.setBounds(250, 20, 400, 400);
 		// 사물함 구역 별로 Lockpanel 카드 갯수
 		for (int i = 0; i < 10; i++) {
 			Lock_card[i] = new JPanel();
-			Lock_card[i].setLayout(new GridLayout(3, 3));
+			Lock_card[i].setLayout(new GridLayout(4, 4));
 			Lockpanel.add(Lock_card[i]);
 		}
 
@@ -91,11 +90,11 @@ public class MainFrame extends JFrame {
 		mainpanel.add(NextButton);
 
 		btnStyle.deleteButtonFormat(NextButton);
-		// 버튼 3x3생성
-		Lock_num = new JButton[9];
+		// 버튼 4x4생성
+		Lock_num = new JButton[16];
 		for (int i = 0; i < Lock_card.length; i++) {
-			for (int j = 0; j < 9; j++) {
-				Lock_num[j] = new JButton(new ImageIcon("./Img/locker.png"));
+			for (int j = 0; j < 16; j++) {
+				Lock_num[j] = new JButton(new ImageIcon("./Img/forone.png"));
 				Lock_num[j].addActionListener(new MyActionListener());
 				Lock_num[j].setContentAreaFilled(false);
 				Lock_num[j].setOpaque(false);
