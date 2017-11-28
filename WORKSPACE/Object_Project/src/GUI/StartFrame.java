@@ -48,7 +48,7 @@ public class StartFrame extends JFrame {
 		closeBtn.addActionListener(new StartFrm_ActionListener());
 			
 		btnPanel.setLayout(new FlowLayout(1,20,30));
-		btnPanel.setBackground(Color.white);
+		btnPanel.setBackground(Color.BLACK);
 		btnPanel.add(startBtn);
 		btnPanel.add(closeBtn);
 		

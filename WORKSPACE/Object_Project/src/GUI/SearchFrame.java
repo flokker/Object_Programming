@@ -1,16 +1,15 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.event.*;
+import javax.swing.plaf.*;
+import javax.swing.plaf.basic.*;
+
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.event.*;
 
 import Operation.ExcelSearcher;
 import Operation.MainApplication;
@@ -26,90 +25,147 @@ import Operation.data_set;
 * User should select one condition per one JComboBox. for example, each two JComboBox can not indicate Name Field at the same time.
 *
 * @author Myungho Bae
-* @version 1.0
+* @version 1.5
 **/
 public class SearchFrame extends JFrame {
-
-	private JPanel pan_content = new JPanel();
+	
+	private JFrame frame;
+	private JPanel text_Panel;
+	private JPanel lab_Panel;
+	private JPanel entireForm_Panel;
 	private JTextField[] Item_tf = new JTextField[5];
 	private JComboBox[] Item_cb = new JComboBox[5];
 	private JButton btn_add;
 	private JButton btn_del;
-	private JButton btn_next;
-	private JButton btn_exit;	
+	private JButton doneBtn;
+	private JButton closeBtn;	
 	private int count = 0;
 	private int[] comboCnt = new int[5];
 	String Cust[] = new String[5];
 	
-	protected SearchFrame() {
-		setBounds(100, 100, 450, 345);
-		getContentPane().setLayout(null);
-setTitle("SearchFrame");
-		addSearchPanel();
+	protected SearchFrame() {	
+		frame = new JFrame();
+		frame.setAlwaysOnTop(true);
+		frame.setBounds(100, 100, 550, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+
+		// 전체를 포함하는 판넬
+		JPanel full_Panel = new JPanel();
+		full_Panel.setBackground(Color.BLACK);
+		full_Panel.setBounds(0, 0, 534, 561);
+		frame.getContentPane().add(full_Panel);
+		full_Panel.setLayout(null);
+
+		// 상단 텍스트 라벨 판넬
+		JPanel info_Panel = new JPanel();
+		info_Panel.setBounds(12, 10, 510, 86);
+		info_Panel.setBackground(Color.BLACK);
+		full_Panel.add(info_Panel);
+		info_Panel.setLayout(null);
 		
-		pan_content.setBounds(5, 5, 424, 250);
-		getContentPane().add(pan_content);
-		pan_content.setLayout(null);
+		JLabel info1_Label = new JLabel("사물함 검색하기");
+		info1_Label.setBounds(12, 10, 277, 47);
+		info_Panel.add(info1_Label);
+		info1_Label.setFont(new Font("나눔고딕 ExtraBold", Font.PLAIN, 40));
+		info1_Label.setForeground(Color.LIGHT_GRAY);
 		
-		JLabel lbl_Item = new JLabel("분류");
-		lbl_Item.setBounds(75, 0, 30, 21);
-		lbl_Item.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		pan_content.add(lbl_Item);
+		JLabel info2_Label = new JLabel("어떤 사물함을 원하세요? 무엇이든지 다 찾아드릴게요!");
+		info2_Label.setFont(new Font("나눔고딕 ExtraBold", Font.BOLD, 18));
+		info2_Label.setForeground(Color.LIGHT_GRAY);
+		info2_Label.setBounds(12, 58, 491, 22);
+		info_Panel.add(info2_Label);
+		
+		// 메인 판넬 (라벨 판넬과 텍스트 판넬을 포함)
+		entireForm_Panel = new JPanel();
+		entireForm_Panel.setBounds(23, 125, 488, 338);
+		full_Panel.add(entireForm_Panel);
+		entireForm_Panel.setLayout(null);
+		
+		// 라벨 판넬
+		lab_Panel = new JPanel();
+		lab_Panel.setBounds(0, 0, 151, 338);
+		lab_Panel.setBackground(Color.BLACK);
+		entireForm_Panel.add(lab_Panel);
+		lab_Panel.setLayout(null);
+		
+		JLabel lbl_Item = new JLabel("항목");
+		lbl_Item.setFont(new Font("나눔고딕 ExtraBold", Font.BOLD, 18));
+		lbl_Item.setForeground(Color.LIGHT_GRAY);
+		lbl_Item.setBounds(70, 0, 57, 30);
+		lab_Panel.add(lbl_Item);	
+	
+		btn_add = new JButton(new ImageIcon("./Img/searchFrame_Add.png"));
+		btn_add.setFont(new Font("나눔고딕", Font.PLAIN, 14));
+		btn_add.setBounds(56, 80, 94, 24);
+		btn_add.addActionListener(new SearchFrm_ActionListener());
+		lab_Panel.add(btn_add);
+		
+		// 텍스트 판넬
+		text_Panel = new JPanel();
+		text_Panel.setBounds(151, 0, 337, 338);
+		text_Panel.setBackground(Color.BLACK);
+		entireForm_Panel.add(text_Panel);
+		text_Panel.setLayout(null);
 		
 		JLabel lbl_Word = new JLabel("내용");
-		lbl_Word.setBounds(260, 0, 30, 21);
-		lbl_Word.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		pan_content.add(lbl_Word);
+		lbl_Word.setFont(new Font("나눔고딕 ExtraBold", Font.BOLD, 18));
+		lbl_Word.setForeground(Color.LIGHT_GRAY);
+		lbl_Word.setBounds(125, 0, 42, 28);
+		text_Panel.add(lbl_Word);
 		
-		btn_add = new JButton("조건 추가");
-		btn_add.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		btn_add.setBounds(45, 60, 90, 23);
-		btn_add.addActionListener(new SearchFrm_ActionListener());
-		pan_content.add(btn_add);
+		addSearchPanel();
 		
-		btn_del = new JButton("조건 삭제");
-		btn_del.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		btn_del.setBounds(147, 61, 90, 23);
-		btn_del.addActionListener(new SearchFrm_ActionListener());
-		pan_content.add(btn_del);
-	
-		JPanel pan_prog = new JPanel();
-		FlowLayout flowLayout = (FlowLayout) pan_prog.getLayout();
-		flowLayout.setHgap(120);
-		pan_prog.setBounds(5, 265, 424, 39);
-		getContentPane().add(pan_prog);
+		btn_del = new JButton(new ImageIcon("./Img/searchFrame_del.png"));
+		btn_del.setBounds(12, 80, 94, 24);
+		btn_del.addActionListener(new SearchFrm_ActionListener());	
+		btn_del.setFont(new Font("나눔고딕", Font.PLAIN, 14));
+		text_Panel.add(btn_del);
 		
-		JButton btn_next = new JButton("확인");
-		btn_next.addActionListener(new SearchFrm_ActionListener());
-		pan_prog.add(btn_next);
+		// 하단 버튼 판넬
+		ButtonStyle buttonstyle = new ButtonStyle();
+		JPanel btn_Panel = new JPanel();
+		btn_Panel.setBackground(Color.BLACK);
+		btn_Panel.setBounds(12, 480, 510, 78);
+		full_Panel.add(btn_Panel);
+
+		doneBtn = new JButton(new ImageIcon("./Img/searchFrame_Done.png"));
+		buttonstyle.deleteButtonFormat(doneBtn);
+		doneBtn.setBackground(Color.BLACK);
+		doneBtn.setOpaque(true);	
+		doneBtn.addActionListener(new SearchFrm_ActionListener());	
+		btn_Panel.add(doneBtn);
 		
-		JButton btn_exit = new JButton("종료");
-		btn_exit.addActionListener(new SearchFrm_ActionListener());
-		pan_prog.add(btn_exit);
+		closeBtn = new JButton(new ImageIcon("./Img/searchFrame_Close.png"));
+		buttonstyle.deleteButtonFormat(closeBtn);
+		closeBtn.setBackground(Color.BLACK);
+		closeBtn.setOpaque(true);		
+		closeBtn.addActionListener(new SearchFrm_ActionListener());	
+		btn_Panel.add(closeBtn);
 		
 		resetVariable();
-		setVisible(true);
+		frame.setVisible(true);
 	}
 	
 	class SearchFrm_ActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			JButton btn = (JButton)e.getSource();
 			
-			if(btn.getText() == "조건 추가") {
+			if(e.getSource().equals(btn_add)) {
 				if(count < 5) {
-					btn_add.setBounds(45, 65+(35*count), 90, 23);
-					btn_del.setBounds(147, 65+(35*count), 90, 23);
+					btn_add.setBounds(56, 80+(40*count), 94, 24);
+					btn_del.setBounds(12, 80+(40*count), 94, 24);	
 					addSearchPanel();
 				}
 			}
-			else if(btn.getText() == "조건 삭제") {
+			else if(e.getSource().equals(btn_del)) {
 				if(count > 1) {		
 					delSearchPanel();
-					btn_add.setBounds(45, 65+(35*(count-1)), 90, 23);
-					btn_del.setBounds(147, 65+(35*(count-1)), 90, 23);	
+					btn_add.setBounds(56, 80+(40*(count-1)), 94, 24);
+					btn_del.setBounds(12, 80+(40*(count-1)), 94, 24);	
 				}
 			}			
-			else if(btn.getText() == "확인") {
+			else if(e.getSource().equals(doneBtn)) {
 				if(checkCondition() == false) {
 					for(int i=0; i<count; i++) {
 						int index = Item_cb[i].getSelectedIndex();
@@ -122,7 +178,7 @@ setTitle("SearchFrame");
 					MainApplication MA = new MainApplication();
 					MA.excelSearhing(ds,count);
 					
-					dispose();
+					frame.dispose();
 				}
 				else {
 	                JOptionPane.showConfirmDialog(getContentPane(), "동일한 조건이 2개 이상 있습니다.", "검색 오류", 
@@ -131,11 +187,25 @@ setTitle("SearchFrame");
 				}
 			}
 			else {
-				dispose();
+				frame.dispose();
 			}
 		}
 	}
 
+	static class ColorArrowUI extends BasicComboBoxUI {
+
+	    public static ComboBoxUI createUI(JComponent c) {
+	        return new ColorArrowUI();
+	    }
+
+	    protected JButton createArrowButton() {
+	        return new BasicArrowButton(
+	            BasicArrowButton.SOUTH,
+	            Color.GRAY, Color.GRAY,
+	            Color.WHITE, Color.WHITE);
+	    }
+	}
+	
 	/** Returns true if two or more JComboBox condition indicate same field at the same time.
 	* 
 	* <br>
@@ -182,23 +252,36 @@ setTitle("SearchFrame");
 	* @return void
 	**/	
 	private void addSearchPanel() {
-		int height = 35*count;
-		Item_cb[count] = new JComboBox();
-		Item_cb[count].setBounds(27, 30+height, 120, 21);
-		Item_cb[count].addItem("사물함번호");
-		Item_cb[count].addItem("학번");
-		Item_cb[count].addItem("이름");
-		Item_cb[count].addItem("핸드폰번호");
-		Item_cb[count].addItem("만료기간");
-		pan_content.add(Item_cb[count]);
+		Border border = BorderFactory.createLineBorder(Color.WHITE, 2);
+		int height = 40*(count+1);
 		
-		Item_tf[count] = new JTextField();
-		Item_tf[count].setBounds(160, 30+height, 230, 21);
-		pan_content.add(Item_tf[count]);	
+		Item_cb[count] = new JComboBox(new String[] {"사물함 번호", "이름", "학번", "핸드폰 번호", "만료기간"});
+		Item_cb[count].setRenderer(new DefaultListCellRenderer() {
+		    public void paint(Graphics g) {
+		        setBackground(Color.GRAY);
+		        setForeground(Color.WHITE);
+		        super.paint(g);
+		    }
+		});		
+		Item_cb[count].setUI(ColorArrowUI.createUI(Item_cb[count]));
+		Item_cb[count].setBorder(border);
+		Item_cb[count].setOpaque(true);
+		Item_cb[count].setFont(new Font("나눔고딕", Font.BOLD, 16));
+		Item_cb[count].setBounds(30, height, 120, 30);
+		lab_Panel.add(Item_cb[count]);
+		
+		Item_tf[count] = new JTextField(10);
+		Item_tf[count].setFont(new Font("나눔고딕", Font.BOLD, 16));
+		Item_tf[count].setBounds(12, height, 267, 30);
+		Item_tf[count].setBorder(border);
+		Item_tf[count].setBackground(Color.GRAY);
+		Item_tf[count].setForeground(Color.WHITE);
+		Item_tf[count].setOpaque(true);
+		text_Panel.add(Item_tf[count]);	
 		
 		count++;
-		pan_content.revalidate();
-		pan_content.repaint();
+		entireForm_Panel.revalidate();
+		entireForm_Panel.repaint();
 	}
 
 	/** Removes the group of JComboBox and JTextField from container.
@@ -210,10 +293,10 @@ setTitle("SearchFrame");
 	**/	
 	private void delSearchPanel() {
 		count --;
-		pan_content.remove(Item_cb[count]);
-		pan_content.remove(Item_tf[count]);
+		lab_Panel.remove(Item_cb[count]);
+		text_Panel.remove(Item_tf[count]);
 		
-		pan_content.revalidate();
-		pan_content.repaint();	
+		entireForm_Panel.revalidate();
+		entireForm_Panel.repaint();	
 	}
 }
