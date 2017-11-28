@@ -5973,3 +5973,17 @@ Caused by: org.apache.http.client.CircularRedirectException: Circular redirect t
 
 !ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-28 23:11:06.683
 !MESSAGE Server returned lastModified <= 0 for http://www.objectaid.net/update/content.jar
+!SESSION 2017-11-29 00:14:13.013 -----------------------------------------------
+eclipse.buildId=4.7.0.I20170612-0950
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-11-29 00:14:26.025
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\r'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

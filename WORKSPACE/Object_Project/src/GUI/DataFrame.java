@@ -41,7 +41,7 @@ public class DataFrame extends JFrame {
 		frame = new JFrame();
 		frame.setAlwaysOnTop(true);
 		frame.setBounds(100, 100, 550, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		//frame.setUndecorated(true);		// 타이틀 바 없애는 함수
 		frame.setLocationRelativeTo(null); // 프로그램 화면 중앙에서 실행
