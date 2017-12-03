@@ -30,27 +30,24 @@ public class DataFrame extends JFrame {
 	String PhoneNumber;
 	String Period;
 	
-	
-	JFrame frame;	
 	JButton doneBtn;
 	JButton closeBtn;
 	JLabel[] Label = new JLabel[5];	
 	JTextField[] Text = new JTextField[5];
 		
 	public DataFrame() {
-		frame = new JFrame();
-		frame.setAlwaysOnTop(true);
-		frame.setBounds(100, 100, 530, 580);
+		setAlwaysOnTop(true);
+		setBounds(100, 100, 530, 580);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		//frame.setUndecorated(true);		// 타이틀 바 없애는 함수
-		frame.setLocationRelativeTo(null); // 프로그램 화면 중앙에서 실행
-		frame.setResizable(false);
+		getContentPane().setLayout(null);
+		setUndecorated(true);		// 타이틀 바 없애는 함수
+		setLocationRelativeTo(null); // 프로그램 화면 중앙에서 실행
+		setResizable(false);	
 		// 상단 텍스트 라벨 판넬
 		JPanel full_Panel = new JPanel();
 		full_Panel.setBackground(Color.BLACK);
 		full_Panel.setBounds(0, 0, 534, 561);
-		frame.getContentPane().add(full_Panel);
+		getContentPane().add(full_Panel);
 		full_Panel.setLayout(null);
 		
 		JPanel info_Panel = new JPanel();
@@ -114,7 +111,7 @@ public class DataFrame extends JFrame {
 		buttonstyle.deleteButtonFormat(closeBtn);
 		btn_Panel.add(closeBtn);
 		
-		frame.setVisible(true);
+		setVisible(true);
 	}
 
 	private class DataFrm_ActionListener implements ActionListener {
@@ -127,10 +124,10 @@ public class DataFrame extends JFrame {
 				data_set ds = new data_set(Locker,ID,Name,PhoneNumber,Period);
 				MainApplication MA = new MainApplication();
 				MA.excelWriting(ds);
-				frame.dispose();
+				dispose();
 			}
 			else {
-				frame.dispose();
+				dispose();
 			}
 		}		
 	}

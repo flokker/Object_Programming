@@ -31,7 +31,6 @@ import Operation.data_set;
  **/
 public class SearchFrame extends JFrame {
 
-	private JFrame frame;
 	private JPanel text_Panel;
 	private JPanel lab_Panel;
 	private JPanel entireForm_Panel;
@@ -46,17 +45,18 @@ public class SearchFrame extends JFrame {
 	String Cust[] = new String[5];
 
 	protected SearchFrame() {
-		frame = new JFrame();
-		frame.setAlwaysOnTop(true);
-		frame.setBounds(100, 100, 530, 580);
+		setAlwaysOnTop(true);
+		setBounds(100, 100, 530, 580);
 		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		frame.setResizable(false);
+		getContentPane().setLayout(null);
+		setResizable(false);
+		setUndecorated(true);
+		setLocationRelativeTo(null);		
 		// 전체를 포함하는 판넬
 		JPanel full_Panel = new JPanel();
 		full_Panel.setBackground(Color.BLACK);
 		full_Panel.setBounds(0, 0, 534, 561);
-		frame.getContentPane().add(full_Panel);
+		getContentPane().add(full_Panel);
 		full_Panel.setLayout(null);
 
 		// 상단 텍스트 라벨 판넬
@@ -146,7 +146,7 @@ public class SearchFrame extends JFrame {
 		btn_Panel.add(closeBtn);
 
 		resetVariable();
-		frame.setVisible(true);
+		setVisible(true);
 	}
 
 	class SearchFrm_ActionListener implements ActionListener {
@@ -178,13 +178,13 @@ public class SearchFrame extends JFrame {
 					MainApplication MA = new MainApplication();
 					MA.excelSearhing(ds, count);
 
-					frame.dispose();
+					dispose();
 				} else {
 					JOptionPane.showConfirmDialog(getContentPane(), "동일한 조건이 2개 이상 있습니다.", "검색 오류",
 							JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE, null);
 				}
 			} else {
-				frame.dispose();
+				dispose();
 			}
 		}
 	}
