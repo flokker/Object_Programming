@@ -71,4 +71,7 @@ public class StartFrame extends JFrame {
 			}
 		}		
 	}
+	public static void main(String[] args) {
+		GUI.StartFrame startApp = new GUI.StartFrame();
+	}
 }

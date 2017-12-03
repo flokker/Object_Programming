@@ -9,10 +9,11 @@ import Operation.ExcelWriter; //ExcelWriter class import
 /**
  * Writing data in GUI & Writing in Excelsheet with Creats Excelwriter objects
  * history : June hyuk, 1.0 2017.10.14 initiate version
+ * 
  * @author June hyuk, Myungho Bae
- * @since 2017.10.14 
- * @version 1.1 - 2017.11.08 add CustLock variable 
-**/
+ * @since 2017.10.14
+ * @version 1.1 - 2017.11.08 add CustLock variable
+ **/
 public class MainApplication {
 
 	public void excelWriting(data_set ds) {
@@ -23,30 +24,26 @@ public class MainApplication {
 
 		excelwriter.xlsxWriter(list);
 	}
-	
-	/** Operating SearchLocker method in ExcelSearcher class.
-	* 
-	* <br>
-	* 
-	* @param List<data_set> list
-	* @param int enterCnt
-	* @return void
-	* @author Myungho Bae
-	**/	
+
+	/**
+	 * Operating SearchLocker method in ExcelSearcher class.
+	 * 
+	 * <br>
+	 * 
+	 * @param List<data_set>
+	 *            list
+	 * @param int
+	 *            enterCnt
+	 * @return void
+	 * @author Myungho Bae
+	 **/
 	public void excelSearhing(data_set ds, int count) {
 		List<data_set> list = new ArrayList<data_set>();
 		list.add(ds);
 
 		ExcelSearcher excelsearcher = new ExcelSearcher();
 
-		excelsearcher.SearchLocker(list, count);		
+		excelsearcher.SearchLocker(list, count);
 	}
 
-	/**
-	 * Operate program with create startApp object
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		GUI.StartFrame startApp = new GUI.StartFrame();
-	}
 }
