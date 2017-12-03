@@ -40,12 +40,12 @@ public class DataFrame extends JFrame {
 	public DataFrame() {
 		frame = new JFrame();
 		frame.setAlwaysOnTop(true);
-		frame.setBounds(100, 100, 550, 600);
+		frame.setBounds(100, 100, 530, 580);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		//frame.setUndecorated(true);		// 타이틀 바 없애는 함수
 		frame.setLocationRelativeTo(null); // 프로그램 화면 중앙에서 실행
-		
+		frame.setResizable(false);
 		// 상단 텍스트 라벨 판넬
 		JPanel full_Panel = new JPanel();
 		full_Panel.setBackground(Color.BLACK);
@@ -66,7 +66,7 @@ public class DataFrame extends JFrame {
 		info1_Label.setFont(new Font("나눔고딕 ExtraBold", Font.PLAIN, 40));
 		
 		JLabel info2_Label = new JLabel("아래의 빈칸을 모두 채우면 사물함을 사용할 수 있습니다!");
-		info2_Label.setBounds(12, 58, 465, 22);
+		info2_Label.setBounds(12, 58, 500, 22);
 		info_Panel.add(info2_Label);
 		info2_Label.setFont(new Font("나눔고딕 ExtraBold", Font.BOLD, 18));
 		info2_Label.setForeground(Color.LIGHT_GRAY);
