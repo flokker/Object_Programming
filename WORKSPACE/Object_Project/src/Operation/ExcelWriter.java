@@ -24,7 +24,7 @@ import Operation.data_set;
 **/
 public class ExcelWriter {
 
-	public void xlsxWriter(List<data_set> list) {
+	public void xlsxWriter(List<data_set> list, int rowid) {
 
 		File file = new File("./ExcelSheet/db.xlsx");
 		FileOutputStream fos = null;
@@ -65,8 +65,7 @@ public class ExcelWriter {
 		
 		data_set ds;
 		ds = list.get(0);
-		if(rows == 0) rows = 1;
-		row = sheet.createRow(rows);
+		row = sheet.createRow(rowid);
 
 		cell = row.createCell(0);
 		cell.setCellValue(ds.getCustLock());

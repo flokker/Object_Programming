@@ -38,6 +38,11 @@ public class ExcelSearcher {
 	* @param int enterCnt
 	* @return void
 	**/
+	
+	public void getLeftPeriod(int lockNum) {
+		
+	}
+	
 	public void SearchLocker(List<data_set> list, int enterCnt) {
 		data_set ds = list.get(0);		
 		Cust[0] = ds.getCustLock();

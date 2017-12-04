@@ -19,6 +19,8 @@ import GUI.MainBackgroundPanel;
 
 public class MainFrame extends JFrame {
 
+	int userNumber; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
+	
 	ButtonStyle btnStyle = new ButtonStyle();
 
 	private JButton[] Lock_num;
@@ -160,7 +162,7 @@ public class MainFrame extends JFrame {
 			} else if (temp == InformationButton) {
 				Information Info = new Information();
 			} else {
-				DataFrame daframe = new DataFrame();
+				DataFrame daframe = new DataFrame(userNumber); 
 			}
 		}
 	}
@@ -173,7 +175,8 @@ public class MainFrame extends JFrame {
 	 **/
 	public void goNextCard() {
 		cards.next(Lockpanel);
-
+		
+		// userNumber = 0/1;   
 	}
 
 	/**

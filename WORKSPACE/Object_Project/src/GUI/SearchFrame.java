@@ -12,7 +12,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import Operation.ExcelSearcher;
-import Operation.MainApplication;
+import Operation.ExcelManager;
 import Operation.data_set;
 
 /**
@@ -175,7 +175,7 @@ public class SearchFrame extends JFrame {
 					}
 
 					data_set ds = new data_set(Cust[0], Cust[1], Cust[2], Cust[3], Cust[4]);
-					MainApplication MA = new MainApplication();
+					ExcelManager MA = new ExcelManager();
 					MA.excelSearhing(ds, count);
 
 					dispose();

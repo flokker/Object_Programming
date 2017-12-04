@@ -14,15 +14,15 @@ import Operation.ExcelWriter; //ExcelWriter class import
  * @since 2017.10.14
  * @version 1.1 - 2017.11.08 add CustLock variable
  **/
-public class MainApplication {
+public class ExcelManager {
 
-	public void excelWriting(data_set ds) {
+	public void excelWriting(data_set ds, int rowid) {
 		List<data_set> list = new ArrayList<data_set>();
 		list.add(ds);
 
 		ExcelWriter excelwriter = new ExcelWriter();
 
-		excelwriter.xlsxWriter(list);
+		excelwriter.xlsxWriter(list, rowid);
 	}
 
 	/**
