@@ -58,12 +58,16 @@ public class MainFrame extends JFrame {
 		Lockpanel.setLayout(cards);
 		Lockpanel.setBounds(250, 20, 400, 400);
 		// 사물함 구역 별로 Lockpanel 카드 갯수
-		for (int i = 0; i < 10; i++) {
+		/*for (int i = 0; i < 10; i++) {
 			Lock_card[i] = new JPanel();
 			Lock_card[i].setLayout(new GridLayout(4, 4));
 			Lockpanel.add(Lock_card[i]);
+		}*/
+		for (int i = 0; i < 10; i++) {
+			Lock_card[i] = new JPanel();
+			Lock_card[i].setLayout(new GridLayout(3, 4));
+			Lockpanel.add(Lock_card[i]);
 		}
-
 		mainpanel.add(Lockpanel);
 
 		// Mini Map 붙일 패널
@@ -87,7 +91,7 @@ public class MainFrame extends JFrame {
 		btnStyle.deleteButtonFormat(NextButton);
 
 		// 버튼 4x4생성
-		Lock_num = new JButton[16];
+		/*Lock_num = new JButton[16];
 		for (int i = 0; i < Lock_card.length; i++) {
 			for (int j = 0; j < 16; j++) {
 				Lock_num[j] = new JButton(new ImageIcon("./Img/forone.png"));
@@ -97,7 +101,20 @@ public class MainFrame extends JFrame {
 				Lock_card[i].add(Lock_num[j]);
 			}
 
+		}*/
+		Lock_num = new JButton[12]; //버튼 3x4생성 
+		for (int i = 0; i < Lock_card.length; i++) {
+			for (int j = 0; j < 12; j++) {
+				Lock_num[j] = new JButton(new ImageIcon("./Img/fortwo.png"));
+				Lock_num[j].addActionListener(new MyActionListener());
+				Lock_num[j].setContentAreaFilled(false);
+				Lock_num[j].setOpaque(false);
+				Lock_card[i].add(Lock_num[j]);
+			}
+
 		}
+		
+		
 		// 인포메이션 버튼
 		InformationButton = new JButton(new ImageIcon("./Img/information.png"));
 		getContentPane().add(InformationButton);
@@ -169,25 +186,28 @@ public class MainFrame extends JFrame {
 	 **/
 	public void goBackCard() {
 		cards.previous(Lockpanel);
-	}	
+	}
 }
+
 class MainBackgroundPanel extends JPanel {
-	
+
 	Image image;
-	
+
 	MainBackgroundPanel() {
 		image = new ImageIcon("./Img/학교 배경.png").getImage();
 	}
 
-	/** Painting a background image on panel to override javax.swing.JComponent.paint.
-	* 
-	* 
-	* @param void
-	* @return boolean
-	**/	
-	public void paint(Graphics g){
+	/**
+	 * Painting a background image on panel to override
+	 * javax.swing.JComponent.paint.
+	 * 
+	 * 
+	 * @param void
+	 * @return boolean
+	 **/
+	public void paint(Graphics g) {
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		setOpaque(false);
-		super.paint(g);   
+		super.paint(g);
 	}
-}	
+}

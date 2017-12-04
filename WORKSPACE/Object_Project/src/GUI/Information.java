@@ -27,7 +27,6 @@ public class Information extends JFrame {
 		frame.setTitle("information");
 		frame.setSize(680, 550);
 		frame.setVisible(true);
-		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setAlwaysOnTop(true);
 		frame.setResizable(false);
