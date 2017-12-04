@@ -74,7 +74,7 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 
 		// back button
-		BackButton = new JButton(new ImageIcon("./Img/back.png"));
+		BackButton = new JButton(new ImageIcon("./Img/prev.png"));
 		BackButton.setBounds(0, 124, 97, 178);
 		mainpanel.add(BackButton);
 		btnStyle.deleteButtonFormat(BackButton);
@@ -176,7 +176,7 @@ class MainBackgroundPanel extends JPanel {
 	Image image;
 	
 	MainBackgroundPanel() {
-		image = new ImageIcon("./Img/main_background.png").getImage();
+		image = new ImageIcon("./Img/학교 배경.png").getImage();
 	}
 
 	/** Painting a background image on panel to override javax.swing.JComponent.paint.

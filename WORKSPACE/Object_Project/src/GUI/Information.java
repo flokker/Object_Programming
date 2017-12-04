@@ -5,6 +5,16 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * This is class about how to use this program
+ * <br>
+ * this class consist of PNG image files about information
+ * <br>
+ * 
+ * @author june hyeock
+ *@version 1.0
+ *
+ */
 public class Information extends JFrame {
 
 	JFrame frame;

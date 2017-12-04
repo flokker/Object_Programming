@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\r\Documents\Object_Programming\WORKSPACE\Object_Project"/>
+		<item value="C:\Users\r\Documents\Object_Programming\WORKSPACE"/>
+		<item value="C:\Users\r\Desktop\Object_Programming-master\WORKSPACE"/>
+	</list>
 	<section name="ExternalProjectImportWizard">
 	</section>
 	<section name="NewWizardAction">
