@@ -9,7 +9,8 @@ import GUI.MainBackgroundPanel;
 
 /**
  * This class acts as MainFrame in this program with GUI in this class, all
- * panels and buttons are history : June hyeock, 1.0 2017.11.14 initiate version
+ * panels and buttons are implemented in this class <br>
+ * history : June hyeock, 1.0 2017.11.14 initiate version <br>
  * 
  * @author June hyeock
  * @since 2017.11.14
@@ -35,7 +36,7 @@ public class MainFrame extends JFrame {
 	 */
 	protected MainFrame() {
 
-		Lock_card = new JPanel[10];
+		Lock_card = new JPanel[2];
 
 		setTitle("Main Frame");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,17 +58,16 @@ public class MainFrame extends JFrame {
 		Lockpanel = new JPanel();
 		Lockpanel.setLayout(cards);
 		Lockpanel.setBounds(250, 20, 400, 400);
-		// 사물함 구역 별로 Lockpanel 카드 갯수
-		/*for (int i = 0; i < 10; i++) {
+		
+		
+		for (int i = 0; i < 2; i++) {
 			Lock_card[i] = new JPanel();
-			Lock_card[i].setLayout(new GridLayout(4, 4));
-			Lockpanel.add(Lock_card[i]);
-		}*/
-		for (int i = 0; i < 10; i++) {
-			Lock_card[i] = new JPanel();
-			Lock_card[i].setLayout(new GridLayout(3, 4));
-			Lockpanel.add(Lock_card[i]);
 		}
+		Lock_card[0].setLayout(new GridLayout(3, 4));
+		Lockpanel.add(Lock_card[0]);
+
+		Lock_card[1].setLayout(new GridLayout(4, 4));
+		Lockpanel.add(Lock_card[1]);
 		mainpanel.add(Lockpanel);
 
 		// Mini Map 붙일 패널
@@ -91,30 +91,28 @@ public class MainFrame extends JFrame {
 		btnStyle.deleteButtonFormat(NextButton);
 
 		// 버튼 4x4생성
-		/*Lock_num = new JButton[16];
-		for (int i = 0; i < Lock_card.length; i++) {
-			for (int j = 0; j < 16; j++) {
-				Lock_num[j] = new JButton(new ImageIcon("./Img/forone.png"));
-				Lock_num[j].addActionListener(new MyActionListener());
-				Lock_num[j].setContentAreaFilled(false);
-				Lock_num[j].setOpaque(false);
-				Lock_card[i].add(Lock_num[j]);
-			}
 
-		}*/
-		Lock_num = new JButton[12]; //버튼 3x4생성 
-		for (int i = 0; i < Lock_card.length; i++) {
-			for (int j = 0; j < 12; j++) {
-				Lock_num[j] = new JButton(new ImageIcon("./Img/fortwo.png"));
-				Lock_num[j].addActionListener(new MyActionListener());
-				Lock_num[j].setContentAreaFilled(false);
-				Lock_num[j].setOpaque(false);
-				Lock_card[i].add(Lock_num[j]);
-			}
+		Lock_num = new JButton[16];
+
+		for (int j = 0; j < 16; j++) {
+			Lock_num[j] = new JButton(new ImageIcon("./Img/forone.png"));
+			Lock_num[j].addActionListener(new MyActionListener());
+			Lock_num[j].setContentAreaFilled(false);
+			Lock_num[j].setOpaque(false);
+			Lock_card[1].add(Lock_num[j]);
+		}
+
+		Lock_num = new JButton[12]; // 버튼 3x4생성
+
+		for (int j = 0; j < 12; j++) {
+			Lock_num[j] = new JButton(new ImageIcon("./Img/fortwo.png"));
+			Lock_num[j].addActionListener(new MyActionListener());
+			Lock_num[j].setContentAreaFilled(false);
+			Lock_num[j].setOpaque(false);
+			Lock_card[0].add(Lock_num[j]);
 
 		}
-		
-		
+
 		// 인포메이션 버튼
 		InformationButton = new JButton(new ImageIcon("./Img/information.png"));
 		getContentPane().add(InformationButton);
