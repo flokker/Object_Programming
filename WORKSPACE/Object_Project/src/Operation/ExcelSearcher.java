@@ -1,6 +1,5 @@
 package Operation;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,31 +12,31 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-
-
-/** This class consists of SearchLocker method returning the list of index number for given search targets
-* 
-* <br>
-* A method in this class receives data list of locker without NULL, and number of conditions.
-* During Performing a search operation, they count number if given list and stored list are consistent.
-* If give number of conditions and Counting number are consistent, the list will be search target
-* 
-* 
-* @author Myungho Bae
-* @version 1.1
-**/
+/**
+ * This class consists of SearchLocker method returning the list of index number for given search targets
+ * 
+ * <br>
+ * A method in this class receives data list of locker without NULL, and number
+ * of conditions. During Performing a search operation, they count number if
+ * given list and stored list are consistent. If give number of conditions and
+ * Counting number are consistent, the list will be search target
+ * 
+ * 
+ * @author Myungho Bae
+ * @version 1.1
+ **/
 public class ExcelSearcher {
 	/** Stored information of data_set from SearchFrame Class **/
 	String Cust[] = new String[5];
 
-
-	/** Returns left period of locker.
-	* 
-	* <br>
-	* 
-	* @param int rowid
-	* @return String
-	**/		
+	/**
+	 * Returns left period of locker.
+	 * 
+	 * <br>
+	 * 
+	 * @param int rowid
+	 * @return String
+	 **/
 	public String getLeftPeriod(int rowid) {
 		String leftPeriod = "";
 		try {
@@ -52,22 +51,23 @@ public class ExcelSearcher {
 		}
 		return leftPeriod;
 	}
-	
-	/** Returns index of matching list. If there are matching list, returning NULL.
-	* 
-	* <br>
-	* 
-	* @param List<data_set> list
-	* @param int enterCnt
-	* @return void
-	**/	
+
+	/**
+	 * Returns index of matching list. If there are matching list, returning NULL.
+	 * 
+	 * <br>
+	 * 
+	 * @param List<data_set> list
+	 * @param int enterCnt
+	 * @return void
+	 **/
 	public void SearchLocker(List<data_set> list, int enterCnt) {
-		data_set ds = list.get(0);		
+		data_set ds = list.get(0);
 		Cust[0] = ds.getCustLock();
 		Cust[1] = ds.getCustId();
 		Cust[2] = ds.getCustName();
 		Cust[3] = ds.getCustNum();
-		Cust[4] = ds.getCustPeriod();		
+		Cust[4] = ds.getCustPeriod();
 		try {
 			FileInputStream fis = new FileInputStream("./ExcelSheet/db.xlsx");
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
@@ -83,27 +83,24 @@ public class ExcelSearcher {
 					int cells = row.getPhysicalNumberOfCells();
 					for (int columnIndex = 0; columnIndex < 5; columnIndex++) {
 						XSSFCell cell = row.getCell(columnIndex);
-						if(Cust[columnIndex].equals(cell.getStringCellValue())) {
-							searchedCnt ++;
+						if (Cust[columnIndex].equals(cell.getStringCellValue())) {
+							searchedCnt++;
 						}
 					}
-					if(searchedCnt == enterCnt) {
+					if (searchedCnt == enterCnt) {
 						SearchArray[ArrayNum] = rowIndex;
-						ArrayNum ++;
+						ArrayNum++;
 						searchedCnt = 0;
-					}					
+					}
 				}
 			}
 			/*
-			System.out.println("검색 결과 :");
-			for(int i=0; i<ArrayNum; i++) {
-				System.out.println(SearchArray[i]);				
-			}
-			//이곳에 draw method를 추가해야함
-			*/
-			
+			 * System.out.println("검색 결과 :"); for(int i=0; i<ArrayNum; i++) {
+			 * System.out.println(SearchArray[i]); } //이곳에 draw method를 추가해야함
+			 */
+
 		} catch (IOException e) {
 			e.printStackTrace();
-		}	
+		}
 	}
 }

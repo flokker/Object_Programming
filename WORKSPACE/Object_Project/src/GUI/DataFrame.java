@@ -5,8 +5,9 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import Operation.MainApplication;
+import Operation.ExcelManager;
 import Operation.data_set;
+import GUI.ButtonStyle;
 
 /** A class that lets the user fill out personal information to apply locker.
 * 
@@ -23,21 +24,25 @@ public class DataFrame extends JFrame {
 	/** Stored end of term as integer variable **/
 	static int semesterValue = 171219;
 	
-	String[] labelText = {"사물함 번호", "이름", "학번", "핸드폰 번호", "기간"};
-	String Locker;
-	String Name;
-	String ID;
-	String PhoneNumber;
-	String Period;
+	String[] labelText = {"사물함 번호", "학번", "이름", "핸드폰 번호", "기간"};
+	static final String SemesterPeriod = "171219";
+	int userNumber;
+	int rowid; // 수정인지  추가인지 구분에 따라 rowid 할당 필요. (새 클래스 작성)
 	
+	CardLayout cards = new CardLayout();
+	JPanel card_Panel;
 	JButton doneBtn;
 	JButton closeBtn;
+	JButton nextBtn;
+	JButton deleteBtn;
 	JLabel[] Label = new JLabel[5];	
-	JTextField[] Text = new JTextField[5];
+	JTextField[][] Text = new JTextField[2][5];
 		
-	public DataFrame() {
+	public DataFrame(int value) {
+		this.userNumber = value;
+		
 		setAlwaysOnTop(true);
-		setBounds(100, 100, 530, 580);
+		setBounds(100, 100, 530, 650);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		setUndecorated(true);		// 타이틀 바 없애는 함수
@@ -46,7 +51,7 @@ public class DataFrame extends JFrame {
 		// 상단 텍스트 라벨 판넬
 		JPanel full_Panel = new JPanel();
 		full_Panel.setBackground(Color.BLACK);
-		full_Panel.setBounds(0, 0, 534, 561);
+		full_Panel.setBounds(0, 0, 534, 611);
 		getContentPane().add(full_Panel);
 		full_Panel.setLayout(null);
 		
@@ -69,66 +74,141 @@ public class DataFrame extends JFrame {
 		info2_Label.setForeground(Color.LIGHT_GRAY);
 		
 		//LabelPanel 라벨이 들어있는 판넬
-		JPanel form_Panel = new JPanel();
-		form_Panel.setBackground(Color.BLACK);
-		form_Panel.setBounds(23, 125, 488, 338);
-		full_Panel.add(form_Panel);
-		form_Panel.setLayout(new GridLayout(10, 1, 0, 0));
+			// CardLayout Main Panel
+		card_Panel = new JPanel();
+		card_Panel.setBackground(Color.BLACK);
+		card_Panel.setBounds(23, 125, 488, 338);
+		full_Panel.add(card_Panel);
+		card_Panel.setLayout(cards);
 		
-		
-		for(int i=0; i<5; i++) {
-			Label[i] = new JLabel(labelText[i]);
-			Label[i].setFont(new Font("나눔고딕 ExtraBold", Font.PLAIN, 18));
-			Label[i].setForeground(Color.WHITE);
+		JPanel[] form_Panel = new JPanel[2];
+		for(int j=0; j<2; j++) {
+			form_Panel[j] = new JPanel();
+			form_Panel[j].setBackground(Color.BLACK);
+			form_Panel[j].setBounds(23, 125, 488, 338);
+			card_Panel.add(form_Panel[j]);
+			form_Panel[j].setLayout(new GridLayout(10, 1, 0, 0));
 			
-			Text[i] = new JTextField(10);
-										
-			form_Panel.add(Label[i]);
-			form_Panel.add(Text[i]);
+			for(int i=0; i<5; i++) {
+				Label[i] = new JLabel(labelText[i]);
+				Label[i].setFont(new Font("나눔고딕 ExtraBold", Font.PLAIN, 18));
+				Label[i].setForeground(Color.WHITE);
+				
+				Text[j][i] = new JTextField(10);
+											
+				form_Panel[j].add(Label[i]);
+				form_Panel[j].add(Text[j][i]);
+			}	
+			Text[j][0].setEditable(false);
+			Text[j][0].setText("");
+			Text[j][4].setText(SemesterPeriod);
 		}
-		Text[0].setEditable(false);
-		Text[0].setText(Locker);
-	
+		
 
+		
 		//BtnPanel 버튼이 들어있는 판넬
 		ButtonStyle buttonstyle = new ButtonStyle();
 		JPanel btn_Panel = new JPanel();
 		btn_Panel.setBackground(Color.BLACK);
-		btn_Panel.setBounds(12, 480, 510, 78);
+		btn_Panel.setBounds(12, 523, 510, 78);
 		full_Panel.add(btn_Panel);
 		
 		doneBtn = new JButton(new ImageIcon("./Img/dataFrame_Done.png"));
-		doneBtn.setBackground(Color.BLACK);
-		doneBtn.setOpaque(true);
 		doneBtn.addActionListener(new DataFrm_ActionListener());
 		buttonstyle.deleteButtonFormat(doneBtn);
 		btn_Panel.add(doneBtn);
 		
 		closeBtn = new JButton(new ImageIcon("./Img/dataFrame_Close.png"));
-		closeBtn.setBackground(Color.BLACK);
-		closeBtn.setOpaque(true);
 		closeBtn.addActionListener(new DataFrm_ActionListener());
 		buttonstyle.deleteButtonFormat(closeBtn);
 		btn_Panel.add(closeBtn);
+
+		deleteBtn = new JButton(new ImageIcon("./Img/dataFrame_Delete.png"));
+		deleteBtn.setBounds(344, 473, 80, 40);
+		deleteBtn.addActionListener(new DataFrm_ActionListener());
+		buttonstyle.deleteButtonFormat(deleteBtn);
+		full_Panel.add(deleteBtn);
 		
+		nextBtn = new JButton(new ImageIcon("./Img/dataFrame_Next.png"));
+		nextBtn.setBounds(421, 473, 80, 40);
+		nextBtn.addActionListener(new DataFrm_ActionListener());
+		buttonstyle.deleteButtonFormat(nextBtn);
+		if(this.userNumber == 1)
+			full_Panel.add(nextBtn);
+
 		setVisible(true);
 	}
 
 	private class DataFrm_ActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			if(e.getSource().equals(doneBtn)) {
-				ID = Text[1].getText();
-				Name = Text[2].getText();
-				PhoneNumber = Text[3].getText();
-				Period = Text[4].getText();
-				data_set ds = new data_set(Locker,ID,Name,PhoneNumber,Period);
-				MainApplication MA = new MainApplication();
-				MA.excelWriting(ds);
+			if(e.getSource().equals(doneBtn)) {		
+				int temp = -1;
+				ExcelManager MA = new ExcelManager();	
+				data_set[] userInfo = new data_set[2];
+				for(int i=0; i<2; i++) {
+					if((i == 0 && userNumber >= 0) || (i == 1 && userNumber == 1)) {					
+						userInfo[i] = new data_set(Text[i][0].getText(),
+													Text[i][1].getText(),
+													Text[i][2].getText(),
+													Text[i][3].getText(),
+													Text[i][4].getText());
+						
+						if(CheckFormat(userInfo[i]) == false)
+						{
+							System.out.println(i);
+							JOptionPane.showConfirmDialog(getContentPane(), "입력 형식이 잘못되었습니다.  다시 한번 확인해주세요.", "입력 오류",
+									JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE, null);							
+							break;
+						}
+						else
+							temp ++;
+					}
+				}
+				if(temp == userNumber) {
+					MA.excelWriting(userInfo[0],rowid);
+					MA.excelWriting(userInfo[1],rowid+1);
+					dispose();							
+				}				
+			}
+			
+			else if(e.getSource().equals(closeBtn)) {
 				dispose();
 			}
-			else {
-				dispose();
+			
+			else if(e.getSource().equals(nextBtn)) {
+				cards.next(card_Panel);
 			}
+			
+			else if(e.getSource().equals(deleteBtn)) {
+				int result = JOptionPane.showConfirmDialog(getContentPane(), "이 사물함의 정보를 삭제하시겠습니까?", "사물함 정보 삭제", 
+						JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+				if(result == JOptionPane.YES_OPTION) {
+					System.out.println("sad");
+					ExcelManager MA = new ExcelManager();	
+					data_set[] userInfo = new data_set[2];	
+					for(int i=0; i<2; i++) {				
+						userInfo[i] = new data_set("-1","-1","-1","-1","-1");	
+						MA.excelWriting(userInfo[i],rowid+i);
+					}
+				}
+			}
+			
 		}		
+	}
+	// 사물함번호, 이름, 학번, 핸드폰번호, 기한
+	private boolean CheckFormat(data_set ds) {
+		boolean result = true;
+		if(ds.getCustName().length() < 2 || ds.getCustName().length() > 6)
+			result = false; // 이름 2~6자
+
+		if(ds.getCustId().length() < 5 || ds.getCustName().length() > 7)
+			result = false; // 학번 5~7자
+		
+		if(ds.getCustNum().length() < 10 || ds.getCustName().length() > 11)
+			result = false;	 // 폰번 10~11자리
+
+		if(ds.getCustPeriod().length() != 6)
+			result = false; // 기간 6자리
+		return result;
 	}
 }
