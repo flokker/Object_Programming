@@ -64,7 +64,7 @@ public class ExcelManager {
 	 * @author Myungho Bae
 	 **/
 	public int getRowID(int locknumber) {
-		data_set ds = new data_set(Integer.toString(locknumber),"","","","");
+		data_set ds = new data_set(locknumber + "","","","","");
 		
 		return excelSearhing(ds, 1)[0];
 	}

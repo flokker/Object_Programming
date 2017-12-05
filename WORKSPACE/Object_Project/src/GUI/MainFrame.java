@@ -19,7 +19,7 @@ import GUI.MainBackgroundPanel;
 
 public class MainFrame extends JFrame {
 
-	int[] lockerInfo = new int[2]; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
+	static int[] lockerInfo = new int[2]; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
 
 	ButtonStyle btnStyle = new ButtonStyle();
 
