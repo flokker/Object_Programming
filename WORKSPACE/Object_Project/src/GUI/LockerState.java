@@ -74,6 +74,20 @@ public class LockerState extends JPanel{
 		}
 		catch(InterruptedException exception) {}
 	}
+	
+	public void searchedLocker(Point p, int i) {
+		if(i == 0)
+		image = Toolkit.getDefaultToolkit().getImage("./Img/Yellow Border_1.png");
+		else
+		image = Toolkit.getDefaultToolkit().getImage("./Img/Yellow Border_2.png");
+		MediaTracker tracker = new MediaTracker(this);
+		tracker.addImage(image, 0);
+		try {
+			tracker.waitForID(0);
+		}
+		catch(InterruptedException exception) {}
+		repaint();
+	}
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

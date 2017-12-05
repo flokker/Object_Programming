@@ -178,7 +178,7 @@ public class SearchFrame extends JFrame {
 					data_set ds = new data_set(Cust[0], Cust[1], Cust[2], Cust[3], Cust[4]);
 					ExcelManager MA = new ExcelManager();
 					result = MA.excelSearhing(ds, count);
-
+					
 					dispose();
 				} else {
 					JOptionPane.showConfirmDialog(getContentPane(), "동일한 조건이 2개 이상 있습니다.", "검색 오류",
@@ -190,6 +190,46 @@ public class SearchFrame extends JFrame {
 		}
 	}
 
+	class SearchFrame_ActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			JButton btn = (JButton) e.getSource();
+
+			if (e.getSource().equals(btn_add)) {
+				if (count < 5) {
+					btn_add.setBounds(56, 80 + (40 * count), 94, 24);
+					btn_del.setBounds(12, 80 + (40 * count), 94, 24);
+					addSearchPanel();
+				}
+			} else if (e.getSource().equals(btn_del)) {
+				if (count > 1) {
+					delSearchPanel();
+					btn_add.setBounds(56, 80 + (40 * (count - 1)), 94, 24);
+					btn_del.setBounds(12, 80 + (40 * (count - 1)), 94, 24);
+				}
+			} else if (e.getSource().equals(doneBtn)) {
+				if (checkCondition() == false) {
+					for (int i = 0; i < count; i++) {
+						int index = Item_cb[i].getSelectedIndex();
+						if (comboCnt[index] == 1) {
+							Cust[index] = Item_tf[i].getText();
+						}
+					}
+
+					data_set ds = new data_set(Cust[0], Cust[1], Cust[2], Cust[3], Cust[4]);
+					ExcelManager MA = new ExcelManager();
+					result = MA.excelSearhing(ds, count);
+					
+					dispose();
+				} else {
+					JOptionPane.showConfirmDialog(getContentPane(), "동일한 조건이 2개 이상 있습니다.", "검색 오류",
+							JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE, null);
+				}
+			} else {
+				dispose();
+			}
+		}
+	}
+	
 	static class ColorArrowUI extends BasicComboBoxUI {
 
 		public static ComboBoxUI createUI(JComponent c) {

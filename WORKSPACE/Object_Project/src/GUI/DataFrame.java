@@ -167,9 +167,9 @@ public class DataFrame extends JFrame {
 					}
 				}
 				if(temp == userNumber) {
-					MA.excelWriting(userInfo[0],rowid);
+					MA.excelWriting(userInfo[0],0);
 					if(userNumber == 1)
-						MA.excelWriting(userInfo[1],rowid+1);
+						MA.excelWriting(userInfo[1],1);
 					dispose();							
 				}				
 			}
@@ -190,7 +190,7 @@ public class DataFrame extends JFrame {
 					data_set[] userInfo = new data_set[2];	
 					for(int i=0; i<2; i++) {				
 						userInfo[i] = new data_set(Integer.toString(lockerNumber),"»èÁ¦ µÊ","»èÁ¦ µÊ","»èÁ¦ µÊ","»èÁ¦ µÊ");	
-						MA.excelWriting(userInfo[i],rowid+i);
+						MA.excelWriting(userInfo[i], i);
 					}
 					dispose();
 				}

@@ -24,6 +24,8 @@ public class MainFrame extends JFrame {
 	ButtonStyle btnStyle = new ButtonStyle();
 
 	protected Mini_Map Map_panel;
+	protected LockerState border;
+	
 	private JButton[] Lock_num1,Lock_num2;
 	private JPanel[] Lock_card;
 	private JPanel Lockpanel;

@@ -23,13 +23,13 @@ import Operation.ExcelWriter; //ExcelWriter class import
  **/
 public class ExcelManager {
 
-	public void excelWriting(data_set ds, int rowid) {
+	public void excelWriting(data_set ds, int i) {
 		List<data_set> list = new ArrayList<data_set>();
 		list.add(ds);
 
 		ExcelWriter excelwriter = new ExcelWriter();
 
-		excelwriter.xlsxWriter(list, rowid);
+		excelwriter.xlsxWriter(list, i);
 	}
 
 	/**

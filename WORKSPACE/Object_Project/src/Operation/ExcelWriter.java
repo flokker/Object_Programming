@@ -31,7 +31,7 @@ public class ExcelWriter {
 	private XSSFCell cell;
 	private XSSFRow row;
 	private int rows;
-	final static int total_rows = 144;
+	final static int total_rows = 136;
 
 	public ExcelWriter() {
 		file = new File("./ExcelSheet/db.xlsx");
@@ -54,7 +54,7 @@ public class ExcelWriter {
 		}
 	}
 	
-	public void xlsxWriter(List<data_set> list, int rowid) {
+	public void xlsxWriter(List<data_set> list, int i) {
 
 //		row = sheet.createRow(0);
 //
@@ -92,9 +92,10 @@ public class ExcelWriter {
 //		cell = row.createCell(4);
 //		cell.setCellValue(ds.getCustPeriod());
 
+		
 		rows = excelSearch(list.get(0).getCustLock(), 0, total_rows);
-		excelDelete(rows);
-		excelInsert(list.get(0), rows);
+		excelDelete(rows+i);
+		excelInsert(list.get(0), rows+i);
 		
 		try {
 			fos = new FileOutputStream(file);
@@ -123,18 +124,23 @@ public class ExcelWriter {
 	}
 	
 	public int excelSearch(String num, int left, int right) {
-		String s = sheet.getRow(right).getCell(0).getStringCellValue();
+		if(left > right) return -1;
+		int m = (left + right)/2;
+		String s = sheet.getRow(m*2).getCell(0).getStringCellValue();
 		int id = Integer.parseInt(s); 
 		int numid = Integer.parseInt(num);
-		if(left > right) return -1;
-		if(id == numid) return right;
-		if(id > numid) return excelSearch(num, right/2+1, right);
-		return excelSearch(num, left, right/2);
+		if(id == numid) return m;
+		if(id > numid) return excelSearch(num, m+1, right);
+		return excelSearch(num, left, m-1);
 	}//2진검색 writer전용
 	
 	public void excelInsert(data_set ds, int rows) {
 		row = sheet.createRow(rows);
-		
+		if(ds.getCustName().equals("삭제 됨")){
+			for(int i = 1; i < 6; i++)
+				cell = row.createCell(i);
+			return;
+		}
 		cell = row.createCell(1);
 		cell.setCellValue(ds.getCustId());
 		
