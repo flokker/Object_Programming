@@ -19,7 +19,7 @@ import GUI.MainBackgroundPanel;
 
 public class MainFrame extends JFrame {
 
-	int userNumber; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
+	int[] lockerInfo = new int[2]; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
 	
 	ButtonStyle btnStyle = new ButtonStyle();
 
@@ -40,7 +40,7 @@ public class MainFrame extends JFrame {
 
 		Lock_card = new JPanel[2];
 
-		setTitle("Main Frame");
+		setTitle("Lock N Roll");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setBounds(100, 100, 913, 693);
@@ -158,8 +158,26 @@ public class MainFrame extends JFrame {
 				SearchFrame frame = new SearchFrame();
 			} else if (temp == InformationButton) {
 				Information Info = new Information();
-			} else {
-				DataFrame daframe = new DataFrame(userNumber); 
+			}
+			else
+			{
+				Current cur = new Current();
+				for(int i=0; i<16; i++) {
+					if(temp == Lock_num1[i]) {
+						lockerInfo[0] = 0;
+						lockerInfo[1] = 20*(cur.current+1) + i;
+						break;
+					}				
+				}
+				for(int i=0; i<12; i++) {
+					if(temp == Lock_num2[i]) {
+						lockerInfo[0] = 1;
+						lockerInfo[1] = 20*(cur.current+1) + i;
+						break;
+					}				
+				}		
+				
+				DataFrame daframe = new DataFrame(lockerInfo); 
 			}
 		}
 	}

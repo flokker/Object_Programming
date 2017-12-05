@@ -20,14 +20,12 @@ import GUI.ButtonStyle;
 * @version 1.5
 **/
 public class DataFrame extends JFrame {
-	
-	/** Stored end of term as integer variable **/
-	static int semesterValue = 171219;
-	
+		
 	String[] labelText = {"사물함 번호", "학번", "이름", "핸드폰 번호", "기간"};
 	static final String SemesterPeriod = "171219";
 	int userNumber;
-	int rowid; // 수정인지  추가인지 구분에 따라 rowid 할당 필요. (새 클래스 작성)
+	int lockerNumber;
+	int rowid;
 	
 	CardLayout cards = new CardLayout();
 	JPanel card_Panel;
@@ -38,15 +36,19 @@ public class DataFrame extends JFrame {
 	JLabel[] Label = new JLabel[5];	
 	JTextField[][] Text = new JTextField[2][5];
 		
-	public DataFrame(int value) {
-		this.userNumber = value;
+	public DataFrame(int[] value) {
+		ExcelManager EM = new ExcelManager();
+		this.userNumber = value[0];
+		this.lockerNumber = value[1];
+		this.rowid = EM.getRowID(lockerNumber);
+		
 		
 		setAlwaysOnTop(true);
-		setBounds(100, 100, 530, 650);
+		setBounds(100, 100, 530, 611);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
-		setUndecorated(true);		// 타이틀 바 없애는 함수
-		setLocationRelativeTo(null); // 프로그램 화면 중앙에서 실행
+		setUndecorated(true);
+		setLocationRelativeTo(null);
 		setResizable(false);	
 		// 상단 텍스트 라벨 판넬
 		JPanel full_Panel = new JPanel();
@@ -100,7 +102,7 @@ public class DataFrame extends JFrame {
 				form_Panel[j].add(Text[j][i]);
 			}	
 			Text[j][0].setEditable(false);
-			Text[j][0].setText("");
+			Text[j][0].setText(Integer.toString(this.lockerNumber));
 			Text[j][4].setText(SemesterPeriod);
 		}
 		
@@ -166,7 +168,8 @@ public class DataFrame extends JFrame {
 				}
 				if(temp == userNumber) {
 					MA.excelWriting(userInfo[0],rowid);
-					MA.excelWriting(userInfo[1],rowid+1);
+					if(userNumber == 1)
+						MA.excelWriting(userInfo[1],rowid+1);
 					dispose();							
 				}				
 			}
@@ -183,13 +186,13 @@ public class DataFrame extends JFrame {
 				int result = JOptionPane.showConfirmDialog(getContentPane(), "이 사물함의 정보를 삭제하시겠습니까?", "사물함 정보 삭제", 
 						JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 				if(result == JOptionPane.YES_OPTION) {
-					System.out.println("sad");
 					ExcelManager MA = new ExcelManager();	
 					data_set[] userInfo = new data_set[2];	
 					for(int i=0; i<2; i++) {				
-						userInfo[i] = new data_set("-1","-1","-1","-1","-1");	
+						userInfo[i] = new data_set(Integer.toString(lockerNumber),"삭제 됨","삭제 됨","삭제 됨","삭제 됨");	
 						MA.excelWriting(userInfo[i],rowid+i);
 					}
+					dispose();
 				}
 			}
 			

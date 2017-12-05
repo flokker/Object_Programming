@@ -42,11 +42,12 @@ public class SearchFrame extends JFrame {
 	private JButton closeBtn;
 	private int count = 0;
 	private int[] comboCnt = new int[5];
+	private int[] result = new int[200];
 	String Cust[] = new String[5];
 
 	protected SearchFrame() {
 		setAlwaysOnTop(true);
-		setBounds(100, 100, 530, 580);
+		setBounds(100, 100, 530, 561);
 		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		setResizable(false);
@@ -176,7 +177,7 @@ public class SearchFrame extends JFrame {
 
 					data_set ds = new data_set(Cust[0], Cust[1], Cust[2], Cust[3], Cust[4]);
 					ExcelManager MA = new ExcelManager();
-					MA.excelSearhing(ds, count);
+					result = MA.excelSearhing(ds, count);
 
 					dispose();
 				} else {

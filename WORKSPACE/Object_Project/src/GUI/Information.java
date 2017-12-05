@@ -17,19 +17,16 @@ import java.awt.event.*;
  */
 public class Information extends JFrame {
 
-	JFrame frame;
-	JScrollPane scrollPane;
 	ImageIcon icon;
 
 	public Information() {
 
-		frame = new JFrame();
-		frame.setTitle("information");
-		frame.setSize(680, 550);
-		frame.setVisible(true);
-		frame.setLocationRelativeTo(null);
-		frame.setAlwaysOnTop(true);
-		frame.setResizable(false);
+		setTitle("information");
+		setSize(675, 540);
+		setVisible(true);
+		setLocationRelativeTo(null);
+		setAlwaysOnTop(true);
+		setResizable(false);
 		icon = new ImageIcon("./Img/인포메이션.png");
 
 		JPanel panel = new JPanel() {
@@ -39,9 +36,9 @@ public class Information extends JFrame {
 				super.paintComponent(g);
 			}
 		};
-		scrollPane = new JScrollPane(panel);
-		setContentPane(scrollPane);
-		frame.add(panel);
+		
+		
+		add(panel);
 	}
 
 }
