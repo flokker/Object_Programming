@@ -74,7 +74,7 @@ public class Current extends JPanel{
 				current = 4; break;
 			}
 		}
-		if(y > 61)
+		if(!Mini_Map.floor)
 			current *= -1;
 	}
 	

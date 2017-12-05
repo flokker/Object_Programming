@@ -35,6 +35,8 @@ public class Mini_Map extends JPanel {
 	private static final int space3 = 4;
 	private static final int button_width = 150;
 	private static final int button_height = 50;
+	
+	public static boolean floor = false;
 
 	/** Initialize each array and specify its position.*/
 	public Mini_Map() {

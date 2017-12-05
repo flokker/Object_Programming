@@ -20,14 +20,15 @@ import GUI.MainBackgroundPanel;
 public class MainFrame extends JFrame {
 
 	int[] lockerInfo = new int[2]; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
-	
+
 	ButtonStyle btnStyle = new ButtonStyle();
 
+	protected Mini_Map Map_panel;
 	private JButton[] Lock_num1,Lock_num2;
 	private JPanel[] Lock_card;
 	private JPanel Lockpanel;
 	private MainBackgroundPanel fullPanel;
-	private JButton BackButton, NextButton, SearchButton, InformationButton;
+	private JButton BackButton, NextButton, UpButton, DownButton, SearchButton, InformationButton;
 	private CardLayout cards;
 	JScrollPane scrollPane;
 	ImageIcon icon;
@@ -70,7 +71,7 @@ public class MainFrame extends JFrame {
 		Lock_card[1].setLayout(new GridLayout(4, 4));
 		Lockpanel.add(Lock_card[1]);
 		mainpanel.add(Lockpanel);
-	
+
 		// 버튼 4x4생성
 		Lock_num1 = new JButton[16];
 
@@ -93,7 +94,7 @@ public class MainFrame extends JFrame {
 
 		}
 		// Mini Map 붙일 패널
-		Mini_Map Map_panel = new Mini_Map();
+		Map_panel = new Mini_Map();
 		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Map_panel.setBounds(217, 436, 478, 166);
 		fullPanel.add(Map_panel);
@@ -109,9 +110,23 @@ public class MainFrame extends JFrame {
 		NextButton = new JButton(new ImageIcon("./Img/next.png"));
 		NextButton.setBounds(800, 124, 97, 178);
 		mainpanel.add(NextButton);
-
 		btnStyle.deleteButtonFormat(NextButton);
 
+		UpButton = new JButton(new ImageIcon("./Img/upPoint.png"));
+		getContentPane().add(UpButton);
+		setVisible(true);
+		btnStyle.deleteButtonFormat(UpButton);
+		UpButton.setBounds(700, 440, 50, 50);
+		fullPanel.add(UpButton);
+
+		DownButton = new JButton(new ImageIcon("./Img/downPoint.png"));
+		getContentPane().add(DownButton);
+		setVisible(true);
+		btnStyle.deleteButtonFormat(DownButton);
+		DownButton.setBounds(700, 550, 50, 50);
+		fullPanel.add(DownButton);
+
+		
 		// 인포메이션 버튼
 		InformationButton = new JButton(new ImageIcon("./Img/information.png"));
 		getContentPane().add(InformationButton);
@@ -134,6 +149,8 @@ public class MainFrame extends JFrame {
 
 		BackButton.addActionListener(new MyActionListener());
 		NextButton.addActionListener(new MyActionListener());
+		UpButton.addActionListener(new MyActionListener());
+		DownButton.addActionListener(new MyActionListener());
 		SearchButton.addActionListener(new MyActionListener());
 		InformationButton.addActionListener(new MyActionListener());
 	}
@@ -154,7 +171,20 @@ public class MainFrame extends JFrame {
 
 			else if (temp == BackButton)
 				goBackCard();
-			else if (temp == SearchButton) {
+			else if(temp == UpButton) {
+				if(Current.current < 0) {
+					Current.current *= -1;
+					Map_panel.floor = true;
+					Map_panel.rePainting();
+				}
+			}
+			else if(temp == DownButton) {
+				if(Current.current > 0) {
+					Current.current *= -1;
+					Map_panel.floor = false;
+					Map_panel.rePainting();
+				}
+			} else if (temp == SearchButton) {
 				SearchFrame frame = new SearchFrame();
 			} else if (temp == InformationButton) {
 				Information Info = new Information();
@@ -176,7 +206,7 @@ public class MainFrame extends JFrame {
 						break;
 					}				
 				}		
-				
+
 				DataFrame daframe = new DataFrame(lockerInfo); 
 			}
 		}
@@ -190,7 +220,7 @@ public class MainFrame extends JFrame {
 	 **/
 	public void goNextCard() {
 		cards.next(Lockpanel);
-		
+
 		// userNumber = 0/1;   
 	}
 
