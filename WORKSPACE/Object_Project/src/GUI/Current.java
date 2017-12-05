@@ -21,7 +21,7 @@ public class Current extends JPanel{
 	public static int current;      // 1st floor < 0, 2nd floor > 0 and not use 0
 	/** Initialize Point*/
 	Current(){
-		p = new Point();
+		p = new Point(4, 4);
 	}
 	/** The implementation part of the abstract to implement JPanel
 	 * 
@@ -64,18 +64,14 @@ public class Current extends JPanel{
 		int x, y, z;
 		x = p.x;
 		y = p.y;
-		z = x/68;
-		if(y == 1 || y == 87) current = z+1;
+		z = x/160;
+		if(y < 20) current = z+1;
 		else {
 			switch(z){
 			case 0:
-				current = 9; break;
+				current = 5; break;
 			case 1:
-				current = 8; break;
-			case 2:
-				current = 7; break;
-			case 3:
-				current = 6; break;
+				current = 4; break;
 			}
 		}
 		if(y > 61)

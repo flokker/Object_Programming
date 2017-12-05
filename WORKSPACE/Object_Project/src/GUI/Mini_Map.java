@@ -33,8 +33,8 @@ public class Mini_Map extends JPanel {
 	private static final int space1 = 1;
 	private static final int space2 = 8;
 	private static final int space3 = 4;
-	private static final int button_width = 60;
-	private static final int button_height = 20;
+	private static final int button_width = 150;
+	private static final int button_height = 50;
 
 	/** Initialize each array and specify its position.*/
 	public Mini_Map() {
@@ -42,46 +42,55 @@ public class Mini_Map extends JPanel {
 		man = new Current();
 		lockers = new Location[2][];
 		for(i = 0; i < 2; i++) {
-			lockers[i] = new Location[10];
-			for(j = 0; j < 9; j++) 
+			lockers[i] = new Location[5];
+			for(j = 0; j < 5; j++) 
 				lockers[i][j] = new Location();
 
 		}
-		setLayout(null);
-		for(i = 0; i < 2; i++) {
-			for(j = 0; j < 9; j++) {
-				lockers[i][j].setSize(button_width, button_height);
-				if(i == 0) {
-					if(j < 6) {
-						lockers[i][j].setLocation(space3+(button_width+space2)*j, space3+83);
-					}
-					else {
-						lockers[i][j].setLocation(space3+(button_width+space2)*(j%6), space3+(button_height*3)+83);
-					}
-				}
-				else {
-					if(j < 7) {
-						lockers[i][j].setLocation(space3+(button_width+space2)*j, space1);
-					}
-					else {
-						lockers[i][j].setLocation(space3+(button_width+space2)*(j%7), space1+(button_height*3));
-					}
-				}
-				add(lockers[i][j]);
-				lockers[i][j].addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						JButton b = (JButton)e.getSource();
-						System.out.println(b.getLocation().x + " " + b.getLocation().y);
-						man.setPosition(b.getLocation());
-						System.out.println(man.current);
-						add(man);
-					}
-				}
-						);
-			}
-		}
+		rePainting();
 		man.current = -1;
+		man.setLocation(man.getPosition());
+		add(man);
 	}
+	
+	public void rePainting() {
+		int i, j;
+		setLayout(null);
+		if(man.current > 0) {
+			i = 1;
+		}
+		else {
+			i = 0;
+		}
+		for(j = 0; j < 5; j++) {
+			lockers[i][j].setSize(button_width, button_height);
+			if(j < 3) {
+				lockers[i][j].setLocation(space3+(button_width+space2)*j, space3);
+			}
+			else {
+				lockers[i][j].setLocation(space3+(button_width+space2)*(j%3), space3*3+(button_height*2));
+			}
+
+
+			add(lockers[i][j]);
+			lockers[i][j].addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JButton b = (JButton)e.getSource();
+					System.out.println(b.getLocation().x + " " + b.getLocation().y);
+					man.setPosition(b.getLocation());
+					System.out.println(man.current);
+					man.setLocation(man.getPosition());
+					man.repaint();
+				}
+			}
+					);
+
+		}
+		
+		repaint();
+		add(man);
+	}
+	
 	/** The part of the current panel
 	 * <br>
 	 * Divide the mini-map into two floors.
@@ -93,17 +102,12 @@ public class Mini_Map extends JPanel {
 		Graphics2D g2 = (Graphics2D)g;
 
 		double width = 476;
-		double height = 82;
+		double height = 164;
 
 		Rectangle2D rect1 = new Rectangle2D.Double(space1, space1, width, height);
 		g2.setPaint(Color.WHITE);
 		g2.fill(rect1);
 		g2.draw(rect1);
-
-		Rectangle2D rect2 = new Rectangle2D.Double(space1, 3*space1 + height, width, height);
-		g2.setPaint(Color.WHITE);
-		g2.fill(rect2);
-		g2.draw(rect2);
 
 	}
 }
