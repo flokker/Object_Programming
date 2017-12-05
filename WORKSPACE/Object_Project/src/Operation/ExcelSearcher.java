@@ -29,6 +29,29 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelSearcher {
 	/** Stored information of data_set from SearchFrame Class **/
 	String Cust[] = new String[5];
+
+
+	/** Returns left period of locker.
+	* 
+	* <br>
+	* 
+	* @param int rowid
+	* @return String
+	**/		
+	public String getLeftPeriod(int rowid) {
+		String leftPeriod = "";
+		try {
+			FileInputStream fis = new FileInputStream("./ExcelSheet/db.xlsx");
+			XSSFWorkbook workbook = new XSSFWorkbook(fis);
+			XSSFSheet sheet = workbook.getSheetAt(0);
+			XSSFRow row = sheet.getRow(rowid);
+			XSSFCell cell = row.getCell(5);
+			leftPeriod = cell.getStringCellValue();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return leftPeriod;
+	}
 	
 	/** Returns index of matching list. If there are matching list, returning NULL.
 	* 
@@ -37,7 +60,7 @@ public class ExcelSearcher {
 	* @param List<data_set> list
 	* @param int enterCnt
 	* @return void
-	**/
+	**/	
 	public void SearchLocker(List<data_set> list, int enterCnt) {
 		data_set ds = list.get(0);		
 		Cust[0] = ds.getCustLock();

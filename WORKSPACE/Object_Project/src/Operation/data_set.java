@@ -116,7 +116,7 @@ public class data_set {
 	}
 
 
-	public String toString() {  // override
+	/*public String toString() {  // override
 		StringBuffer sb = new StringBuffer();
 
 		sb.append("ID : " + CustLock);
@@ -126,5 +126,5 @@ public class data_set {
 		sb.append("ID : " + CustPeriod);
 
 		return sb.toString();
-	}
+	}*/
 }

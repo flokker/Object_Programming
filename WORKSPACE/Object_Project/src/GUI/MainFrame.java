@@ -21,7 +21,7 @@ public class MainFrame extends JFrame {
 
 	ButtonStyle btnStyle = new ButtonStyle();
 
-	private JButton[] Lock_num;
+	private JButton[] Lock_num1,Lock_num2;
 	private JPanel[] Lock_card;
 	private JPanel Lockpanel;
 	private MainBackgroundPanel fullPanel;
@@ -58,8 +58,7 @@ public class MainFrame extends JFrame {
 		Lockpanel = new JPanel();
 		Lockpanel.setLayout(cards);
 		Lockpanel.setBounds(250, 20, 400, 400);
-		
-		
+
 		for (int i = 0; i < 2; i++) {
 			Lock_card[i] = new JPanel();
 		}
@@ -69,7 +68,28 @@ public class MainFrame extends JFrame {
 		Lock_card[1].setLayout(new GridLayout(4, 4));
 		Lockpanel.add(Lock_card[1]);
 		mainpanel.add(Lockpanel);
+	
+		// 버튼 4x4생성
+		Lock_num1 = new JButton[16];
 
+		for (int j = 0; j < 16; j++) {
+			Lock_num1[j] = new JButton(new ImageIcon("./Img/forone.png"));
+			Lock_num1[j].addActionListener(new MyActionListener());
+			Lock_num1[j].setContentAreaFilled(false);
+			Lock_num1[j].setOpaque(false);
+			Lock_card[1].add(Lock_num1[j]);
+		}
+
+		Lock_num2 = new JButton[12]; // 버튼 3x4생성
+
+		for (int j = 0; j < 12; j++) {
+			Lock_num2[j] = new JButton(new ImageIcon("./Img/fortwo.png"));
+			Lock_num2[j].addActionListener(new MyActionListener());
+			Lock_num2[j].setContentAreaFilled(false);
+			Lock_num2[j].setOpaque(false);
+			Lock_card[0].add(Lock_num2[j]);
+
+		}
 		// Mini Map 붙일 패널
 		Mini_Map Map_panel = new Mini_Map();
 		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -89,29 +109,6 @@ public class MainFrame extends JFrame {
 		mainpanel.add(NextButton);
 
 		btnStyle.deleteButtonFormat(NextButton);
-
-		// 버튼 4x4생성
-
-		Lock_num = new JButton[16];
-
-		for (int j = 0; j < 16; j++) {
-			Lock_num[j] = new JButton(new ImageIcon("./Img/forone.png"));
-			Lock_num[j].addActionListener(new MyActionListener());
-			Lock_num[j].setContentAreaFilled(false);
-			Lock_num[j].setOpaque(false);
-			Lock_card[1].add(Lock_num[j]);
-		}
-
-		Lock_num = new JButton[12]; // 버튼 3x4생성
-
-		for (int j = 0; j < 12; j++) {
-			Lock_num[j] = new JButton(new ImageIcon("./Img/fortwo.png"));
-			Lock_num[j].addActionListener(new MyActionListener());
-			Lock_num[j].setContentAreaFilled(false);
-			Lock_num[j].setOpaque(false);
-			Lock_card[0].add(Lock_num[j]);
-
-		}
 
 		// 인포메이션 버튼
 		InformationButton = new JButton(new ImageIcon("./Img/information.png"));
