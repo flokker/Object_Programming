@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * 미니맵 상에 존재하는 작은 사물함의 집합을 표현한 JButton
+ * JButton that represents a set of small lockers that reside on the mini-map
  * <br>
- * button을 누르면 해당하는 사물함 구역이 나오며, 현재 위치가 갱신되게 도움을 주는 버튼.
+ * Clicking this button will bring up the corresponding locker area and help you update your current location.
  * 
  * @author Yongho Kim
  * @since 2017-11-14
@@ -15,7 +15,7 @@ import java.awt.*;
 
 public class Location extends JButton   //15*5 rectangle
 {
-	/** Location에 이미지를 입히기 위한 변수, 따라서 private로 구현 */
+	/** Variable for applying image to location, so it is implemented as private */
 	private Image image;
 	public Location() {
 		image = Toolkit.getDefaultToolkit().getImage("./Img/Slat.png");
@@ -27,7 +27,7 @@ public class Location extends JButton   //15*5 rectangle
 		catch(InterruptedException exception) {}
 	}
 	/**
-	 * JButton을 구현하기 위해서 추상메소드를 구현한 부분
+	 * The implementation part of the abstract to implement JButton
 	 * 
 	 * @param Graphics g input value
 	 */

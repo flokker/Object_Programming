@@ -7,33 +7,36 @@ import java.awt.event.*;
 import java.awt.geom.*;
 
 /**
- * 미니맵 상에서 존재하는 버튼을 종합하는 클래스
+ * This class has some buttons are used to switch slots in the mini-map.
  * <br>
- * 각 버튼들에게 위치를 부여하고 위치에 해당하는 번호를 부여한다.
- * <p> 위치에 해당하는 번호는 각 층에서 좌측 상단을 1번으로 기준을 잡고 시계 방향으로 증가하는 순이다.
- * 맨 마지막 즉 좌측 하단에 해당하는 번호는 9번이며 이 번호는 각 1번에 해당하는 번호와 연결시킨다.
- * 1층은 음수를 사용하고 2층은 양수를 사용하며, 0은 사용하지 않는다.
+ * It assigns a position to each button and assigns a number corresponding to the position.
+ * <p> The number corresponding to the position is the clockwise direction in which the upper left corner of each floor is set as the reference number 1.
+ * At the end of the list, the number on the bottom left is 9, and this number is associated with the number corresponding to each number 1.
+ * The first floor uses negative numbers, the second floor uses positive numbers, and the 0 is not used.
+ * 
+ * In case of version 1, two layers were displayed on one screen.
+ * In version 2, one floor is represented on one screen, a button on the right is created to enable floor-to-floor movement, and a new variable floor(boolean) is added to express this movement.
  * </p>
  * 
  * @author Yongho Kim
  * @since 2017-11-14
- * @version 1.0
+ * @version 2.0
  * 
  * 
  */
 public class Mini_Map extends JPanel {
-	/** lockers는 사물함 한 블록에 해당하며, 자유로운 이동을 위해 JButton으로 구현되어 있다. 또한, 다른 클래스에서도 사용될 것으로 기대되기 때문에 public으로 구현한다. */
+	/** Lockers correspond to a block of lockers and are implemented as JButton for free movement. It is also implemented as public because it is expected to be used in other classes as well */
 	public Location [][] lockers;
-	/** man은 현재 위치를 나타내는 JPanel이므로 미니맵에 관한 모든 Panel을 모아놓은 이 Panel에 있는 것이 적절하며, 이 패널 내에서만 연산이 이루어지므로 private로 구현한다.*/
+	/** Since 'man' is a JPanel that represents the current location, it is appropriate to have this panel in which all the panels related to the mini-map are collected*/
 	private Current man;
-	/** 단순 재사용이 많은 값*/
+	/** Simple reuse with many values*/
 	private static final int space1 = 1;
 	private static final int space2 = 8;
 	private static final int space3 = 4;
 	private static final int button_width = 60;
 	private static final int button_height = 20;
 
-	/** 각 배열들을 초기화 하며, 위치를 지정한다.*/
+	/** Initialize each array and specify its position.*/
 	public Mini_Map() {
 		int i, j;
 		man = new Current();
@@ -79,9 +82,9 @@ public class Mini_Map extends JPanel {
 		}
 		man.current = -1;
 	}
-	/** 현 Panel의 틀을 잡는 부분
+	/** The part of the current panel
 	 * <br>
-	 * 이곳에서 미니맵을 2층으로 나눈다.
+	 * Divide the mini-map into two floors.
 	 * 
 	 * @param Graphics g input value
 	 */
