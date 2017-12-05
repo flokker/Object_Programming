@@ -58,7 +58,7 @@ public class ExcelSearcher {
 				searchedCnt = 0;
 				XSSFRow row = sheet.getRow(rowIndex);
 				if (row != null) {
-					int cells = row.getPhysicalNumberOfCells();
+					row.getPhysicalNumberOfCells();
 					for (int columnIndex = 0; columnIndex < 5; columnIndex++) {
 						XSSFCell cell = row.getCell(columnIndex);
 						if (Cust[columnIndex].equals(cell.getStringCellValue())) {

@@ -23,19 +23,26 @@ import Operation.data_set;
 * @version 1.1 
 **/
 public class ExcelWriter {
+	private File file;
+	private FileOutputStream fos;
+	private FileInputStream fis;
+	private XSSFWorkbook workbook;
+	private XSSFSheet sheet;
+	private XSSFCell cell;
+	private XSSFRow row;
+	private int rows;
+	final static int total_rows = 144;
 
-	public void xlsxWriter(List<data_set> list, int rowid) {
-
-		File file = new File("./ExcelSheet/db.xlsx");
-		FileOutputStream fos = null;
-		FileInputStream fis = null;
+	public ExcelWriter() {
+		file = new File("./ExcelSheet/db.xlsx");
+		fos = null;
+		fis = null;
 		
-		XSSFWorkbook workbook = new XSSFWorkbook();
-		XSSFSheet sheet = workbook.createSheet();
-		XSSFCell cell;
-		XSSFRow row;
-		int rows = 0;
-			
+		workbook = new XSSFWorkbook();
+		sheet = workbook.createSheet();
+		
+		rows = 0;
+		
 		try {
 	        fis = new FileInputStream(file);
 	        workbook = new XSSFWorkbook(fis);
@@ -45,43 +52,50 @@ public class ExcelWriter {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void xlsxWriter(List<data_set> list, int rowid) {
 
-		row = sheet.createRow(0);
+//		row = sheet.createRow(0);
+//
+//		cell = row.createCell(0);
+//		cell.setCellValue("사물함번호");
+//		
+//		cell = row.createCell(1);
+//		cell.setCellValue("학번");
+//
+//		cell = row.createCell(2);
+//		cell.setCellValue("이름");
+//
+//		cell = row.createCell(3);
+//		cell.setCellValue("연락처");
+//
+//		cell = row.createCell(4);
+//		cell.setCellValue("사용기한");
+//		
+//		data_set ds;
+//		ds = list.get(0);
+//		row = sheet.createRow(rowid);
+//
+//		cell = row.createCell(0);
+//		cell.setCellValue(ds.getCustLock());
+//		
+//		cell = row.createCell(1);
+//		cell.setCellValue(ds.getCustId());
+//
+//		cell = row.createCell(2);
+//		cell.setCellValue(ds.getCustName());
+//
+//		cell = row.createCell(3);
+//		cell.setCellValue(ds.getCustNum());
+//
+//		cell = row.createCell(4);
+//		cell.setCellValue(ds.getCustPeriod());
 
-		cell = row.createCell(0);
-		cell.setCellValue("사물함번호");
+		rows = excelSearch(list.get(0).getCustLock(), 0, total_rows);
+		excelDelete(rows);
+		excelInsert(list.get(0), rows);
 		
-		cell = row.createCell(1);
-		cell.setCellValue("학번");
-
-		cell = row.createCell(2);
-		cell.setCellValue("이름");
-
-		cell = row.createCell(3);
-		cell.setCellValue("연락처");
-
-		cell = row.createCell(4);
-		cell.setCellValue("사용기한");
-		
-		data_set ds;
-		ds = list.get(0);
-		row = sheet.createRow(rowid);
-
-		cell = row.createCell(0);
-		cell.setCellValue(ds.getCustLock());
-		
-		cell = row.createCell(1);
-		cell.setCellValue(ds.getCustId());
-
-		cell = row.createCell(2);
-		cell.setCellValue(ds.getCustName());
-
-		cell = row.createCell(3);
-		cell.setCellValue(ds.getCustNum());
-
-		cell = row.createCell(4);
-		cell.setCellValue(ds.getCustPeriod());
-
 		try {
 			fos = new FileOutputStream(file);
 			workbook.write(fos);
@@ -102,5 +116,35 @@ public class ExcelWriter {
 		}
 
 	}
-
+	public void excelDelete(int rows) {
+		this.row = sheet.getRow(rows);
+		for(int i = 1; i < 6; i++)
+			cell = row.createCell(i);
+	}
+	
+	public int excelSearch(String num, int left, int right) {
+		String s = sheet.getRow(right).getCell(0).getStringCellValue();
+		int id = Integer.parseInt(s); 
+		int numid = Integer.parseInt(num);
+		if(left > right) return -1;
+		if(id == numid) return right;
+		if(id > numid) return excelSearch(num, right/2+1, right);
+		return excelSearch(num, left, right/2);
+	}//2진검색 writer전용
+	
+	public void excelInsert(data_set ds, int rows) {
+		row = sheet.createRow(rows);
+		
+		cell = row.createCell(1);
+		cell.setCellValue(ds.getCustId());
+		
+		cell = row.createCell(2);
+		cell.setCellValue(ds.getCustName());
+		
+		cell = row.createCell(3);
+		cell.setCellValue(ds.getCustNum());
+		
+		cell = row.createCell(4);
+		cell.setCellValue(ds.getCustPeriod());
+	}
 }
