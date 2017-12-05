@@ -191,18 +191,17 @@ public class MainFrame extends JFrame {
 			}
 			else
 			{
-				Current cur = new Current();
 				for(int i=0; i<16; i++) {
 					if(temp == Lock_num1[i]) {
 						lockerInfo[0] = 0;
-						lockerInfo[1] = 20*(cur.current+1) + i;
+						lockerInfo[1] = 20*(Current.current+5) + i;
 						break;
 					}				
 				}
 				for(int i=0; i<12; i++) {
 					if(temp == Lock_num2[i]) {
 						lockerInfo[0] = 1;
-						lockerInfo[1] = 20*(cur.current+1) + i;
+						lockerInfo[1] = 20*(Current.current+5) + i;
 						break;
 					}				
 				}		

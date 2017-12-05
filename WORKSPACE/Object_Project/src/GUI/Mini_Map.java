@@ -138,12 +138,12 @@ class KeyHandler extends KeyAdapter
 		case KeyEvent.VK_DOWN:
 			if(p.current > 0) p.current = -1; break;
 		case KeyEvent.VK_LEFT:
-			if(p.current > 0) if(--p.current == 0) p.current = 9;
-			else if(p.current < 0) if(++p.current == 0) p.current = -9;
+			if(p.current > 0) if(--p.current == 0) p.current = 5;
+			else if(p.current < 0) if(++p.current == 0) p.current = -5;
 			break;
 		case KeyEvent.VK_RIGHT:
-			if(p.current > 0) if(++p.current == 10)   p.current = 1;
-			else if(p.current < 0) if(--p.current == -10) p.current = -1;
+			if(p.current > 0) if(++p.current == 6)   p.current = 1;
+			else if(p.current < 0) if(--p.current == -6) p.current = -1;
 			break;
 		}
 //		System.out.println(p.current);
