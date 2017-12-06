@@ -10,7 +10,8 @@ import javax.swing.plaf.basic.*;
 
 import java.awt.*;
 import java.awt.event.*;
-
+import java.net.URL;
+import java.awt.AWTException;
 import Operation.ExcelSearcher;
 import Operation.ExcelManager;
 import Operation.data_set;
@@ -45,19 +46,24 @@ public class SearchFrame extends JFrame {
 	private int[] result = new int[200];
 	String Cust[] = new String[5];
 
-	ImageIcon addImg = new ImageIcon("./Img/searchFrame_Add.png");
-	ImageIcon delImg = new ImageIcon("./Img/searchFrame_del.png");
-	ImageIcon doneImg = new ImageIcon("./Img/searchFrame_Done.png");
-	ImageIcon closeImg = new ImageIcon("./Img/searchFrame_Close.png");
-	
 	protected SearchFrame() {
+
+		URL imgadd = getClass().getClassLoader().getResource("searchFrame_Add.png");
+		URL imgdel = getClass().getClassLoader().getResource("searchFrame_del.png");
+		URL imgdone = getClass().getClassLoader().getResource("searchFrame_Done.png");
+		URL imgclose = getClass().getClassLoader().getResource("searchFrame_Close.png");
+
+		ImageIcon addImg = new ImageIcon(imgadd);
+		ImageIcon delImg = new ImageIcon(imgdel);
+		ImageIcon doneImg = new ImageIcon(imgdone);
+		ImageIcon closeImg = new ImageIcon(imgclose);
+
 		setAlwaysOnTop(true);
 		setBounds(100, 100, 530, 561);
-		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		setResizable(false);
 		setUndecorated(true);
-		setLocationRelativeTo(null);		
+		setLocationRelativeTo(null);
 		// 전체를 포함하는 판넬
 		JPanel full_Panel = new JPanel();
 		full_Panel.setBackground(Color.BLACK);
@@ -123,7 +129,7 @@ public class SearchFrame extends JFrame {
 		text_Panel.add(lbl_Word);
 
 		addSearchPanel();
-		
+
 		btn_del = new JButton(delImg);
 		btn_del.setBounds(12, 80, 94, 24);
 		btn_del.addActionListener(new SearchFrm_ActionListener());
@@ -136,7 +142,7 @@ public class SearchFrame extends JFrame {
 		btn_Panel.setBackground(Color.BLACK);
 		btn_Panel.setBounds(12, 480, 510, 78);
 		full_Panel.add(btn_Panel);
-	
+
 		doneBtn = new JButton(doneImg);
 		buttonstyle.deleteButtonFormat(doneBtn);
 		doneBtn.setBackground(Color.BLACK);
@@ -206,7 +212,8 @@ public class SearchFrame extends JFrame {
 	}
 
 	/**
-	 * Returns true if two or more JComboBox condition indicate same field at the same time.
+	 * Returns true if two or more JComboBox condition indicate same field at the
+	 * same time.
 	 * 
 	 * <br>
 	 * 

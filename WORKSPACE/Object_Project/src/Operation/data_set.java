@@ -23,11 +23,13 @@ public class data_set {
 	 * CustNum means user's phone number
 	 * CustPeriod means user's Period of use
 	 * 
+	 * <br>
 	 * @param String CustLock
 	 * @param String CustId
 	 * @param String CustName
 	 * @param String CustNum
 	 * @param String CustPeriod
+	 * @author june hyeock
 	 */
 	public data_set(String CustLock, String CustId, String CustName, String CustNum, String CustPeriod) {		// data set about id,name,num,peroid
 	
@@ -41,6 +43,8 @@ public class data_set {
 	/**
 	 * 
 	 * Method of return CustLock variable
+	 * 
+	 * @param void
 	 * @return CustLock
 	 */
 	public String getCustLock() {
@@ -58,6 +62,7 @@ public class data_set {
 	/**
 	 * Method of return CustId variable
 	 * @return CustId
+	 * @param void
 	 */
 	
 	public String getCustId() {
@@ -73,6 +78,7 @@ public class data_set {
 /**
  * Method of return CustName variable 
  * @return CustName
+ * @param void
  */
 	public String getCustName() {
 		return CustName;
@@ -88,6 +94,7 @@ public class data_set {
 /**
  * Method of return CustNum variable
  * @return CustNum
+ * @param void
  */
 	public String getCustNum() {
 		return CustNum;
@@ -96,6 +103,7 @@ public class data_set {
 /**
  * Method of Store CustNum variable
  * @param String CustNum
+ * 
  */
 	public void setCustNum(String CustNum) {
 		this.CustNum = CustNum;
@@ -103,6 +111,7 @@ public class data_set {
 /**
  * Method of return CustPeriod variable
  * @return CustPeriod
+ * @param void
  */
 	public String getCustPeriod() {
 		return CustPeriod;

@@ -4,21 +4,27 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
 
 /**
- * This is class about how to use this program
- * <br>
- * this class consist of PNG image files about information
- * <br>
+ * This is class about how to use this program <br>
+ * this class consist of PNG image files about information <br>
  * 
  * @author june hyeock
- *@version 1.0
+ * @version 1.0
  *
  */
 public class Information extends JFrame {
 
 	ImageIcon icon;
 
+	/**
+	 * this method role of draw image on the background
+	 * 
+	 * @param void
+	 * @return void
+	 * @author june hyeock
+	 */
 	public Information() {
 
 		setTitle("information");
@@ -26,7 +32,9 @@ public class Information extends JFrame {
 		setLocationRelativeTo(null);
 		setAlwaysOnTop(true);
 		setResizable(false);
-		icon = new ImageIcon("./Img/인포메이션.png");
+
+		URL imginfoback = getClass().getClassLoader().getResource("인포메이션.png");
+		icon = new ImageIcon(imginfoback);
 
 		JPanel panel = new JPanel() {
 			public void paintComponent(Graphics g) {
@@ -35,8 +43,7 @@ public class Information extends JFrame {
 				super.paintComponent(g);
 			}
 		};
-		
-		
+
 		add(panel);
 	}
 
