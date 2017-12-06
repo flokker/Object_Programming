@@ -23,7 +23,6 @@ public class Information extends JFrame {
 
 		setTitle("information");
 		setSize(675, 540);
-		setVisible(true);
 		setLocationRelativeTo(null);
 		setAlwaysOnTop(true);
 		setResizable(false);

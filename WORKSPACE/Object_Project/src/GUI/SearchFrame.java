@@ -45,6 +45,11 @@ public class SearchFrame extends JFrame {
 	private int[] result = new int[200];
 	String Cust[] = new String[5];
 
+	ImageIcon addImg = new ImageIcon("./Img/searchFrame_Add.png");
+	ImageIcon delImg = new ImageIcon("./Img/searchFrame_del.png");
+	ImageIcon doneImg = new ImageIcon("./Img/searchFrame_Done.png");
+	ImageIcon closeImg = new ImageIcon("./Img/searchFrame_Close.png");
+	
 	protected SearchFrame() {
 		setAlwaysOnTop(true);
 		setBounds(100, 100, 530, 561);
@@ -98,7 +103,7 @@ public class SearchFrame extends JFrame {
 		lbl_Item.setBounds(70, 0, 57, 30);
 		lab_Panel.add(lbl_Item);
 
-		btn_add = new JButton(new ImageIcon("./Img/searchFrame_Add.png"));
+		btn_add = new JButton(addImg);
 		btn_add.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 14));
 		btn_add.setBounds(56, 80, 94, 24);
 		btn_add.addActionListener(new SearchFrm_ActionListener());
@@ -118,8 +123,8 @@ public class SearchFrame extends JFrame {
 		text_Panel.add(lbl_Word);
 
 		addSearchPanel();
-
-		btn_del = new JButton(new ImageIcon("./Img/searchFrame_del.png"));
+		
+		btn_del = new JButton(delImg);
 		btn_del.setBounds(12, 80, 94, 24);
 		btn_del.addActionListener(new SearchFrm_ActionListener());
 		btn_del.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 14));
@@ -131,15 +136,15 @@ public class SearchFrame extends JFrame {
 		btn_Panel.setBackground(Color.BLACK);
 		btn_Panel.setBounds(12, 480, 510, 78);
 		full_Panel.add(btn_Panel);
-
-		doneBtn = new JButton(new ImageIcon("./Img/searchFrame_Done.png"));
+	
+		doneBtn = new JButton(doneImg);
 		buttonstyle.deleteButtonFormat(doneBtn);
 		doneBtn.setBackground(Color.BLACK);
 		doneBtn.setOpaque(true);
 		doneBtn.addActionListener(new SearchFrm_ActionListener());
 		btn_Panel.add(doneBtn);
 
-		closeBtn = new JButton(new ImageIcon("./Img/searchFrame_Close.png"));
+		closeBtn = new JButton(closeImg);
 		buttonstyle.deleteButtonFormat(closeBtn);
 		closeBtn.setBackground(Color.BLACK);
 		closeBtn.setOpaque(true);
@@ -147,7 +152,6 @@ public class SearchFrame extends JFrame {
 		btn_Panel.add(closeBtn);
 
 		resetVariable();
-		setVisible(true);
 	}
 
 	class SearchFrm_ActionListener implements ActionListener {
@@ -202,8 +206,7 @@ public class SearchFrame extends JFrame {
 	}
 
 	/**
-	 * Returns true if two or more JComboBox condition indicate same field at the
-	 * same time.
+	 * Returns true if two or more JComboBox condition indicate same field at the same time.
 	 * 
 	 * <br>
 	 * 

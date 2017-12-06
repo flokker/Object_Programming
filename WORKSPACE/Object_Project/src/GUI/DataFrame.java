@@ -35,14 +35,18 @@ public class DataFrame extends JFrame {
 	JButton deleteBtn;
 	JLabel[] Label = new JLabel[5];	
 	JTextField[][] Text = new JTextField[2][5];
-		
+
+	ImageIcon doneImg = new ImageIcon("./Img/dataFrame_Done.png");
+	ImageIcon closeImg = new ImageIcon("./Img/dataFrame_Close.png");
+	ImageIcon deleteImg = new ImageIcon("./Img/dataFrame_Delete.png");
+	ImageIcon nextImg = new ImageIcon("./Img/dataFrame_Next.png");
+	
 	public DataFrame(int[] value) {
 		ExcelManager EM = new ExcelManager();
 		this.userNumber = value[0];
 		this.lockerNumber = value[1];
 		this.rowid = EM.getRowID(lockerNumber);
-		
-		
+				
 		setAlwaysOnTop(true);
 		setBounds(100, 100, 530, 611);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -105,9 +109,7 @@ public class DataFrame extends JFrame {
 			Text[j][0].setText(Integer.toString(this.lockerNumber));
 			Text[j][4].setText(SemesterPeriod);
 		}
-		
-
-		
+			
 		//BtnPanel 버튼이 들어있는 판넬
 		ButtonStyle buttonstyle = new ButtonStyle();
 		JPanel btn_Panel = new JPanel();
@@ -115,30 +117,29 @@ public class DataFrame extends JFrame {
 		btn_Panel.setBounds(12, 523, 510, 78);
 		full_Panel.add(btn_Panel);
 		
-		doneBtn = new JButton(new ImageIcon("./Img/dataFrame_Done.png"));
+
+		doneBtn = new JButton(doneImg);
 		doneBtn.addActionListener(new DataFrm_ActionListener());
 		buttonstyle.deleteButtonFormat(doneBtn);
 		btn_Panel.add(doneBtn);
 		
-		closeBtn = new JButton(new ImageIcon("./Img/dataFrame_Close.png"));
+		closeBtn = new JButton(closeImg);
 		closeBtn.addActionListener(new DataFrm_ActionListener());
 		buttonstyle.deleteButtonFormat(closeBtn);
 		btn_Panel.add(closeBtn);
 
-		deleteBtn = new JButton(new ImageIcon("./Img/dataFrame_Delete.png"));
+		deleteBtn = new JButton(deleteImg);
 		deleteBtn.setBounds(344, 473, 80, 40);
 		deleteBtn.addActionListener(new DataFrm_ActionListener());
 		buttonstyle.deleteButtonFormat(deleteBtn);
 		full_Panel.add(deleteBtn);
 		
-		nextBtn = new JButton(new ImageIcon("./Img/dataFrame_Next.png"));
+		nextBtn = new JButton(nextImg);
 		nextBtn.setBounds(421, 473, 80, 40);
 		nextBtn.addActionListener(new DataFrm_ActionListener());
 		buttonstyle.deleteButtonFormat(nextBtn);
 		if(this.userNumber == 1)
 			full_Panel.add(nextBtn);
-
-		setVisible(true);
 	}
 
 	private class DataFrm_ActionListener implements ActionListener {
@@ -198,7 +199,16 @@ public class DataFrame extends JFrame {
 			
 		}		
 	}
-	// 사물함번호, 이름, 학번, 핸드폰번호, 기한
+	
+	/**
+	 * Returns true if datas are consistent with each format of JTextField.
+	 *
+	 * 
+	 * <br>
+	 * 
+	 * @param data_set ds
+	 * @return boolean
+	 **/
 	private boolean CheckFormat(data_set ds) {
 		boolean result = true;
 		if(ds.getCustName().length() < 2 || ds.getCustName().length() > 6)

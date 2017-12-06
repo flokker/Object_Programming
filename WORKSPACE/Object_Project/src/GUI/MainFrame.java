@@ -19,7 +19,9 @@ import GUI.MainBackgroundPanel;
 
 public class MainFrame extends JFrame {
 
-	int[] lockerInfo = new int[2]; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
+	
+	
+	static int[] lockerInfo = new int[2]; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
 	
 	ButtonStyle btnStyle = new ButtonStyle();
 
@@ -32,12 +34,18 @@ public class MainFrame extends JFrame {
 	JScrollPane scrollPane;
 	ImageIcon icon;
 
+	DataFrame daframe;
+	SearchFrame searchFrame;
+	Information infoFrame;
 	/**
 	 * this method from Mainframe
 	 * 
 	 */
 	protected MainFrame() {
-
+	
+		searchFrame = new SearchFrame();
+		infoFrame = new Information();
+		
 		Lock_card = new JPanel[2];
 
 		setTitle("Lock N Roll");
@@ -47,7 +55,8 @@ public class MainFrame extends JFrame {
 		fullPanel = new MainBackgroundPanel();
 		fullPanel.setLayout(null);
 		setContentPane(fullPanel);
-
+		setResizable(false);
+		
 		// MainPanel
 		JPanel mainpanel = new JPanel();
 		mainpanel.setBounds(0, 10, 897, 416);
@@ -97,7 +106,6 @@ public class MainFrame extends JFrame {
 		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Map_panel.setBounds(217, 436, 478, 166);
 		fullPanel.add(Map_panel);
-		setVisible(true);
 
 		// back button
 		BackButton = new JButton(new ImageIcon("./Img/prev.png"));
@@ -115,27 +123,24 @@ public class MainFrame extends JFrame {
 		// 인포메이션 버튼
 		InformationButton = new JButton(new ImageIcon("./Img/information.png"));
 		getContentPane().add(InformationButton);
-		setVisible(true);
 		btnStyle.deleteButtonFormat(InformationButton);
 		InformationButton.setBounds(0, 471, 127, 131);
 
 		// 검색버튼
 		SearchButton = new JButton(new ImageIcon("./Img/Search.png"));
 		getContentPane().add(SearchButton);
-		setVisible(true);
 		btnStyle.deleteButtonFormat(SearchButton);
 
 		// search 버튼 action listener
-
 		SearchButton.setBounds(80, 471, 127, 131);
 		fullPanel.add(SearchButton);
-
 		fullPanel.addKeyListener(new KeyHandler());
-
 		BackButton.addActionListener(new MyActionListener());
 		NextButton.addActionListener(new MyActionListener());
 		SearchButton.addActionListener(new MyActionListener());
 		InformationButton.addActionListener(new MyActionListener());
+		
+		setVisible(true);
 	}
 
 	/**
@@ -149,39 +154,63 @@ public class MainFrame extends JFrame {
 	class MyActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			JButton temp = (JButton) e.getSource();
-			if (temp == NextButton)
+			if (temp == NextButton) {
 				goNextCard();
-
-			else if (temp == BackButton)
-				goBackCard();
-			else if (temp == SearchButton) {
-				SearchFrame frame = new SearchFrame();
-			} else if (temp == InformationButton) {
-				Information Info = new Information();
 			}
+			
+			else if (temp == BackButton) {
+				goBackCard();
+			}
+			
+			else if (temp == SearchButton) {
+				searchFrame.setVisible(true);
+			} 
+			
+			else if (temp == InformationButton) {
+				infoFrame.setVisible(true);
+			}
+			
 			else
 			{
-				Current cur = new Current();
+				int num = getLockerNumOfZero(Current.current);
+				System.out.println(getLockerNumOfZero(-1));
 				for(int i=0; i<16; i++) {
 					if(temp == Lock_num1[i]) {
 						lockerInfo[0] = 0;
-						lockerInfo[1] = 20*(cur.current+1) + i;
+						lockerInfo[1] = ((num+1)/2)*12+(num/2)*16+1+i;
 						break;
 					}				
 				}
 				for(int i=0; i<12; i++) {
 					if(temp == Lock_num2[i]) {
 						lockerInfo[0] = 1;
-						lockerInfo[1] = 20*(cur.current+1) + i;
+						lockerInfo[1] = ((num+1)/2)*12+(num/2)*16+1+i;
 						break;
 					}				
 				}		
-				
-				DataFrame daframe = new DataFrame(lockerInfo); 
+				daframe = new DataFrame(lockerInfo);
+				daframe.setVisible(true);
 			}
 		}
 	}
 
+	/**
+	 * Returns number of locker area that is ranged from -5~5 to 0~9.
+	 * 
+	 * @param int areaNumber
+	 * @return int
+	 **/
+	private int getLockerNumOfZero(int areaNumber) {
+		int result = 0;
+		if(areaNumber > 0) {
+			result = areaNumber+4;
+		}
+		else {
+			result = (areaNumber*-1)-1;
+		}
+		return result;
+	}
+	
 	/**
 	 * This method acts as function to the next card in Cardlayout
 	 * 
@@ -190,8 +219,19 @@ public class MainFrame extends JFrame {
 	 **/
 	public void goNextCard() {
 		cards.next(Lockpanel);
-		
-		// userNumber = 0/1;   
+
+		if(Current.current < 0)
+		{
+			Current.current = (Math.abs(Current.current)+1)*-1;
+			if(Current.current < -5)
+				Current.current = 1;				
+		}
+		else if(Current.current > 0)
+		{
+			Current.current = Current.current+1;
+			if(Current.current > 5)
+				Current.current = -1; 			
+		}
 	}
 
 	/**
@@ -202,6 +242,19 @@ public class MainFrame extends JFrame {
 	 **/
 	public void goBackCard() {
 		cards.previous(Lockpanel);
+		
+		if(Current.current < 0)
+		{
+			Current.current = (Math.abs(Current.current)-1)*-1;
+			if(Current.current > -1)
+				Current.current = 5;			
+		}
+		
+		else if(Current.current > 0) {
+			Current.current = Current.current-1;
+			if(Current.current < 1)
+				Current.current = -5;			
+		}	
 	}
 }
 
