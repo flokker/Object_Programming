@@ -144,7 +144,7 @@ public class MainFrame extends JFrame {
 		// search ¹öÆ° action listener
 		SearchButton.setBounds(80, 471, 127, 131);
 		fullPanel.add(SearchButton);
-		fullPanel.addKeyListener(new KeyHandler());
+//		fullPanel.addKeyListener(new KeyHandler());
 		BackButton.addActionListener(new MyActionListener());
 		NextButton.addActionListener(new MyActionListener());
 		SearchButton.addActionListener(new MyActionListener());

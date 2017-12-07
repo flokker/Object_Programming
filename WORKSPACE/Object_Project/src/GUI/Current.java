@@ -88,7 +88,7 @@ public class Current extends JPanel {
 		else {
 			switch (z) {
 			case 0:
-				current = 9;
+				current = 5;
 				break;
 			case 1:
 				current = 8;

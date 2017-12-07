@@ -46,8 +46,8 @@ public class Mini_Map extends JPanel {
 	private static final int space1 = 1;
 	private static final int space2 = 8;
 	private static final int space3 = 4;
-	private static final int button_width = 60;
-	private static final int button_height = 20;
+	private static final int button_width = 150;
+	private static final int button_height = 50;
 
 	/** Initialize each array and specify its position. */
 	public Mini_Map() {
@@ -56,29 +56,22 @@ public class Mini_Map extends JPanel {
 		lockers = new Location[2][];
 		for (i = 0; i < 2; i++) {
 			lockers[i] = new Location[10];
-			for (j = 0; j < 9; j++)
+			for (j = 0; j < 5; j++)
 				lockers[i][j] = new Location();
 
 		}
 		setLayout(null);
 		for (i = 0; i < 2; i++) {
-			for (j = 0; j < 9; j++) {
+			for (j = 0; j < 5; j++) {
 				lockers[i][j].setSize(button_width, button_height);
-				if (i == 0) {
-					if (j < 6) {
-						lockers[i][j].setLocation(space3 + (button_width + space2) * j, space3 + 83);
-					} else {
-						lockers[i][j].setLocation(space3 + (button_width + space2) * (j % 6),
-								space3 + (button_height * 3) + 83);
-					}
+
+				if (j < 3) {
+					lockers[i][j].setLocation(space3 + (button_width + space2) * j, space3);
 				} else {
-					if (j < 7) {
-						lockers[i][j].setLocation(space3 + (button_width + space2) * j, space1);
-					} else {
-						lockers[i][j].setLocation(space3 + (button_width + space2) * (j % 7),
-								space1 + (button_height * 3));
-					}
+					lockers[i][j].setLocation(space3 + (button_width + space2) * (j % 3),
+							space3 + (button_height * 2));
 				}
+
 				add(lockers[i][j]);
 				lockers[i][j].addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -106,63 +99,58 @@ public class Mini_Map extends JPanel {
 		Graphics2D g2 = (Graphics2D) g;
 
 		double width = 476;
-		double height = 82;
+		double height = 168;
 
 		Rectangle2D rect1 = new Rectangle2D.Double(space1, space1, width, height);
 		g2.setPaint(Color.WHITE);
 		g2.fill(rect1);
 		g2.draw(rect1);
 
-		Rectangle2D rect2 = new Rectangle2D.Double(space1, 3 * space1 + height, width, height);
-		g2.setPaint(Color.WHITE);
-		g2.fill(rect2);
-		g2.draw(rect2);
-
 	}
 }
 
-/**
- * @author Yongho Kim
- * @since 2017-11-14
- * @version 1.0
- * @description key push - up -> if you are on first floor, you displace to
- *              second floor. key push - down -> if you are on second floor, you
- *              displace to first floor. key push - left -> left move key push -
- *              right -> right move
- **/
-
-class KeyHandler extends KeyAdapter {
-	Current p;
-
-	public void keyReleased(KeyEvent e) {
-		int keyCode = e.getKeyCode();
-
-		switch (keyCode) {
-		case KeyEvent.VK_UP:
-			if (p.current < 0)
-				p.current = 1;
-			break;
-		case KeyEvent.VK_DOWN:
-			if (p.current > 0)
-				p.current = -1;
-			break;
-		case KeyEvent.VK_LEFT:
-			if (p.current > 0)
-				if (--p.current == 0)
-					p.current = 9;
-				else if (p.current < 0)
-					if (++p.current == 0)
-						p.current = -9;
-			break;
-		case KeyEvent.VK_RIGHT:
-			if (p.current > 0)
-				if (++p.current == 10)
-					p.current = 1;
-				else if (p.current < 0)
-					if (--p.current == -10)
-						p.current = -1;
-			break;
-		}
-		// System.out.println(p.current);
-	}
-}
+///**
+// * @author Yongho Kim
+// * @since 2017-11-14
+// * @version 1.0
+// * @description key push - up -> if you are on first floor, you displace to
+// *              second floor. key push - down -> if you are on second floor, you
+// *              displace to first floor. key push - left -> left move key push -
+// *              right -> right move
+// **/
+//
+//class KeyHandler extends KeyAdapter {
+//	Current p;
+//
+//	public void keyReleased(KeyEvent e) {
+//		int keyCode = e.getKeyCode();
+//
+//		switch (keyCode) {
+//		case KeyEvent.VK_UP:
+//			if (p.current < 0)
+//				p.current = 1;
+//			break;
+//		case KeyEvent.VK_DOWN:
+//			if (p.current > 0)
+//				p.current = -1;
+//			break;
+//		case KeyEvent.VK_LEFT:
+//			if (p.current > 0)
+//				if (--p.current == 0)
+//					p.current = 5;
+//				else if (p.current < 0)
+//					if (++p.current == 0)
+//						p.current = -5;
+//			break;
+//		case KeyEvent.VK_RIGHT:
+//			if (p.current > 0)
+//				if (++p.current == 6)
+//					p.current = 1;
+//				else if (p.current < 0)
+//					if (--p.current == -6)
+//						p.current = -1;
+//			break;
+//		}
+//		// System.out.println(p.current);
+//	}
+//}
