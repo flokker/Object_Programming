@@ -20,6 +20,7 @@ public class Current extends JPanel {
 	 * private to this class
 	 */
 	private Point p;
+	private Image image;
 	/**
 	 * this variable is needed to know what the current lockers area is, and since
 	 * it is unique, it is declared static. Variables represent a range of -9 to
@@ -29,8 +30,15 @@ public class Current extends JPanel {
 	public static int current; // 1st floor < 0, 2nd floor > 0 and not use 0
 
 	/** Initialize Point */
-	Current() {
-		p = new Point();
+	public Current() {
+		image = Toolkit.getDefaultToolkit().getImage("./Img/Man.png");
+		MediaTracker tracker = new MediaTracker(this);
+		tracker.addImage(image, 0);
+		try {
+			tracker.waitForID(0);
+		}
+		catch(InterruptedException exception) {}
+		p = new Point(4, 4);
 	}
 
 	/**
@@ -41,14 +49,9 @@ public class Current extends JPanel {
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		Graphics2D g2 = (Graphics2D) g;
-		double radius = 10;
-
-		Ellipse2D circle = new Ellipse2D.Double();
-		circle.setFrameFromCenter(p.x + 30, p.y + 20, p.x + radius, p.y + radius);
-		g2.setPaint(new Color(255, 238, 219));
-		g2.fill(circle);
-		g2.draw(circle);
+		if(image == null) return;
+		
+		g.drawImage(image, 0,0, null);
 	}
 
 	/**
@@ -70,6 +73,11 @@ public class Current extends JPanel {
 	 */
 
 	public Point getPosition() {
+		p.x = p.x + 65;
+		if(p.y > 20)
+			p.y -= 22;
+		else
+			p.y += 52;
 		return p;
 	}
 
@@ -82,8 +90,8 @@ public class Current extends JPanel {
 		int x, y, z;
 		x = p.x;
 		y = p.y;
-		z = x / 68;
-		if (y == 1 || y == 87)
+		z = x / 160;
+		if (y < 20)
 			current = z + 1;
 		else {
 			switch (z) {
@@ -91,17 +99,10 @@ public class Current extends JPanel {
 				current = 5;
 				break;
 			case 1:
-				current = 8;
-				break;
-			case 2:
-				current = 7;
-				break;
-			case 3:
-				current = 6;
-				break;
+				current = 4;
 			}
 		}
-		if (y > 61)
+		if (!Mini_Map.floor)
 			current *= -1;
 	}
 

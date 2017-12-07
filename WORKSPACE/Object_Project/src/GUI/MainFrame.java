@@ -25,11 +25,12 @@ public class MainFrame extends JFrame {
 
 	ButtonStyle btnStyle = new ButtonStyle();
 
+	Mini_Map Map_panel;
 	private JButton[] Lock_num1, Lock_num2;
 	private JPanel[] Lock_card;
 	private JPanel Lockpanel;
 	private MainBackgroundPanel fullPanel;
-	private JButton BackButton, NextButton, SearchButton, InformationButton;
+	private JButton BackButton, NextButton, UpButton, DownButton, SearchButton, InformationButton;
 	private CardLayout cards;
 	JScrollPane scrollPane;
 	ImageIcon icon;
@@ -108,7 +109,7 @@ public class MainFrame extends JFrame {
 
 		}
 		// Mini Map 붙일 패널
-		Mini_Map Map_panel = new Mini_Map();
+		Map_panel = new Mini_Map();
 		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Map_panel.setBounds(217, 436, 478, 166);
 		fullPanel.add(Map_panel);
@@ -125,9 +126,21 @@ public class MainFrame extends JFrame {
 		NextButton = new JButton(new ImageIcon(imgnext));
 		NextButton.setBounds(800, 124, 97, 178);
 		mainpanel.add(NextButton);
-
 		btnStyle.deleteButtonFormat(NextButton);
 
+		URL imgup = getClass().getClassLoader().getResource("upPoint.png");
+		UpButton = new JButton(new ImageIcon(imgup));
+		UpButton.setBounds(700, 440, 50, 50);
+		btnStyle.deleteButtonFormat(UpButton);
+		fullPanel.add(UpButton);
+		
+		URL imgdown = getClass().getClassLoader().getResource("downPoint.png");
+		DownButton = new JButton(new ImageIcon(imgdown));
+		DownButton.setBounds(700, 550, 50, 50);
+		btnStyle.deleteButtonFormat(DownButton);
+		fullPanel.add(DownButton);
+		
+		
 		// 인포메이션 버튼
 		URL imginfobtn = getClass().getClassLoader().getResource("information.png");
 		InformationButton = new JButton(new ImageIcon(imginfobtn));
@@ -145,6 +158,8 @@ public class MainFrame extends JFrame {
 		SearchButton.setBounds(80, 471, 127, 131);
 		fullPanel.add(SearchButton);
 //		fullPanel.addKeyListener(new KeyHandler());
+		UpButton.addActionListener(new MyActionListener());
+		DownButton.addActionListener(new MyActionListener());
 		BackButton.addActionListener(new MyActionListener());
 		NextButton.addActionListener(new MyActionListener());
 		SearchButton.addActionListener(new MyActionListener());
@@ -171,7 +186,21 @@ public class MainFrame extends JFrame {
 			else if (temp == BackButton) {
 				goBackCard();
 			}
-
+			
+			else if(temp == UpButton) {
+				if(Current.current < 0) {
+					Current.current *= -1;
+					Map_panel.floor = true;
+					Map_panel.rePainting(Map_panel.floor);
+				}
+			}
+			else if(temp == DownButton) {
+				if(Current.current > 0) {
+					Current.current *= -1;
+					Map_panel.floor = false;
+					Map_panel.rePainting(Map_panel.floor);
+				}
+			}
 			else if (temp == SearchButton) {
 				searchFrame.setVisible(true);
 			}

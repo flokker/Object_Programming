@@ -1,5 +1,6 @@
 package GUI;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -43,48 +44,80 @@ public class Mini_Map extends JPanel {
 	 */
 	private Current man;
 	/** Simple reuse with many values */
+	private JLabel floortxt;
 	private static final int space1 = 1;
 	private static final int space2 = 8;
 	private static final int space3 = 4;
 	private static final int button_width = 150;
 	private static final int button_height = 50;
+	
+	public static boolean floor = false;
 
 	/** Initialize each array and specify its position. */
 	public Mini_Map() {
 		int i, j;
 		man = new Current();
 		lockers = new Location[2][];
-		for (i = 0; i < 2; i++) {
-			lockers[i] = new Location[10];
-			for (j = 0; j < 5; j++)
+		for(i = 0; i < 2; i++) {
+			lockers[i] = new Location[5];
+			for(j = 0; j < 5; j++) 
 				lockers[i][j] = new Location();
-
+			
 		}
-		setLayout(null);
-		for (i = 0; i < 2; i++) {
-			for (j = 0; j < 5; j++) {
-				lockers[i][j].setSize(button_width, button_height);
-
-				if (j < 3) {
-					lockers[i][j].setLocation(space3 + (button_width + space2) * j, space3);
-				} else {
-					lockers[i][j].setLocation(space3 + (button_width + space2) * (j % 3),
-							space3 + (button_height * 2));
-				}
-
-				add(lockers[i][j]);
-				lockers[i][j].addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						JButton b = (JButton) e.getSource();
-						System.out.println(b.getLocation().x + " " + b.getLocation().y);
-						man.setPosition(b.getLocation());
-						System.out.println(man.current);
-						add(man);
-					}
-				});
-			}
-		}
+		floortxt = new JLabel("1Ãþ");
+		floortxt.setFont(new Font("³ª´®°íµñ", Font.BOLD, 60));
+		floortxt.setForeground(Color.BLACK);
+		floortxt.setBounds(350, 80, 100, 100);
+		add(floortxt);
+		
 		man.current = -1;
+		man.setSize(20, 20);
+		man.setLocation(man.getPosition());
+		add(man);
+		
+		rePainting(floor);
+	}
+	/** The part of the current panel
+	 * <br>
+	 * Divide the mini-map into two floors.
+	 * 
+	 * @param Graphics g input value
+	 */
+	
+	public void rePainting(boolean b) {
+		int i, j;
+		setLayout(null);
+		if(floor) {
+			i = 1;
+		}
+		else {
+			i = 0;
+		}
+		for(j = 0; j < 5; j++) {
+			lockers[i][j].setSize(button_width, button_height);
+			if(j < 3) {
+				lockers[i][j].setLocation(space3+(button_width+space2)*j, space3);
+			}
+			else {
+				lockers[i][j].setLocation(space3+(button_width+space2)*(j%3), space3*3+(button_height*2));
+			}
+
+
+			add(lockers[i][j]);
+			lockers[i][j].addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JButton b = (JButton)e.getSource();
+					System.out.println(b.getLocation().x + " " + b.getLocation().y);
+					man.setPosition(b.getLocation());
+					System.out.println(man.current);
+					man.setLocation(man.getPosition());
+					man.repaint();
+				}
+			}
+					);
+
+		}
+		floortxt.setName(i + "Ãþ");
 	}
 
 	/**
@@ -105,7 +138,8 @@ public class Mini_Map extends JPanel {
 		g2.setPaint(Color.WHITE);
 		g2.fill(rect1);
 		g2.draw(rect1);
-
+		
+		
 	}
 }
 
