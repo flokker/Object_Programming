@@ -6,6 +6,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
+import java.util.Calendar;
 
 import javax.swing.*;
 import javax.swing.event.*;
@@ -26,7 +27,7 @@ public class StartFrame extends JFrame {
 	private String audioFile;
 	private Clip clip;
 	private AudioInputStream audioInputStream;
-
+	public static Calendar now = Calendar.getInstance();
 	JScrollPane scrollPane;
 	JButton startBtn;
 	JButton closeBtn;
@@ -119,6 +120,7 @@ public class StartFrame extends JFrame {
 
 	public static void main(String[] args) {
 
+		now = Calendar.getInstance();
 		new StartFrame();
 
 	}

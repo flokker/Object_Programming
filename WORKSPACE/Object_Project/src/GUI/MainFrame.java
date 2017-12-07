@@ -24,7 +24,7 @@ public class MainFrame extends JFrame {
 	static int[] lockerInfo = new int[2]; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
 
 	ButtonStyle btnStyle = new ButtonStyle();
-
+	LockerState Border;
 	Mini_Map Map_panel;
 	private JButton[] Lock_num1, Lock_num2;
 	private JPanel[] Lock_card;
@@ -87,7 +87,7 @@ public class MainFrame extends JFrame {
 
 		// 버튼 4x4생성
 		Lock_num1 = new JButton[16];
-
+		Point p = new Point();
 		for (int j = 0; j < 16; j++) {
 			URL imgforone = getClass().getClassLoader().getResource("forone.png");
 			Lock_num1[j] = new JButton(new ImageIcon(imgforone));
@@ -95,6 +95,10 @@ public class MainFrame extends JFrame {
 			Lock_num1[j].setContentAreaFilled(false);
 			Lock_num1[j].setOpaque(false);
 			Lock_card[1].add(Lock_num1[j]);
+			p = Lock_num1[j].getLocation();
+			Border = new LockerState(j, false);
+			Border.setBounds(p.x, p.y, 120, 120);
+			add(Border);
 		}
 
 		Lock_num2 = new JButton[12]; // 버튼 3x4생성
@@ -106,7 +110,10 @@ public class MainFrame extends JFrame {
 			Lock_num2[j].setContentAreaFilled(false);
 			Lock_num2[j].setOpaque(false);
 			Lock_card[0].add(Lock_num2[j]);
-
+			p = Lock_num2[j].getLocation();
+			Border = new LockerState(j, false, 0);
+			Border.setBounds(p.x, p.y, 120, 160);
+			add(Border);
 		}
 		// Mini Map 붙일 패널
 		Map_panel = new Mini_Map();

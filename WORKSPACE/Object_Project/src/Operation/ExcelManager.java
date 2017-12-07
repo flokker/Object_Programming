@@ -3,6 +3,7 @@ package Operation;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List; //import to use list 
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -103,17 +104,25 @@ public class ExcelManager {
 	 * @author Myungho Bae
 	 **/
 	public String getLeftPeriod(int rowid) {
-		String leftPeriod = "";
+		String Period = "0";
+		int leftPeriod = 0;
 		try {
 			FileInputStream fis = new FileInputStream("./ExcelSheet/db.xlsx");
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			XSSFRow row = sheet.getRow(rowid);
-			XSSFCell cell = row.getCell(5);
-			leftPeriod = cell.getStringCellValue();
+			XSSFCell cell = row.getCell(4);
+			Period = cell.getStringCellValue();
+			if(Period.equals("ªË¡¶ µ "))
+				return "0";			
+			Calendar now = GUI.StartFrame.now;
+			int nowday = ((now.getTime().getYear() % 100)*100+(now.getTime().getMonth()+1))*100 + now.getTime().getDate();
+			leftPeriod = Integer.parseInt(Period);
+			leftPeriod -= nowday;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return leftPeriod;
+		return leftPeriod + "";
+		
 	}
 }
