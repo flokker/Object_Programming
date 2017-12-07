@@ -115,10 +115,10 @@ public class ExcelManager {
 			Period = cell.getStringCellValue();
 			if(Period.equals("ªË¡¶ µ "))
 				return "0";			
-			Calendar now = GUI.StartFrame.now;
-			int nowday = ((now.getTime().getYear() % 100)*100+(now.getTime().getMonth()+1))*100 + now.getTime().getDate();
-			leftPeriod = Integer.parseInt(Period);
-			leftPeriod -= nowday;
+//			Calendar now = GUI.StartFrame.now;
+//			int nowday = ((now.getTime().getYear() % 100)*100+(now.getTime().getMonth()+1))*100 + now.getTime().getDate();
+//			leftPeriod = Integer.parseInt(Period);
+//			leftPeriod -= nowday;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

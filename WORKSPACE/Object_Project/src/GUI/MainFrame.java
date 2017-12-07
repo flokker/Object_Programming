@@ -28,10 +28,11 @@ public class MainFrame extends JFrame {
 	Mini_Map Map_panel;
 	private JButton[] Lock_num1, Lock_num2;
 	private JPanel[] Lock_card;
-	private JPanel Lockpanel;
+	private static JPanel Lockpanel;
 	private MainBackgroundPanel fullPanel;
 	private JButton BackButton, NextButton, UpButton, DownButton, SearchButton, InformationButton;
-	private CardLayout cards;
+	private static CardLayout cards;
+	public static boolean divide;
 	JScrollPane scrollPane;
 	ImageIcon icon;
 
@@ -96,9 +97,9 @@ public class MainFrame extends JFrame {
 			Lock_num1[j].setOpaque(false);
 			Lock_card[1].add(Lock_num1[j]);
 			p = Lock_num1[j].getLocation();
-			Border = new LockerState(j, false);
-			Border.setBounds(p.x, p.y, 120, 120);
-			add(Border);
+//			Border = new LockerState(j, false);
+//			Border.setBounds(p.x, p.y, 120, 120);
+//			add(Border);
 		}
 
 		Lock_num2 = new JButton[12]; // 버튼 3x4생성
@@ -111,9 +112,9 @@ public class MainFrame extends JFrame {
 			Lock_num2[j].setOpaque(false);
 			Lock_card[0].add(Lock_num2[j]);
 			p = Lock_num2[j].getLocation();
-			Border = new LockerState(j, false, 0);
-			Border.setBounds(p.x, p.y, 120, 160);
-			add(Border);
+//			Border = new LockerState(j, false, 0);
+//			Border.setBounds(p.x, p.y, 120, 160);
+//			add(Border);
 		}
 		// Mini Map 붙일 패널
 		Map_panel = new Mini_Map();
@@ -263,9 +264,9 @@ public class MainFrame extends JFrame {
 	 * @return void
 	 * @author june hyeock
 	 **/
-	public void goNextCard() {
+	public static void goNextCard() {
 		cards.next(Lockpanel);
-
+		divide = !divide;
 		if (Current.current < 0) {
 			Current.current = (Math.abs(Current.current) + 1) * -1;
 			if (Current.current < -5)
@@ -275,8 +276,10 @@ public class MainFrame extends JFrame {
 			if (Current.current > 5)
 				Current.current = -1;
 		}
+		
 	}
-
+	
+	
 	/**
 	 * This method acts as function to the previous card in Cardlayout <br>
 	 * 
@@ -284,9 +287,9 @@ public class MainFrame extends JFrame {
 	 * @return void
 	 * @author june hyeock
 	 **/
-	public void goBackCard() {
+	public static void goBackCard() {
 		cards.previous(Lockpanel);
-
+		divide = !divide;
 		if (Current.current < 0) {
 			Current.current = (Math.abs(Current.current) - 1) * -1;
 			if (Current.current > -1)

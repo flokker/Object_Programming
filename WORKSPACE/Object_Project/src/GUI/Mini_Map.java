@@ -64,17 +64,17 @@ public class Mini_Map extends JPanel {
 				lockers[i][j] = new Location();
 			
 		}
-		floortxt = new JLabel("1Ãþ");
-		floortxt.setFont(new Font("³ª´®°íµñ", Font.BOLD, 60));
-		floortxt.setForeground(Color.BLACK);
-		floortxt.setBounds(350, 80, 100, 100);
-		add(floortxt);
+		
 		
 		man.current = -1;
 		man.setSize(20, 20);
 		man.setLocation(man.getPosition());
 		add(man);
-		
+		floortxt = new JLabel(1 + "Ãþ");
+		floortxt.setFont(new Font("³ª´®°íµñ", Font.BOLD, 60));
+		floortxt.setForeground(Color.BLACK);
+		floortxt.setBounds(350, 80, 100, 100);
+		add(floortxt);
 		rePainting(floor);
 	}
 	/** The part of the current panel
@@ -85,6 +85,7 @@ public class Mini_Map extends JPanel {
 	 */
 	
 	public void rePainting(boolean b) {
+		
 		int i, j;
 		setLayout(null);
 		if(floor) {
@@ -112,12 +113,32 @@ public class Mini_Map extends JPanel {
 					System.out.println(man.current);
 					man.setLocation(man.getPosition());
 					man.repaint();
+					if(man.current > 0) {
+						if(man.current%2 == 1)
+							if(MainFrame.divide)
+								MainFrame.goNextCard();
+							else;
+						else
+							if(!MainFrame.divide)
+								MainFrame.goNextCard();
+					}
+					else {
+						if(man.current%2 == -1)
+							if(!MainFrame.divide)
+								MainFrame.goNextCard();
+							else;
+						else
+							if(MainFrame.divide)
+								MainFrame.goNextCard();
+					}
 				}
 			}
 					);
 
 		}
-		floortxt.setName(i + "Ãþ");
+		floortxt.setText(i+1 + "Ãþ");
+		floortxt.repaint();
+		repaint();
 	}
 
 	/**
