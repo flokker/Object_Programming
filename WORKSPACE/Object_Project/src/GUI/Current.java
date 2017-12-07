@@ -12,7 +12,7 @@ import java.awt.*;
  * 
  * @author Yongho Kim
  * @since 2017-11-16
- * @version 0.5
+ * @version 1
  */
 public class Current extends JPanel {
 	/**

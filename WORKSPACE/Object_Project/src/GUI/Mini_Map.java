@@ -77,13 +77,11 @@ public class Mini_Map extends JPanel {
 		add(floortxt);
 		rePainting(floor);
 	}
-	/** The part of the current panel
-	 * <br>
-	 * Divide the mini-map into two floors.
-	 * 
-	 * @param Graphics g input value
+	/**
+	 * It is a method separated from the constructor because it needs to redraw the minimap as the layer of the minimap changes.
+	 * If the input value of this method is false, if the first layer is true, it represents the second layer.
+	 * @param boolean b
 	 */
-	
 	public void rePainting(boolean b) {
 		
 		int i, j;
@@ -145,8 +143,7 @@ public class Mini_Map extends JPanel {
 	 * The part of the current panel <br>
 	 * Divide the mini-map into two floors.
 	 * 
-	 * @param Graphics
-	 *            g input value
+	 * @param Graphics g input value
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
