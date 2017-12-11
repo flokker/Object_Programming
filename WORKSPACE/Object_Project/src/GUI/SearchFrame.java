@@ -43,11 +43,11 @@ public class SearchFrame extends JFrame {
 	private JButton closeBtn;
 	private int count = 0;
 	private int[] comboCnt = new int[5];
-	private int[] result = new int[200];
+	private int[] result = new int[288];
 	String Cust[] = new String[5];
 
 	protected SearchFrame() {
-
+		
 		URL imgadd = getClass().getClassLoader().getResource("searchFrame_Add.png");
 		URL imgdel = getClass().getClassLoader().getResource("searchFrame_del.png");
 		URL imgdone = getClass().getClassLoader().getResource("searchFrame_Done.png");
@@ -188,8 +188,15 @@ public class SearchFrame extends JFrame {
 					data_set ds = new data_set(Cust[0], Cust[1], Cust[2], Cust[3], Cust[4]);
 					ExcelManager MA = new ExcelManager();
 					result = MA.excelSearhing(ds, count);
-
-					dispose();
+					StringBuffer sb = new StringBuffer();
+					for(int j=0; result[j]!=0; j++) {
+						sb.append(MA.getLockerID(result[j]) + "번");
+						sb.append("(" + Integer.toString(result[j]) + "행)\n");
+					}
+					System.out.println(sb);
+					JOptionPane.showConfirmDialog(getContentPane(), sb, "검색 결과",
+							JOptionPane.CLOSED_OPTION, JOptionPane.INFORMATION_MESSAGE, null);
+		
 				} else {
 					JOptionPane.showConfirmDialog(getContentPane(), "동일한 조건이 2개 이상 있습니다.", "검색 오류",
 							JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE, null);
@@ -265,7 +272,7 @@ public class SearchFrame extends JFrame {
 		Border border = BorderFactory.createLineBorder(Color.WHITE, 2);
 		int height = 40 * (count + 1);
 
-		Item_cb[count] = new JComboBox(new String[] { "사물함 번호", "이름", "학번", "핸드폰 번호", "만료기간" });
+		Item_cb[count] = new JComboBox(new String[] { "사물함 번호", "학번", "이름", "핸드폰 번호", "만료기간" });
 		Item_cb[count].setRenderer(new DefaultListCellRenderer() {
 			public void paint(Graphics g) {
 				setBackground(Color.GRAY);

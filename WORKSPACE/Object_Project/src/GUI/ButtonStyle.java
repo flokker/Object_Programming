@@ -11,13 +11,12 @@ import javax.swing.JButton;
 * @version 1.0
 **/
 public class ButtonStyle {
-	/** Sets the all states of given JButton to 0
-	* 
-	* 
-	* @param void
-	* @return boolean
-	**/		
-	public void deleteButtonFormat(JButton btn) {	// 버튼의 기본 모습들을 없애 주기 위한 함수를 포함한 메소드
+	
+	/**
+	 * Sets the all states of given JButton to 0
+	 * @param btn - this param means button that declare JButton
+	 */
+	public void deleteButtonFormat(JButton btn) {	
 		btn.setBorderPainted(false);
 		btn.setContentAreaFilled(false);
 		btn.setDefaultCapable(false);

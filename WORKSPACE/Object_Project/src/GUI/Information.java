@@ -19,10 +19,7 @@ public class Information extends JFrame {
 	ImageIcon icon;
 
 	/**
-	 * this method role of draw image on the background
-	 * 
-	 * @param void
-	 * @return void
+	 *this method role of draw image on the background
 	 * @author june hyeock
 	 */
 	public Information() {

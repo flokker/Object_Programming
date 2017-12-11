@@ -6,9 +6,13 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
+import java.util.Calendar;
 
 import javax.swing.*;
 import javax.swing.event.*;
+
+import Operation.ExcelManager;
+
 import javax.sound.sampled.*;
 
 /**
@@ -26,12 +30,17 @@ public class StartFrame extends JFrame {
 	private String audioFile;
 	private Clip clip;
 	private AudioInputStream audioInputStream;
-
+	public static Calendar now = Calendar.getInstance();
 	JScrollPane scrollPane;
 	JButton startBtn;
 	JButton closeBtn;
+	
+	ExcelManager ex;
 
 	public StartFrame() {
+		
+		ex = new ExcelManager();
+
 		ButtonStyle btnStyle = new ButtonStyle();
 		setTitle("Lock N Roll");
 		setBounds(100, 100, 500, 600);
@@ -80,8 +89,8 @@ public class StartFrame extends JFrame {
 	 **/
 	private void PlayMusic() {
 		try {
-
-			AudioInputStream ais = AudioSystem.getAudioInputStream(new File("./sound/jazzrock.wav"));
+			URL sound = getClass().getClassLoader().getResource("jazzrock.wav");
+			AudioInputStream ais = AudioSystem.getAudioInputStream(sound);
 			clip = AudioSystem.getClip();
 			clip.stop();
 			clip.open(ais);
@@ -105,9 +114,11 @@ public class StartFrame extends JFrame {
 	private class StartFrm_ActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource().equals(startBtn)) {
-
+				StopMusic();
 				new MainFrame();
-
+				
+				// JOptionPane.showConfirmDialog(getContentPane(),System.getProperty("user.dir"), "검색 오류",JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE, null);
+				
 				dispose();
 			} else {
 				System.exit(0);
@@ -116,10 +127,8 @@ public class StartFrame extends JFrame {
 			StopMusic();
 		}
 	}
-
 	public static void main(String[] args) {
-
+		now = Calendar.getInstance();
 		new StartFrame();
-
 	}
 }

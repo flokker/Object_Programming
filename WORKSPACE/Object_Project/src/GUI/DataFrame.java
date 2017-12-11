@@ -28,6 +28,9 @@ public class DataFrame extends JFrame {
 	int userNumber;
 	int lockerNumber;
 	int rowid;
+	
+	protected MainFrame mf;
+
 
 	CardLayout cards = new CardLayout();
 	JPanel card_Panel;
@@ -169,6 +172,8 @@ public class DataFrame extends JFrame {
 					MA.excelWriting(userInfo[0], rowid);
 					if (userNumber == 1)
 						MA.excelWriting(userInfo[1], rowid + 1);
+					mf.State.drawButtonBorder(mf.Lock_num1);
+					mf.State.drawButtonBorder(mf.Lock_num2);
 					dispose();
 				}
 			}
@@ -210,16 +215,16 @@ public class DataFrame extends JFrame {
 	 **/
 	private boolean CheckFormat(data_set ds) {
 		boolean result = true;
-		if (ds.getCustName().length() < 2 || ds.getCustName().length() > 6)
+		if (ds.getCustName() != "0" && (ds.getCustName().length() < 2 || ds.getCustName().length() > 6))
 			result = false; // 이름 2~6자
 
-		if (ds.getCustId().length() < 5 || ds.getCustName().length() > 7)
+		if (ds.getCustId() != "0" && (ds.getCustId().length() < 5 || ds.getCustName().length() > 7))
 			result = false; // 학번 5~7자
 
-		if (ds.getCustNum().length() < 10 || ds.getCustName().length() > 11)
+		if (ds.getCustNum() != "0" && (ds.getCustNum().length() < 10 || ds.getCustName().length() > 11))
 			result = false; // 폰번 10~11자리
 
-		if (ds.getCustPeriod().length() != 6)
+		if (ds.getCustPeriod() != "0" && (ds.getCustPeriod().length() != 6))
 			result = false; // 기간 6자리
 		return result;
 	}

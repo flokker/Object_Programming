@@ -24,20 +24,22 @@ public class MainFrame extends JFrame {
 	static int[] lockerInfo = new int[2]; // userNumber에 유저가 선택한 사물함이 몇인용인지 저장
 
 	ButtonStyle btnStyle = new ButtonStyle();
-
-	private JButton[] Lock_num1, Lock_num2;
+	LockState State = new LockState();
+	static Mini_Map Map_panel;
+	protected JButton[] Lock_num1, Lock_num2;
 	private JPanel[] Lock_card;
-	private JPanel Lockpanel;
+	private static JPanel Lockpanel;
 	private MainBackgroundPanel fullPanel;
-	private JButton BackButton, NextButton, SearchButton, InformationButton;
-	private CardLayout cards;
-	JScrollPane scrollPane;
+	private JButton BackButton, NextButton, UpButton, DownButton, SearchButton, InformationButton;
+	private static CardLayout cards;
+	public static boolean divide;
 	ImageIcon icon;
 
 	DataFrame daframe;
 	SearchFrame searchFrame;
 	Information infoFrame;
 
+	private static Point p;
 	/**
 	 * this is method of MainFrame that detail implemented. <br>
 	 * it has many button and panel, if you click each button, different events
@@ -46,12 +48,13 @@ public class MainFrame extends JFrame {
 	 * @author june hyeock
 	 * @param void
 	 */
+	
 	protected MainFrame() {
 
 		searchFrame = new SearchFrame();
 		infoFrame = new Information();
 		Lock_card = new JPanel[2];
-
+		
 		setTitle("Lock N Roll");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -86,7 +89,7 @@ public class MainFrame extends JFrame {
 
 		// 버튼 4x4생성
 		Lock_num1 = new JButton[16];
-
+		Point p = new Point();
 		for (int j = 0; j < 16; j++) {
 			URL imgforone = getClass().getClassLoader().getResource("forone.png");
 			Lock_num1[j] = new JButton(new ImageIcon(imgforone));
@@ -94,10 +97,10 @@ public class MainFrame extends JFrame {
 			Lock_num1[j].setContentAreaFilled(false);
 			Lock_num1[j].setOpaque(false);
 			Lock_card[1].add(Lock_num1[j]);
+
 		}
 
 		Lock_num2 = new JButton[12]; // 버튼 3x4생성
-
 		for (int j = 0; j < 12; j++) {
 			URL imgfortwo = getClass().getClassLoader().getResource("fortwo.png");
 			Lock_num2[j] = new JButton(new ImageIcon(imgfortwo));
@@ -107,8 +110,11 @@ public class MainFrame extends JFrame {
 			Lock_card[0].add(Lock_num2[j]);
 
 		}
+		State.drawButtonBorder(Lock_num2);
+		State.drawButtonBorder(Lock_num1);
+		
 		// Mini Map 붙일 패널
-		Mini_Map Map_panel = new Mini_Map();
+		Map_panel = new Mini_Map(Lock_num1,Lock_num2);
 		Map_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		Map_panel.setBounds(217, 436, 478, 166);
 		fullPanel.add(Map_panel);
@@ -125,8 +131,20 @@ public class MainFrame extends JFrame {
 		NextButton = new JButton(new ImageIcon(imgnext));
 		NextButton.setBounds(800, 124, 97, 178);
 		mainpanel.add(NextButton);
-
 		btnStyle.deleteButtonFormat(NextButton);
+
+		URL imgup = getClass().getClassLoader().getResource("upPoint.png");
+		UpButton = new JButton(new ImageIcon(imgup));
+		UpButton.setBounds(700, 440, 50, 50);
+		btnStyle.deleteButtonFormat(UpButton);
+		fullPanel.add(UpButton);
+		
+		URL imgdown = getClass().getClassLoader().getResource("downPoint.png");
+		DownButton = new JButton(new ImageIcon(imgdown));
+		DownButton.setBounds(700, 550, 50, 50);
+		btnStyle.deleteButtonFormat(DownButton);
+		fullPanel.add(DownButton);
+		
 
 		// 인포메이션 버튼
 		URL imginfobtn = getClass().getClassLoader().getResource("information.png");
@@ -144,15 +162,20 @@ public class MainFrame extends JFrame {
 		// search 버튼 action listener
 		SearchButton.setBounds(80, 471, 127, 131);
 		fullPanel.add(SearchButton);
-		fullPanel.addKeyListener(new KeyHandler());
+//		fullPanel.addKeyListener(new KeyHandler());
+		UpButton.addActionListener(new MyActionListener());
+		DownButton.addActionListener(new MyActionListener());
 		BackButton.addActionListener(new MyActionListener());
 		NextButton.addActionListener(new MyActionListener());
 		SearchButton.addActionListener(new MyActionListener());
-		InformationButton.addActionListener(new MyActionListener());
-
+		InformationButton.addActionListener(new MyActionListener());		
+		
+		// 버튼 테두리 그리기
 		setVisible(true);
 	}
+	
 
+	
 	/**
 	 * This class implements for ActionListener, if click conditional button then
 	 * events for that button occur <br>
@@ -162,27 +185,67 @@ public class MainFrame extends JFrame {
 	 * @author june hyeock
 	 **/
 	class MyActionListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent e) {	
 			JButton temp = (JButton) e.getSource();
 			if (temp == NextButton) {
 				goNextCard();
+				if (Current.current < 0) {
+					Current.current = (Math.abs(Current.current) + 1) * -1;
+					if (Current.current < -5)
+						Current.current = 1;
+				} else if (Current.current > 0) {
+					Current.current = Current.current + 1;
+					if (Current.current > 5)
+						Current.current = -1;
+				}				
+				if(!divide)
+					State.drawButtonBorder(Lock_num2);
+				else
+					State.drawButtonBorder(Lock_num1);
 			}
 
 			else if (temp == BackButton) {
 				goBackCard();
+				if (Current.current < 0) {
+					Current.current = (Math.abs(Current.current) - 1) * -1;
+					if (Current.current > -1)
+						Current.current = 5;
+				}
+				else if (Current.current > 0) {
+					Current.current = Current.current - 1;
+					if (Current.current < 1)
+						Current.current = -5;
+				}				
+				if(!divide)
+					State.drawButtonBorder(Lock_num2);
+				else
+					State.drawButtonBorder(Lock_num1);				
 			}
-
+			
+			else if(temp == UpButton) {
+				if(Current.current < 0) {
+					Current.current *= -1;
+					Map_panel.floor = true;
+					Map_panel.rePainting(Map_panel.floor);
+				}
+			}
+			else if(temp == DownButton) {
+				if(Current.current > 0) {
+					Current.current *= -1;
+					Map_panel.floor = false;
+					Map_panel.rePainting(Map_panel.floor);
+				}
+			}
 			else if (temp == SearchButton) {
 				searchFrame.setVisible(true);
 			}
-
+		
 			else if (temp == InformationButton) {
 				infoFrame.setVisible(true);
 			}
 
 			else {
 				int num = getLockerNumOfZero(Current.current);
-				System.out.println(getLockerNumOfZero(-1));
 				for (int i = 0; i < 16; i++) {
 					if (temp == Lock_num1[i]) {
 						lockerInfo[0] = 0;
@@ -198,9 +261,14 @@ public class MainFrame extends JFrame {
 					}
 				}
 				daframe = new DataFrame(lockerInfo);
+				daframe.mf = getSelf();						
 				daframe.setVisible(true);
 			}
 		}
+	}
+	
+	public MainFrame getSelf() {
+		return this;
 	}
 
 	/**
@@ -220,48 +288,25 @@ public class MainFrame extends JFrame {
 		return result;
 	}
 
+	
 	/**
-	 * This method acts as function to the next card in Cardlayout <br>
-	 * 
-	 * @param void
-	 * @return void
+	 * This method acts as function to the next card in Cardlayout 
+	 * <br>
 	 * @author june hyeock
-	 **/
-	public void goNextCard() {
+	 */
+	// -1 -2 -3 -4 -5 1 2 3 4 5
+	public static void goNextCard() {
 		cards.next(Lockpanel);
-
-		if (Current.current < 0) {
-			Current.current = (Math.abs(Current.current) + 1) * -1;
-			if (Current.current < -5)
-				Current.current = 1;
-		} else if (Current.current > 0) {
-			Current.current = Current.current + 1;
-			if (Current.current > 5)
-				Current.current = -1;
-		}
+		divide = !divide;
 	}
-
+		
 	/**
 	 * This method acts as function to the previous card in Cardlayout <br>
-	 * 
-	 * @param void
-	 * @return void
 	 * @author june hyeock
-	 **/
-	public void goBackCard() {
+	 */
+	public static void goBackCard() {
 		cards.previous(Lockpanel);
-
-		if (Current.current < 0) {
-			Current.current = (Math.abs(Current.current) - 1) * -1;
-			if (Current.current > -1)
-				Current.current = 5;
-		}
-
-		else if (Current.current > 0) {
-			Current.current = Current.current - 1;
-			if (Current.current < 1)
-				Current.current = -5;
-		}
+		divide = !divide;		
 	}
 }
 
@@ -274,13 +319,7 @@ class MainBackgroundPanel extends JPanel {
 		image = new ImageIcon(imgbackground).getImage();
 	}
 
-	/**
-	 * Painting a background image on panel to override
-	 * javax.swing.JComponent.paint. <br>
-	 * 
-	 * @param void
-	 * @return boolean
-	 **/
+	
 	public void paint(Graphics g) {
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		setOpaque(false);

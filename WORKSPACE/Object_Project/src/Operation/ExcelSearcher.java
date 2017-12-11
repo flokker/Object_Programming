@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- * This class consists of SearchLocker method returning the list of index number for given search targets
+ *  * This class consists of SearchLocker method returning the list of index number for given search targets
  * 
  * <br>
  * A method in this class receives data list of locker without NULL, and number
@@ -21,24 +21,27 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * given list and stored list are consistent. If give number of conditions and
  * Counting number are consistent, the list will be search target
  * 
- * 
  * @author Myungho Bae
  * @version 1.1
- **/
+ */
 public class ExcelSearcher {
 	/** Stored information of data_set from SearchFrame Class **/
 	String Cust[] = new String[5];
+	
+	public String path;
+	
+	public ExcelSearcher() {
+		path = ExcelManager.class.getResource("").getPath();
+
+	}
 
 
 	/**
 	 * Returns index of matching list. If there are matching list, returning NULL.
-	 * 
-	 * <br>
-	 * 
-	 * @param List<data_set> list
-	 * @param int enterCnt
-	 * @return void
-	 **/
+	 * @param list - this param means list of data_set
+	 * @param enterCnt - this param means number of input
+	 * @return - return SearchArray
+	 */
 	public int[] SearchLocker(List<data_set> list, int enterCnt) {
 		data_set ds = list.get(0);
 		Cust[0] = ds.getCustLock();
@@ -46,14 +49,14 @@ public class ExcelSearcher {
 		Cust[2] = ds.getCustName();
 		Cust[3] = ds.getCustNum();
 		Cust[4] = ds.getCustPeriod();
-		int SearchArray[] = new int[200];
+		int SearchArray[] = new int[281];
 		try {
-			FileInputStream fis = new FileInputStream("./ExcelSheet/db.xlsx");
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/db.xlsx");
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			int rows = sheet.getPhysicalNumberOfRows();
 			int ArrayNum = 0;
-			int searchedCnt = 0;
+			int searchedCnt;
 			for (int rowIndex = 1; rowIndex < rows; rowIndex++) {
 				searchedCnt = 0;
 				XSSFRow row = sheet.getRow(rowIndex);

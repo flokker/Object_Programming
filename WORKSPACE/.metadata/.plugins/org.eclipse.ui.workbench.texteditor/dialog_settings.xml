@@ -2,18 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getR" key="selection"/>
+		<item value="학교" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="getr"/>
-			<item value="row"/>
-			<item value="riw"/>
-			<item value="rowid"/>
-			<item value="rows"/>
-			<item value="SearchFrame"/>
+			<item value="학교"/>
+			<item value="nextcard"/>
+			<item value="gonextcard"/>
+			<item value="drawButtonBorder"/>
+			<item value="draw"/>
+			<item value="drow"/>
+			<item value="dataframe"/>
+			<item value="getlow"/>
+			<item value="gonext"/>
+			<item value="divide"/>
+			<item value="excelMANAGER"/>
+			<item value="사물함"/>
+			<item value="mana"/>
+			<item value="getLockerID"/>
+			<item value="panel"/>
 		</list>
 		<list key="replacehistory">
 		</list>

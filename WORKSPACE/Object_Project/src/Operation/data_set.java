@@ -1,7 +1,8 @@
 package Operation;
 
 /**
- * define using data & some of structure(like Programming language C) class
+ * define using data like some of structure(like Programming language C) class
+ * <br>
  * history : June hyuk, 1.0 2017.10.14 initiate version
  * @author June hyuk
  * @since 2017-10-14 
@@ -22,14 +23,13 @@ public class data_set {
 	 * CustName means user's name
 	 * CustNum means user's phone number
 	 * CustPeriod means user's Period of use
-	 * 
 	 * <br>
-	 * @param String CustLock
-	 * @param String CustId
-	 * @param String CustName
-	 * @param String CustNum
-	 * @param String CustPeriod
-	 * @author june hyeock
+	 * 
+	 * @param CustLock - this value means CustLock variable
+	 * @param CustId - this value means CustId variable
+	 * @param CustName - this value means CustName variable
+	 * @param CustNum - this value means CustNum variable
+	 * @param CustPeriod - this value means CustPeriod variable
 	 */
 	public data_set(String CustLock, String CustId, String CustName, String CustNum, String CustPeriod) {		// data set about id,name,num,peroid
 	
@@ -44,82 +44,81 @@ public class data_set {
 	 * 
 	 * Method of return CustLock variable
 	 * 
-	 * @param void
-	 * @return CustLock
+	 * @return CustLock - return CustLock value
 	 */
 	public String getCustLock() {
 		return CustLock;
 	}
 	
 	/**
-	 * Method of Store CustLock variable
-	 * @param String CustLock
+	 *  Method of Store CustLock value
+	 * @param CustLock - this is value about CustLock 
 	 */
 	public void setCustLock(String CustLock) {
 		this.CustLock = CustLock;
 	}
 
 	/**
-	 * Method of return CustId variable
-	 * @return CustId
-	 * @param void
+	 * Method of return CustId value
+	 * @return - return CustId value
 	 */
 	
 	public String getCustId() {
 		return CustId;
 	}
-/**
- * Method of Store CustId variable
- * @param String CustId
- */
+
+	/**
+	 * Method of Store CustId variable
+	 * @param CustId - this is value about CustId
+	 */
 	public void setCustId(String CustId) {
 		this.CustId = CustId;
 	}
-/**
- * Method of return CustName variable 
- * @return CustName
- * @param void
- */
+
+	/**
+	 * Method of return CustName value 
+	 * @return - return CustName value
+	 */
 	public String getCustName() {
 		return CustName;
 	}
+	
 /**
- * Method of Store CustName variable
- * @param String CustName
+ * Method of Store CustName value
+ * @param CustName - this is value about CustName
  */
 	public void setCustName(String CustName) {
 		this.CustName = CustName;
 	}
 
-/**
- * Method of return CustNum variable
- * @return CustNum
- * @param void
- */
+	/**
+	 * Method of return CustNum value
+	 * @return - return CustNum value
+	 */
 	public String getCustNum() {
 		return CustNum;
 	}
 
 /**
- * Method of Store CustNum variable
- * @param String CustNum
- * 
+ * Method of Store CustNum value
+ * @param CustNum - this is value about CustNum
  */
 	public void setCustNum(String CustNum) {
 		this.CustNum = CustNum;
 	}
-/**
- * Method of return CustPeriod variable
- * @return CustPeriod
- * @param void
- */
+
+	/**
+	 * Method of return CustPeriod value
+	 * @return - return CustPeriod value
+	 */
 	public String getCustPeriod() {
 		return CustPeriod;
 	}
-/**
- * Method of Store CustPeriod variable
- * @param String CustPeriod
- */
+
+	/**
+	 * Method of Store CustPeriod value
+	 * @param CustPeriod - this is value about CustPeriod
+	 */
 	public void setCustPeriod(String CustPeriod) {
 		this.CustPeriod = CustPeriod;
 	}

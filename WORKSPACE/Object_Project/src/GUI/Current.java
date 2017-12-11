@@ -2,6 +2,7 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.geom.*;
+import java.net.URL;
 import java.awt.color.*;
 import java.awt.*;
 
@@ -20,6 +21,7 @@ public class Current extends JPanel {
 	 * private to this class
 	 */
 	private Point p;
+	private Image image;
 	/**
 	 * this variable is needed to know what the current lockers area is, and since
 	 * it is unique, it is declared static. Variables represent a range of -9 to
@@ -27,49 +29,53 @@ public class Current extends JPanel {
 	 * visible.
 	 */
 	public static int current; // 1st floor < 0, 2nd floor > 0 and not use 0
+	public static int preCurrent; // 이전 커렌트 저장
 
 	/** Initialize Point */
-	Current() {
-		p = new Point();
+	public Current() {
+		URL imgMan = getClass().getClassLoader().getResource("Man.png");
+		image = Toolkit.getDefaultToolkit().getImage(imgMan);
+		MediaTracker tracker = new MediaTracker(this);
+		tracker.addImage(image, 0);
+		
+		try {
+			tracker.waitForID(0);
+		}
+		catch(InterruptedException exception) {}
+		p = new Point(4, 4);
 	}
 
 	/**
 	 * The implementation part of the abstract to implement JPanel
-	 * 
-	 * @param Graphics
-	 *            g input value
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		Graphics2D g2 = (Graphics2D) g;
-		double radius = 10;
-
-		Ellipse2D circle = new Ellipse2D.Double();
-		circle.setFrameFromCenter(p.x + 30, p.y + 20, p.x + radius, p.y + radius);
-		g2.setPaint(new Color(255, 238, 219));
-		g2.fill(circle);
-		g2.draw(circle);
+		if(image == null) return;
+		
+		g.drawImage(image, 0,0, null);
 	}
 
 	/**
-	 * It is a method to convert a private p that takes a location. This method
-	 * invokes a method that changes the current to change the currnet.
-	 * 
-	 * @param Point
-	 *            p input value
+	 *  It is a method to convert a private p that takes a location.
+	 *  <br> 
+	 *  This method invokes a method that changes the current to change the currnet.
+	 * @param p - this param means p 
 	 */
 	public void setPosition(Point p) {
 		this.p = p;
 		setCurrent();
 	}
 
-	/**
-	 * Return the value of Point
-	 * 
-	 * @return value of Point
-	 */
-
+/**
+ * Return the value of Point
+ * @return - return p value
+ */
 	public Point getPosition() {
+		p.x = p.x + 65;
+		if(p.y > 20)
+			p.y -= 22;
+		else
+			p.y += 52;
 		return p;
 	}
 
@@ -82,27 +88,19 @@ public class Current extends JPanel {
 		int x, y, z;
 		x = p.x;
 		y = p.y;
-		z = x / 68;
-		if (y == 1 || y == 87)
+		z = x / 160;
+		if (y < 20)
 			current = z + 1;
 		else {
 			switch (z) {
 			case 0:
-				current = 9;
+				current = 5;
 				break;
 			case 1:
-				current = 8;
-				break;
-			case 2:
-				current = 7;
-				break;
-			case 3:
-				current = 6;
-				break;
+				current = 4;
 			}
 		}
-		if (y > 61)
+		if (!Mini_Map.floor)
 			current *= -1;
 	}
-
 }

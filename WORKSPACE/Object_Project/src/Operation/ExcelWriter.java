@@ -23,10 +23,17 @@ import Operation.data_set;
 * @version 1.1 
 **/
 public class ExcelWriter {
+	
+	public String path;
+
+	public ExcelWriter() {
+		path = ExcelManager.class.getResource("").getPath();
+
+	}
 
 	public void xlsxWriter(List<data_set> list, int rowid) {
 
-		File file = new File("./ExcelSheet/db.xlsx");
+		File file = new File(System.getProperty("user.dir")+"/db.xlsx");
 		FileOutputStream fos = null;
 		FileInputStream fis = null;
 		
@@ -102,5 +109,5 @@ public class ExcelWriter {
 		}
 
 	}
-
+	
 }
